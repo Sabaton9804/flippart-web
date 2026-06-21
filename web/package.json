@@ -1,0 +1,12 @@
+{
+  "name": "flippart-web",
+  "private": true,
+  "scripts": {
+    "start": "python -m http.server 5500",
+    "test:visual": "playwright test",
+    "test:visual:ui": "playwright test --ui"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.49.0"
+  }
+}
