@@ -1,6 +1,21 @@
-# Hostinger despliega la raíz del repo en public_html.
-# El sitio vive en web/ — redirigimos todo el tráfico ahí.
+# Hostinger publica la raíz del repo en public_html; el sitio está en web/
 <IfModule mod_rewrite.c>
 RewriteEngine On
+RewriteBase /
+
+# Evitar bucle en reescrituras internas
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+
+# No tocar rutas que ya apuntan a web/
+RewriteCond %{REQUEST_URI} !^/web/ [NC]
+
+# Reescribir solo si el destino existe en web/
+RewriteCond %{DOCUMENT_ROOT}/web/$1 -f [OR]
+RewriteCond %{DOCUMENT_ROOT}/web/$1 -d
 RewriteRule ^(.*)$ web/$1 [L]
+
+# Raíz del dominio → index del sitio
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond %{REQUEST_URI} ^/?$
+RewriteRule ^ web/index.html [L]
 </IfModule>
