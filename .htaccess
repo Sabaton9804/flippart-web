@@ -1,0 +1,6 @@
+# Hostinger despliega la raíz del repo en public_html.
+# El sitio vive en web/ — redirigimos todo el tráfico ahí.
+<IfModule mod_rewrite.c>
+RewriteEngine On
+RewriteRule ^(.*)$ web/$1 [L]
+</IfModule>
