@@ -325,24 +325,6 @@ renderVideos();
 initSEO();
 initAnalytics();
 initLeadForm();
-
-function initSEO() {
-  const base = (typeof FLIPPART_CONFIG !== 'undefined' && FLIPPART_CONFIG.siteUrl)
-    ? FLIPPART_CONFIG.siteUrl.replace(/\/$/, '')
-    : window.location.origin;
-
-  const setMeta = (selector, content) => {
-    document.querySelectorAll(selector).forEach((el) => { el.content = content; });
-  };
-
-  setMeta('meta[property="og:image"], meta[name="twitter:image"]', `${base}/assets/og-image.jpg`);
-  setMeta('meta[property="og:url"]', `${base}/`);
-
-  const canonical = document.getElementById('canonical-url');
-  if (canonical) canonical.href = `${base}/`;
-}
-
-function initAnalytics() {
   if (typeof FLIPPART_CONFIG === 'undefined') return;
 
   trackEvent('page_view', { path: window.location.pathname });

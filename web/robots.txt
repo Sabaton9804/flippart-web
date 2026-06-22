@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://flippart.com.co/sitemap.xml
