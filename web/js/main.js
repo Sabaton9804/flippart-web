@@ -1,12 +1,15 @@
 const MEDIA = 'media';
+const ASSETS = 'assets';
 
 const portfolioItems = [
   {
     category: 'mascotas',
     name: 'Benji',
     type: 'compare',
-    original: `${MEDIA}/Mascotas/Bengi/Orginal.jpeg`,
-    result: `${MEDIA}/Mascotas/Bengi/listo.jpeg`,
+    original: `${ASSETS}/gallery/benji/original.png`,
+    result: `${ASSETS}/gallery/benji/figura.png`,
+    fallbackOriginal: `${MEDIA}/Mascotas/Bengi/Orginal.jpeg`,
+    fallbackResult: `${MEDIA}/Mascotas/Bengi/listo.jpeg`,
   },
   {
     category: 'mascotas',
@@ -163,8 +166,14 @@ function encodePath(path) {
   return path.split('/').map((part) => encodeURIComponent(part)).join('/');
 }
 
+function imageFallbackAttr(item, fallbackKey) {
+  if (!fallbackKey || !item[fallbackKey]) return '';
+  return ` data-fallback="${encodePath(item[fallbackKey])}"`;
+}
+
 function renderGallery(filter = 'all') {
   const gallery = document.getElementById('gallery');
+  if (!gallery) return;
   gallery.innerHTML = '';
 
   portfolioItems.forEach((item) => {
@@ -181,34 +190,25 @@ function renderGallery(filter = 'all') {
     }[item.category];
 
     if (item.type === 'compare') {
-      el.classList.add('gallery__item--compare');
+      el.classList.add('gallery__item--figure');
       el.innerHTML = `
-        <div class="gallery__compare">
-          <div class="gallery__compare-row">
-            <div class="gallery__compare-panel">
-              <span>Foto real</span>
-              <img src="${encodePath(item.original)}" alt="Foto original de ${item.name}" loading="lazy" onerror="this.closest('.gallery__item').remove()">
-            </div>
-            <div class="gallery__compare-panel">
-              <span>Figura FlippArt</span>
-              <img src="${encodePath(item.result)}" alt="Figura terminada de ${item.name}" loading="lazy" onerror="this.closest('.gallery__item').remove()">
-            </div>
+        <h4 class="gallery__figure-title">${item.name}</h4>
+        <div class="gallery__figure-media">
+          <img class="gallery__figure-img" src="${encodePath(item.result)}"${imageFallbackAttr(item, 'fallbackResult')} alt="Figura FlippArt de ${item.name}" loading="lazy">
+          <div class="gallery__figure-popover" aria-hidden="true">
+            <img src="${encodePath(item.original)}"${imageFallbackAttr(item, 'fallbackOriginal')} alt="Foto original de ${item.name}" loading="lazy">
+            <span>Foto original</span>
           </div>
         </div>
-        <div class="gallery__info">
-          <h4>${item.name}</h4>
-          <span>${categoryLabel} · Ver comparación</span>
-        </div>
       `;
-      el.addEventListener('click', () => openCompareLightbox(
-        encodePath(item.original),
-        encodePath(item.result),
+      el.addEventListener('click', () => openLightbox(
+        el.querySelector('.gallery__figure-popover img')?.src || encodePath(item.original),
         item.name,
       ));
     } else {
       el.innerHTML = `
         <div class="gallery__single">
-          <img src="${encodePath(item.image)}" alt="Obra FlippArt: ${item.name} — figura personalizada artesanal" loading="lazy" onerror="this.closest('.gallery__item').remove()">
+          <img src="${encodePath(item.image)}" alt="Obra FlippArt: ${item.name} — figura personalizada artesanal" loading="lazy">
         </div>
         <div class="gallery__info">
           <h4>${item.name}</h4>
@@ -220,10 +220,20 @@ function renderGallery(filter = 'all') {
 
     gallery.appendChild(el);
   });
+
+  gallery.querySelectorAll('img[data-fallback]').forEach((img) => {
+    img.addEventListener('error', function handleFallback() {
+      const fallback = this.dataset.fallback;
+      if (!fallback || this.dataset.fallbackUsed === 'true') return;
+      this.dataset.fallbackUsed = 'true';
+      this.src = fallback;
+    }, { once: true });
+  });
 }
 
 function renderVideos() {
   const container = document.getElementById('processVideos');
+  if (!container) return;
   container.innerHTML = '';
 
   processVideos.forEach((src, i) => {
@@ -260,25 +270,6 @@ function openLightbox(src, caption) {
   img.src = src;
   img.alt = caption;
   cap.textContent = caption;
-  lightbox.hidden = false;
-  document.body.style.overflow = 'hidden';
-}
-
-function openCompareLightbox(originalSrc, resultSrc, caption) {
-  const lightbox = document.getElementById('lightbox');
-  const img = document.getElementById('lightboxImg');
-  const compare = document.getElementById('lightboxCompare');
-  const cap = document.getElementById('lightboxCaption');
-  const orig = document.getElementById('lightboxOriginal');
-  const result = document.getElementById('lightboxResult');
-
-  img.hidden = true;
-  compare.hidden = false;
-  orig.src = originalSrc;
-  orig.alt = `Foto real — ${caption}`;
-  result.src = resultSrc;
-  result.alt = `Figura FlippArt — ${caption}`;
-  cap.textContent = `${caption} — Comparación foto real vs figura`;
   lightbox.hidden = false;
   document.body.style.overflow = 'hidden';
 }
@@ -320,11 +311,7 @@ window.addEventListener('scroll', () => {
     : 'rgba(10, 10, 10, 0.85)';
 });
 
-renderGallery();
-renderVideos();
-initSEO();
-initAnalytics();
-initLeadForm();
+function initAnalytics() {
   if (typeof FLIPPART_CONFIG === 'undefined') return;
 
   trackEvent('page_view', { path: window.location.pathname });
@@ -495,3 +482,8 @@ function initSectionTracking() {
 }
 
 initSectionTracking();
+renderGallery();
+renderVideos();
+initSEO();
+initAnalytics();
+initLeadForm();

@@ -44,7 +44,7 @@ test.describe('FlippArt — vitrina y galería', () => {
     await expectImageFullyVisible(page, heroImg);
 
     const showcaseCount = await page.locator('.vitrina__card img').count();
-    expect(showcaseCount).toBeGreaterThanOrEqual(3);
+    expect(showcaseCount).toBeGreaterThanOrEqual(2);
   });
 
   test('caso destacado Coco — similitud y vitrina separados', async ({ page }) => {
@@ -63,41 +63,41 @@ test.describe('FlippArt — vitrina y galería', () => {
     await caseStudy.screenshot({ path: 'tests/screenshots/caso-coco-completo.png' });
   });
 
-  test('Coco en galería — comparación sin recorte cover', async ({ page }) => {
+  test('Coco en galería — figura cuadrada con vista previa', async ({ page }) => {
     await page.goto('/#galeria');
     await page.getByRole('button', { name: 'Mascotas' }).click();
 
     const cocoCard = page.locator('.gallery__item', { has: page.getByRole('heading', { name: 'Coco' }) });
     await expect(cocoCard).toBeVisible();
 
-    const panels = cocoCard.locator('.gallery__compare-panel img');
-    await expect(panels).toHaveCount(2);
+    const figure = cocoCard.locator('.gallery__figure-img');
+    const preview = cocoCard.locator('.gallery__figure-popover img');
 
-    const original = panels.nth(0);
-    const figure = panels.nth(1);
+    await expect(figure).toBeVisible();
+    await expect(preview).toHaveCount(1);
 
-    const origMetrics = await expectImageFullyVisible(page, original);
     const figMetrics = await expectImageFullyVisible(page, figure);
-
-    expect(origMetrics.displayHeight).toBeGreaterThan(150);
-    expect(figMetrics.displayHeight).toBeGreaterThan(150);
+    expect(figMetrics.displayHeight).toBeGreaterThan(120);
   });
 
-  test('lightbox comparación Coco muestra ambas fotos completas', async ({ page }) => {
+  test('lightbox galería abre la foto original al hacer clic', async ({ page }) => {
     await page.goto('/#galeria');
-    await page.getByRole('button', { name: 'Mascotas' }).click();
+    await page.getByRole('button', { name: 'Todos' }).click();
 
-    const cocoCard = page.locator('.gallery__item', { has: page.getByRole('heading', { name: 'Coco' }) });
-    await cocoCard.click();
+    const benjiCard = page.locator('.gallery__item', { has: page.getByRole('heading', { name: 'Benji' }) });
+    await expect(benjiCard).toBeVisible();
+    await benjiCard.click();
 
     const lightbox = page.locator('#lightbox');
     await expect(lightbox).toBeVisible();
 
     const compare = page.locator('#lightboxCompare');
-    await expect(compare).toBeVisible();
+    await expect(compare).toBeHidden();
 
-    await expectImageFullyVisible(page, page.locator('#lightboxOriginal'));
-    await expectImageFullyVisible(page, page.locator('#lightboxResult'));
+    const lightboxImg = page.locator('#lightboxImg');
+    await expect(lightboxImg).toBeVisible();
+    await expectImageFullyVisible(page, lightboxImg);
+    await expect(page.locator('#lightboxCaption')).toHaveText('Benji');
   });
 
   test('captura visual — vitrina y galería Coco', async ({ page }) => {
