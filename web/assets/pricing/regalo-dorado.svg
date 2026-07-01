@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 400" fill="none" aria-hidden="true">
+  <defs>
+    <linearGradient id="gFront" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#C9A227"/>
+      <stop offset="50%" stop-color="#B8942E"/>
+      <stop offset="100%" stop-color="#9A7B1A"/>
+    </linearGradient>
+    <linearGradient id="gSide" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#B8942E"/>
+      <stop offset="100%" stop-color="#7A6114"/>
+    </linearGradient>
+    <linearGradient id="gLidTop" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#C9A227"/>
+      <stop offset="40%" stop-color="#B8942E"/>
+      <stop offset="100%" stop-color="#9A7B1A"/>
+    </linearGradient>
+    <linearGradient id="gRibbon" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#9A7B1A"/>
+      <stop offset="30%" stop-color="#B8942E"/>
+      <stop offset="70%" stop-color="#A88724"/>
+      <stop offset="100%" stop-color="#9A7B1A"/>
+    </linearGradient>
+    <linearGradient id="gShine" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#E8D5A0" stop-opacity="0"/>
+      <stop offset="40%" stop-color="#E8D5A0" stop-opacity="0.35"/>
+      <stop offset="60%" stop-color="#D4C090" stop-opacity="0.2"/>
+      <stop offset="100%" stop-color="#E8D5A0" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+
+  <ellipse cx="180" cy="372" rx="100" ry="14" fill="#000" opacity="0.35"/>
+
+  <!-- Caja: cuerpo frontal -->
+  <path d="M72 168 L72 308 L228 308 L228 168 Z" fill="url(#gFront)" stroke="#7A6114" stroke-width="1.2"/>
+  <!-- Caja: lado derecho -->
+  <path d="M228 168 L288 148 L288 288 L228 308 Z" fill="url(#gSide)" stroke="#7A6114" stroke-width="1.2"/>
+  <!-- Caja: borde superior cuerpo -->
+  <path d="M72 168 L132 148 L288 148 L228 168 Z" fill="#9A7B1A" opacity="0.35"/>
+
+  <!-- Tapa superior -->
+  <path d="M60 148 L60 168 L240 168 L240 148 Z" fill="url(#gLidTop)" stroke="#7A6114" stroke-width="1.2"/>
+  <path d="M240 148 L300 128 L300 148 L240 168 Z" fill="url(#gSide)" stroke="#7A6114" stroke-width="1"/>
+  <path d="M60 148 L120 128 L300 128 L240 148 L60 148 Z" fill="url(#gLidTop)" stroke="#7A6114" stroke-width="1.2"/>
+  <path d="M60 148 L120 128 L300 128 L240 148 L60 148 Z" fill="url(#gShine)" opacity="0.12"/>
+
+  <!-- Cinta vertical (frente) -->
+  <rect x="156" y="128" width="36" height="180" fill="url(#gRibbon)"/>
+  <rect x="162" y="128" width="12" height="180" fill="url(#gShine)" opacity="0.18"/>
+
+  <!-- Cinta horizontal (frente) -->
+  <rect x="72" y="222" width="156" height="32" fill="url(#gRibbon)"/>
+  <rect x="72" y="226" width="156" height="10" fill="url(#gShine)" opacity="0.15"/>
+
+  <!-- Cinta en tapa (vista superior) -->
+  <path d="M168 128 L168 148 L192 148 L192 128 Z" fill="url(#gRibbon)"/>
+  <path d="M60 136 L240 136 L240 148 L60 148 Z" fill="url(#gRibbon)" opacity="0.75"/>
+
+  <!-- Moño de regalo -->
+  <path d="M180 126 C148 126 122 98 118 72 C114 50 132 38 150 50 C138 64 142 90 158 106 C170 118 180 126 180 126Z" fill="url(#gSide)" stroke="#7A6114" stroke-width="0.9"/>
+  <path d="M180 126 C212 126 238 98 242 72 C246 50 228 38 210 50 C222 64 218 90 202 106 C190 118 180 126 180 126Z" fill="url(#gSide)" stroke="#7A6114" stroke-width="0.9"/>
+  <path d="M180 130 C158 130 142 112 140 92 C138 74 148 62 160 70 C152 82 154 100 166 112 C174 122 180 130 180 130Z" fill="url(#gRibbon)" stroke="#7A6114" stroke-width="1"/>
+  <path d="M180 130 C202 130 218 112 220 92 C222 74 212 62 200 70 C208 82 206 100 194 112 C186 122 180 130 180 130Z" fill="url(#gLidTop)" stroke="#7A6114" stroke-width="1"/>
+  <path d="M180 130 C158 130 142 112 140 92 C138 74 148 62 160 70 C152 82 154 100 166 112 C174 122 180 130 180 130Z" fill="url(#gShine)" opacity="0.12"/>
+  <ellipse cx="180" cy="116" rx="17" ry="14" fill="url(#gFront)" stroke="#7A6114" stroke-width="1"/>
+  <ellipse cx="174" cy="111" rx="6" ry="5" fill="#E8D5A0" opacity="0.2"/>
+  <path d="M164 124 C154 132 148 142 144 154" stroke="url(#gRibbon)" stroke-width="16" stroke-linecap="round" fill="none"/>
+  <path d="M196 124 C206 132 212 142 216 154" stroke="url(#gRibbon)" stroke-width="16" stroke-linecap="round" fill="none"/>
+
+  <!-- Reflejos suaves -->
+  <path d="M84 184 L108 184 L106 260 L84 258 Z" fill="url(#gShine)" opacity="0.14"/>
+  <path d="M72 172 L100 168" stroke="#C9A227" stroke-width="2" stroke-linecap="square" opacity="0.25"/>
+  <path d="M248 156 L276 148" stroke="#C9A227" stroke-width="2" stroke-linecap="square" opacity="0.2"/>
+</svg>

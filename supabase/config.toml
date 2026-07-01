@@ -1,0 +1,11 @@
+# https://supabase.com/docs/guides/cli/config
+project_id = "xoakbkmfnoiwmjtrnscy"
+
+[api]
+enabled = true
+
+[db]
+major_version = 15
+
+[functions.notify-lead]
+verify_jwt = false

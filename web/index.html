@@ -41,7 +41,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=10">
+  <link rel="stylesheet" href="css/style.css?v=36">
   <script src="js/config.js"></script>
 </head>
 <body>
@@ -96,10 +96,6 @@
         >
       </div>
     </div>
-    <div class="hero__scroll">
-      <span>Descubre más</span>
-      <div class="hero__scroll-line"></div>
-    </div>
   </header>
 
   <section class="section section--about" id="nosotros">
@@ -117,32 +113,93 @@
           <p>Cada obra es una interpretación hecha con dedicación: no es una copia exacta, sino un homenaje que refleja la esencia de cada historia.</p>
           <div class="about__quote">
             <span class="about__quote-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
-                <path d="M12 20.5s-7-4.35-7-10.2a4.2 4.2 0 0 1 7.2-2.9A4.2 4.2 0 0 1 19 10.3c0 5.85-7 10.2-7 10.2z"/>
+              <svg class="about__quote-icon-svg" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <defs>
+                  <linearGradient id="quote-heart-gold-v" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#FFD700"/>
+                    <stop offset="45%" stop-color="#D4AF37"/>
+                    <stop offset="100%" stop-color="#C5A059"/>
+                  </linearGradient>
+                  <linearGradient id="quote-heart-gold-h" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0%" stop-color="#FFD700" stop-opacity="0"/>
+                    <stop offset="42%" stop-color="#FFF3B0" stop-opacity="0.95"/>
+                    <stop offset="100%" stop-color="#FFD700" stop-opacity="0"/>
+                  </linearGradient>
+                  <linearGradient id="quote-heart-inner" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#FFD700"/>
+                    <stop offset="100%" stop-color="#D4AF37"/>
+                  </linearGradient>
+                  <radialGradient id="quote-heart-shine" cx="35%" cy="28%" r="55%">
+                    <stop offset="0%" stop-color="#FFF8D4" stop-opacity="0.95"/>
+                    <stop offset="55%" stop-color="#FFD700" stop-opacity="0.35"/>
+                    <stop offset="100%" stop-color="#C5A059" stop-opacity="0"/>
+                  </radialGradient>
+                  <clipPath id="quote-heart-clip">
+                    <path d="M40 16C40 8 30 4 24 8C18 12 18 22 40 54C62 22 62 12 56 8C50 4 40 8 40 16Z"/>
+                  </clipPath>
+                </defs>
+                <ellipse cx="40" cy="72" rx="20" ry="3" fill="#000" opacity="0.25"/>
+                <path d="M40 16C40 8 30 4 24 8C18 12 18 22 40 54C62 22 62 12 56 8C50 4 40 8 40 16Z" fill="url(#quote-heart-gold-v)" stroke="#9A7B1A" stroke-width="1.4"/>
+                <path d="M40 16C40 8 30 4 24 8C18 12 18 22 40 54C62 22 62 12 56 8C50 4 40 8 40 16Z" fill="url(#quote-heart-shine)" opacity="0.72"/>
+                <path d="M40 20C40 14 32 11 28 14C24 17 24 24 40 48C56 24 56 17 52 14C48 11 40 14 40 20Z" fill="url(#quote-heart-inner)" stroke="#C5A059" stroke-width="0.8" opacity="0.88"/>
+                <path d="M40 20C40 14 32 11 28 14C24 17 24 24 40 48C56 24 56 17 52 14C48 11 40 14 40 20Z" fill="url(#quote-heart-gold-h)" opacity="0.45"/>
+                <rect x="16" y="8" width="48" height="30" fill="url(#quote-heart-gold-h)" opacity="0.38" clip-path="url(#quote-heart-clip)"/>
+                <path d="M28 22C30 18 34 16 38 18" stroke="#FFF8D4" stroke-width="1.4" stroke-linecap="round" opacity="0.75"/>
+                <path d="M40 24C41 22 43 22 44 24" stroke="#FFD700" stroke-width="1" stroke-linecap="round" opacity="0.6"/>
+                <circle cx="54" cy="16" r="1.6" fill="#FFF8D4" opacity="0.92"/>
+                <circle cx="58" cy="22" r="1.1" fill="#FFD700" opacity="0.78"/>
+                <circle cx="50" cy="12" r="0.85" fill="#FFD700" opacity="0.65"/>
               </svg>
             </span>
             <p>Más que figuras, creamos conexiones emocionales que permanecen.</p>
           </div>
         </div>
         <div class="about__features">
-          <article class="about-card">
+          <article class="about-card about-card--airbrush">
             <span class="about-card__star" aria-hidden="true">✦</span>
-            <div class="about-card__icon" aria-hidden="true">
-              <svg class="about-card__icon-svg about-card__icon-svg--airbrush" viewBox="0 0 28 20" fill="none" stroke="currentColor" stroke-width="1.25" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M2.5 10h9.5"/>
-                <path d="M12 10h2.4"/>
-                <path d="M14.4 9.4l2.4.6"/>
-                <path d="M7.2 10V7.6"/>
-                <path d="M5.8 7.6h2.8"/>
-                <path d="M8.6 7.1v.8"/>
-                <path d="M9.2 10v2.6"/>
-                <path d="M8.1 12.6h2.2"/>
-                <circle cx="18.6" cy="8.1" r="0.55" fill="currentColor" stroke="none"/>
-                <circle cx="20.2" cy="9.7" r="0.48" fill="currentColor" stroke="none"/>
-                <circle cx="20.8" cy="7.1" r="0.42" fill="currentColor" stroke="none"/>
-                <circle cx="22.1" cy="10.4" r="0.46" fill="currentColor" stroke="none"/>
-                <circle cx="21" cy="11.3" r="0.36" fill="currentColor" stroke="none"/>
-                <circle cx="22.8" cy="8.8" r="0.32" fill="currentColor" stroke="none"/>
+            <div class="about-card__icon about-card__icon--airbrush" aria-hidden="true">
+              <svg class="about-card__icon-svg about-card__icon-svg--airbrush" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <defs>
+                  <linearGradient id="feat-gold-v" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#FFD700"/>
+                    <stop offset="50%" stop-color="#D4AF37"/>
+                    <stop offset="100%" stop-color="#C5A059"/>
+                  </linearGradient>
+                  <linearGradient id="feat-gold-h" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0%" stop-color="#FFD700" stop-opacity="0"/>
+                    <stop offset="45%" stop-color="#FFF3B0" stop-opacity="0.95"/>
+                    <stop offset="100%" stop-color="#FFD700" stop-opacity="0"/>
+                  </linearGradient>
+                  <linearGradient id="feat-gold-d" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#D4AF37"/>
+                    <stop offset="100%" stop-color="#FFD700"/>
+                  </linearGradient>
+                  <radialGradient id="feat-mist" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stop-color="#FFF8D4"/>
+                    <stop offset="100%" stop-color="#C5A059" stop-opacity="0"/>
+                  </radialGradient>
+                </defs>
+                <ellipse cx="34" cy="68" rx="26" ry="3" fill="#000" opacity="0.22"/>
+                <!-- Aerógrafo -->
+                <rect x="4" y="36" width="12" height="12" rx="3" fill="url(#feat-gold-v)" stroke="#9A7B1A" stroke-width="1"/>
+                <rect x="15" y="33" width="38" height="14" rx="7" fill="url(#feat-gold-v)" stroke="#9A7B1A" stroke-width="1"/>
+                <rect x="18" y="35" width="32" height="5" rx="2.5" fill="url(#feat-gold-h)" opacity="0.85"/>
+                <path d="M28 33V27Q32 23 36 27V33" fill="url(#feat-gold-v)" stroke="#C5A059" stroke-width="0.8"/>
+                <rect x="30" y="24.5" width="4" height="7" rx="1.2" fill="#FFD700" stroke="#C5A059" stroke-width="0.7"/>
+                <path d="M53 40H60L68 41L60 42H53Z" fill="url(#feat-gold-d)" stroke="#C5A059" stroke-width="0.8"/>
+                <circle cx="68.5" cy="41" r="1.4" fill="#FFD700"/>
+                <circle cx="70" cy="38" r="1.1" fill="url(#feat-mist)"/>
+                <circle cx="71" cy="41" r="1.2" fill="url(#feat-mist)"/>
+                <circle cx="70.5" cy="43.5" r="0.9" fill="url(#feat-mist)" opacity="0.85"/>
+                <circle cx="72" cy="39.5" r="0.7" fill="#FFD700" opacity="0.8"/>
+                <!-- Pincel fino -->
+                <path d="M46 58L72 18" stroke="url(#feat-gold-v)" stroke-width="3.5" stroke-linecap="round"/>
+                <path d="M46 58L72 18" stroke="url(#feat-gold-h)" stroke-width="1.2" stroke-linecap="round" opacity="0.75"/>
+                <path d="M70 16L76 12L74 20L68 18Z" fill="url(#feat-gold-d)" stroke="#9A7B1A" stroke-width="0.7"/>
+                <path d="M74 13.5L76.5 11.5" stroke="#FFF8D4" stroke-width="0.8" stroke-linecap="round" opacity="0.7"/>
+                <path d="M44 60C42 63 38 64 35 62" stroke="#C5A059" stroke-width="2.2" stroke-linecap="round" opacity="0.9"/>
+                <path d="M33 61.5C31 64.5 27 65.5 24 63.5" stroke="#FFD700" stroke-width="1.4" stroke-linecap="round" opacity="0.75"/>
+                <ellipse cx="36" cy="62" rx="5" ry="2.2" fill="url(#feat-gold-v)" opacity="0.35"/>
               </svg>
             </div>
             <div class="about-card__body">
@@ -150,14 +207,54 @@
               <p>Aerógrafo para bases y degradados; pincel fino para pelaje, rostros y detalles minuciosos.</p>
             </div>
           </article>
-          <article class="about-card">
+          <article class="about-card about-card--printer">
             <span class="about-card__star" aria-hidden="true">✦</span>
-            <div class="about-card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
-                <path d="M5 17h14v3H5z"/>
-                <path d="M7 17V9h10v8"/>
-                <path d="M9 13h6M9 10h6"/>
-                <path d="M10 6h4v3h-4z"/>
+            <div class="about-card__icon about-card__icon--printer" aria-hidden="true">
+              <svg class="about-card__icon-svg about-card__icon-svg--printer" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <defs>
+                  <linearGradient id="print-gold-v" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#FFD700"/>
+                    <stop offset="50%" stop-color="#D4AF37"/>
+                    <stop offset="100%" stop-color="#C5A059"/>
+                  </linearGradient>
+                  <linearGradient id="print-gold-h" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0%" stop-color="#FFD700" stop-opacity="0"/>
+                    <stop offset="45%" stop-color="#FFF3B0" stop-opacity="0.9"/>
+                    <stop offset="100%" stop-color="#FFD700" stop-opacity="0"/>
+                  </linearGradient>
+                  <linearGradient id="print-resin" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#FFF3B0" stop-opacity="0.85"/>
+                    <stop offset="100%" stop-color="#D4AF37" stop-opacity="0.55"/>
+                  </linearGradient>
+                  <linearGradient id="print-filament" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#FFD700"/>
+                    <stop offset="100%" stop-color="#9A7B1A"/>
+                  </linearGradient>
+                </defs>
+                <ellipse cx="40" cy="72" rx="28" ry="3" fill="#000" opacity="0.2"/>
+                <!-- Impresora resina (SLA) -->
+                <rect x="6" y="52" width="30" height="7" rx="2" fill="url(#print-gold-v)" stroke="#9A7B1A" stroke-width="0.9"/>
+                <rect x="8" y="40" width="26" height="13" rx="2.5" fill="url(#print-gold-v)" stroke="#9A7B1A" stroke-width="0.9"/>
+                <rect x="10" y="41.5" width="22" height="3" rx="1.5" fill="url(#print-gold-h)" opacity="0.75"/>
+                <rect x="10" y="14" width="22" height="27" rx="2.5" fill="url(#print-resin)" stroke="#D4AF37" stroke-width="1"/>
+                <rect x="12" y="16" width="18" height="20" rx="1.5" fill="rgba(10,10,10,0.35)" stroke="#FFD700" stroke-width="0.6" opacity="0.9"/>
+                <rect x="13" y="30" width="16" height="4" rx="1" fill="url(#print-gold-h)" opacity="0.6"/>
+                <rect x="14" y="22" width="2" height="14" rx="1" fill="url(#print-gold-v)" opacity="0.85"/>
+                <rect x="12" y="12" width="24" height="4" rx="1.5" fill="url(#print-gold-v)" stroke="#9A7B1A" stroke-width="0.7"/>
+                <circle cx="32" cy="14" r="1.2" fill="#FFD700"/>
+                <!-- Filamento (FDM) -->
+                <circle cx="58" cy="28" r="14" fill="none" stroke="url(#print-filament)" stroke-width="4.5"/>
+                <circle cx="58" cy="28" r="14" fill="none" stroke="url(#print-gold-h)" stroke-width="1.2" opacity="0.6"/>
+                <circle cx="58" cy="28" r="5" fill="url(#print-gold-v)" stroke="#9A7B1A" stroke-width="0.8"/>
+                <path d="M58 42C58 48 52 52 46 54" stroke="#FFD700" stroke-width="2" stroke-linecap="round" fill="none"/>
+                <path d="M46 54L42 58" stroke="#D4AF37" stroke-width="1.8" stroke-linecap="round"/>
+                <rect x="38" y="56" width="10" height="8" rx="2" fill="url(#print-gold-v)" stroke="#9A7B1A" stroke-width="0.8"/>
+                <rect x="40" y="58" width="6" height="3" rx="1" fill="#1a1a1a" stroke="#C5A059" stroke-width="0.5"/>
+                <path d="M43 61v5" stroke="#FFD700" stroke-width="1.5" stroke-linecap="round"/>
+                <ellipse cx="43" cy="67.5" rx="2.5" ry="1.2" fill="url(#print-gold-v)" opacity="0.7"/>
+                <!-- Capa impresa -->
+                <path d="M52 58L62 52L68 56L58 62Z" fill="url(#print-gold-v)" stroke="#C5A059" stroke-width="0.7" opacity="0.85"/>
+                <path d="M54 59L62 54" stroke="#FFF8D4" stroke-width="0.6" opacity="0.5"/>
               </svg>
             </div>
             <div class="about-card__body">
@@ -165,12 +262,53 @@
               <p>Impresión en resina para máximo detalle y filamento para estructuras robustas.</p>
             </div>
           </article>
-          <article class="about-card">
+          <article class="about-card about-card--custom">
             <span class="about-card__star" aria-hidden="true">✦</span>
-            <div class="about-card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
-                <path d="M6.5 12c0-3 2.5-5.5 5.5-5.5s5.5 2.5 5.5 5.5-2.5 5.5-5.5 5.5"/>
-                <path d="M17.5 12c0 3-2.5 5.5-5.5 5.5S6.5 15 6.5 12 9 6.5 12 6.5s5.5 2.5 5.5 5.5z"/>
+            <div class="about-card__icon about-card__icon--custom" aria-hidden="true">
+              <svg class="about-card__icon-svg about-card__icon-svg--custom" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <defs>
+                  <linearGradient id="custom-gold-v" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#FFD700"/>
+                    <stop offset="50%" stop-color="#D4AF37"/>
+                    <stop offset="100%" stop-color="#C5A059"/>
+                  </linearGradient>
+                  <linearGradient id="custom-gold-h" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0%" stop-color="#FFD700" stop-opacity="0"/>
+                    <stop offset="45%" stop-color="#FFF3B0" stop-opacity="0.95"/>
+                    <stop offset="100%" stop-color="#FFD700" stop-opacity="0"/>
+                  </linearGradient>
+                  <linearGradient id="custom-photo" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#2a2418"/>
+                    <stop offset="100%" stop-color="#141210"/>
+                  </linearGradient>
+                  <radialGradient id="custom-spark" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stop-color="#FFF8D4"/>
+                    <stop offset="55%" stop-color="#FFD700"/>
+                    <stop offset="100%" stop-color="#C5A059" stop-opacity="0"/>
+                  </radialGradient>
+                </defs>
+                <ellipse cx="38" cy="70" rx="24" ry="3" fill="#000" opacity="0.2"/>
+                <!-- Marco de foto -->
+                <rect x="10" y="14" width="44" height="52" rx="4" fill="url(#custom-gold-v)" stroke="#9A7B1A" stroke-width="1.2"/>
+                <rect x="13" y="17" width="38" height="40" rx="2.5" fill="url(#custom-photo)" stroke="#C5A059" stroke-width="0.7"/>
+                <rect x="14" y="18" width="36" height="38" rx="2" fill="none" stroke="url(#custom-gold-h)" stroke-width="0.8" opacity="0.35"/>
+                <!-- Silueta mascota -->
+                <circle cx="32" cy="30" r="7" fill="url(#custom-gold-v)" opacity="0.85"/>
+                <ellipse cx="32" cy="42" rx="10" ry="8" fill="url(#custom-gold-v)" opacity="0.7"/>
+                <circle cx="28" cy="28" r="1.2" fill="#FFF8D4" opacity="0.8"/>
+                <!-- Controles edición -->
+                <rect x="16" y="58" width="32" height="3" rx="1.5" fill="#1a1a1a" stroke="#C5A059" stroke-width="0.5"/>
+                <circle cx="24" cy="59.5" r="2.2" fill="url(#custom-gold-v)" stroke="#9A7B1A" stroke-width="0.5"/>
+                <rect x="16" y="58" width="14" height="3" rx="1.5" fill="url(#custom-gold-h)" opacity="0.5"/>
+                <!-- Varita mágica / edición -->
+                <path d="M52 10L72 30" stroke="url(#custom-gold-v)" stroke-width="3" stroke-linecap="round"/>
+                <path d="M52 10L72 30" stroke="url(#custom-gold-h)" stroke-width="1" stroke-linecap="round" opacity="0.8"/>
+                <path d="M70 28L76 24L74 32L68 30Z" fill="url(#custom-gold-v)" stroke="#9A7B1A" stroke-width="0.7"/>
+                <circle cx="50" cy="12" r="2.5" fill="url(#custom-spark)" opacity="0.95"/>
+                <circle cx="46" cy="18" r="1.5" fill="url(#custom-spark)" opacity="0.8"/>
+                <path d="M74 22l2-2M76 26l2 1M72 34l1.5 2" stroke="#FFD700" stroke-width="1" stroke-linecap="round" opacity="0.75"/>
+                <!-- Cursor selección -->
+                <path d="M58 48L58 62L52 56H62L58 48Z" fill="url(#custom-gold-v)" stroke="#9A7B1A" stroke-width="0.7" opacity="0.9"/>
               </svg>
             </div>
             <div class="about-card__body">
@@ -181,11 +319,47 @@
         </div>
       </div>
       <div class="about__values">
-        <div class="about-value">
-          <div class="about-value__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
-              <path d="M12 3l7 3v6c0 4.5-3.5 7.5-7 9-3.5-1.5-7-4.5-7-9V6l7-3z"/>
-              <path d="M9.5 12.5l2 2 4-4"/>
+        <div class="about-value about-value--quality">
+          <div class="about-value__icon about-value__icon--shield" aria-hidden="true">
+            <svg class="about-value__icon-svg about-value__icon-svg--shield" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <linearGradient id="val-shield-gold-v" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#FFD700"/>
+                  <stop offset="45%" stop-color="#D4AF37"/>
+                  <stop offset="100%" stop-color="#C5A059"/>
+                </linearGradient>
+                <linearGradient id="val-shield-gold-h" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stop-color="#FFD700" stop-opacity="0"/>
+                  <stop offset="42%" stop-color="#FFF3B0" stop-opacity="0.95"/>
+                  <stop offset="100%" stop-color="#FFD700" stop-opacity="0"/>
+                </linearGradient>
+                <linearGradient id="val-shield-inner" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#D4AF37"/>
+                  <stop offset="100%" stop-color="#9A7B1A"/>
+                </linearGradient>
+                <radialGradient id="val-shield-shine" cx="35%" cy="28%" r="45%">
+                  <stop offset="0%" stop-color="#FFF8D4" stop-opacity="0.95"/>
+                  <stop offset="55%" stop-color="#FFD700" stop-opacity="0.35"/>
+                  <stop offset="100%" stop-color="#C5A059" stop-opacity="0"/>
+                </radialGradient>
+                <clipPath id="val-shield-clip">
+                  <path d="M40 7L64 18.5V39.5C64 54.5 53.5 66.5 40 74C26.5 66.5 16 54.5 16 39.5V18.5L40 7Z"/>
+                </clipPath>
+              </defs>
+              <ellipse cx="40" cy="76" rx="22" ry="3" fill="#000" opacity="0.28"/>
+              <path d="M40 7L64 18.5V39.5C64 54.5 53.5 66.5 40 74C26.5 66.5 16 54.5 16 39.5V18.5L40 7Z" fill="url(#val-shield-gold-v)" stroke="#9A7B1A" stroke-width="1.4"/>
+              <path d="M40 7L64 18.5V39.5C64 54.5 53.5 66.5 40 74C26.5 66.5 16 54.5 16 39.5V18.5L40 7Z" fill="url(#val-shield-shine)" opacity="0.75"/>
+              <path d="M40 14L57 22.5V38.5C57 50 49 59.5 40 65.5C31 59.5 23 50 23 38.5V22.5L40 14Z" fill="url(#val-shield-inner)" stroke="#C5A059" stroke-width="0.9" opacity="0.92"/>
+              <path d="M40 14L57 22.5V38.5C57 50 49 59.5 40 65.5C31 59.5 23 50 23 38.5V22.5L40 14Z" fill="url(#val-shield-gold-h)" opacity="0.55"/>
+              <path d="M28 24H52" stroke="#FFD700" stroke-width="1.2" stroke-linecap="round" opacity="0.65"/>
+              <path d="M30 28H50" stroke="#C5A059" stroke-width="0.8" stroke-linecap="round" opacity="0.5"/>
+              <circle cx="40" cy="21" r="2.2" fill="#FFD700" stroke="#9A7B1A" stroke-width="0.5"/>
+              <path d="M31.5 40.5L37.5 46.5L49.5 33.5" stroke="#FFD700" stroke-width="3.8" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M31.5 40.5L37.5 46.5L49.5 33.5" stroke="url(#val-shield-gold-h)" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" opacity="0.85"/>
+              <rect x="8" y="10" width="64" height="28" fill="url(#val-shield-gold-h)" opacity="0.35" clip-path="url(#val-shield-clip)"/>
+              <circle cx="52" cy="22" r="1.4" fill="#FFF8D4" opacity="0.9"/>
+              <circle cx="56" cy="28" r="0.9" fill="#FFD700" opacity="0.75"/>
+              <circle cx="48" cy="18" r="0.7" fill="#FFD700" opacity="0.6"/>
             </svg>
           </div>
           <div class="about-value__text">
@@ -193,12 +367,56 @@
             <span>Materiales premium y acabado de nivel superior en cada pieza.</span>
           </div>
         </div>
-        <div class="about-value">
-          <div class="about-value__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
-              <path d="M8 13V8.5a4 4 0 1 1 8 0V13"/>
-              <path d="M6 13h12v8H6z"/>
-              <path d="M12 17.5v2"/>
+        <div class="about-value about-value--soul">
+          <div class="about-value__icon about-value__icon--heart-hand" aria-hidden="true">
+            <svg class="about-value__icon-svg about-value__icon-svg--heart-hand" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <linearGradient id="val-soul-gold-v" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#FFD700"/>
+                  <stop offset="45%" stop-color="#D4AF37"/>
+                  <stop offset="100%" stop-color="#C5A059"/>
+                </linearGradient>
+                <linearGradient id="val-soul-gold-h" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stop-color="#FFD700" stop-opacity="0"/>
+                  <stop offset="42%" stop-color="#FFF3B0" stop-opacity="0.95"/>
+                  <stop offset="100%" stop-color="#FFD700" stop-opacity="0"/>
+                </linearGradient>
+                <linearGradient id="val-soul-inner" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#FFD700"/>
+                  <stop offset="100%" stop-color="#D4AF37"/>
+                </linearGradient>
+                <radialGradient id="val-soul-shine" cx="38%" cy="30%" r="50%">
+                  <stop offset="0%" stop-color="#FFF8D4" stop-opacity="0.95"/>
+                  <stop offset="55%" stop-color="#FFD700" stop-opacity="0.35"/>
+                  <stop offset="100%" stop-color="#C5A059" stop-opacity="0"/>
+                </radialGradient>
+                <clipPath id="val-heart-clip">
+                  <path d="M40 24C40 18 33 14 29 17C25 20 25 28 40 46C55 28 55 20 51 17C47 14 40 18 40 24Z"/>
+                </clipPath>
+              </defs>
+              <ellipse cx="40" cy="76" rx="24" ry="3" fill="#000" opacity="0.28"/>
+              <!-- Mano izquierda -->
+              <path d="M14 70C9 58 8 44 14 34C18 27 24 25 29 30C32 33 31 39 28 45C26 50 30 57 36 62L40 65" fill="url(#val-soul-gold-v)" stroke="#9A7B1A" stroke-width="1.2" stroke-linejoin="round"/>
+              <path d="M14 70C9 58 8 44 14 34C18 27 24 25 29 30C32 33 31 39 28 45C26 50 30 57 36 62L40 65" fill="url(#val-soul-shine)" opacity="0.45"/>
+              <!-- Mano derecha -->
+              <path d="M66 70C71 58 72 44 66 34C62 27 56 25 51 30C48 33 49 39 52 45C54 50 50 57 44 62L40 65" fill="url(#val-soul-gold-v)" stroke="#9A7B1A" stroke-width="1.2" stroke-linejoin="round"/>
+              <path d="M66 70C71 58 72 44 66 34C62 27 56 25 51 30C48 33 49 39 52 45C54 50 50 57 44 62L40 65" fill="url(#val-soul-shine)" opacity="0.45"/>
+              <!-- Palmas unidas -->
+              <path d="M36 62C38 66 42 66 44 62" stroke="#C5A059" stroke-width="1.4" stroke-linecap="round"/>
+              <!-- Dedos decorativos -->
+              <path d="M18 36C20 32 24 30 27 32" stroke="#FFD700" stroke-width="1" stroke-linecap="round" opacity="0.6"/>
+              <path d="M62 36C60 32 56 30 53 32" stroke="#FFD700" stroke-width="1" stroke-linecap="round" opacity="0.6"/>
+              <path d="M16 44C18 40 22 38 25 40" stroke="#C5A059" stroke-width="0.8" stroke-linecap="round" opacity="0.5"/>
+              <path d="M64 44C62 40 58 38 55 40" stroke="#C5A059" stroke-width="0.8" stroke-linecap="round" opacity="0.5"/>
+              <!-- Corazón -->
+              <path d="M40 24C40 18 33 14 29 17C25 20 25 28 40 46C55 28 55 20 51 17C47 14 40 18 40 24Z" fill="url(#val-soul-inner)" stroke="#9A7B1A" stroke-width="1.2"/>
+              <path d="M40 24C40 18 33 14 29 17C25 20 25 28 40 46C55 28 55 20 51 17C47 14 40 18 40 24Z" fill="url(#val-soul-shine)" opacity="0.7"/>
+              <rect x="22" y="14" width="36" height="22" fill="url(#val-soul-gold-h)" opacity="0.4" clip-path="url(#val-heart-clip)"/>
+              <path d="M36 28C37 26 39 26 40 28" stroke="#FFF8D4" stroke-width="1.2" stroke-linecap="round" opacity="0.75"/>
+              <!-- Destellos -->
+              <circle cx="52" cy="20" r="1.5" fill="#FFF8D4" opacity="0.9"/>
+              <circle cx="56" cy="26" r="1" fill="#FFD700" opacity="0.75"/>
+              <circle cx="48" cy="16" r="0.8" fill="#FFD700" opacity="0.65"/>
             </svg>
           </div>
           <div class="about-value__text">
@@ -206,26 +424,66 @@
             <span>Cada obra es una creación artesanal con dedicación y cariño.</span>
           </div>
         </div>
-        <div class="about-value">
-          <div class="about-value__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
-              <path d="M4 9h16v11H4z"/>
-              <path d="M12 9V5"/>
-              <path d="M8.5 5h7l1.5 4H7z"/>
-              <path d="M12 13v4M10 15h4"/>
-            </svg>
-          </div>
-          <div class="about-value__text">
-            <strong>Empaque premium</strong>
-            <span>Presentación de unboxing diseñada para una experiencia memorable.</span>
-          </div>
-        </div>
-        <div class="about-value">
-          <div class="about-value__icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
-              <circle cx="12" cy="9" r="4"/>
-              <path d="M8 21l4-3 4 3"/>
-              <path d="M12 5V3"/>
+        <div class="about-value about-value--guarantee">
+          <div class="about-value__icon about-value__icon--medal" aria-hidden="true">
+            <svg class="about-value__icon-svg about-value__icon-svg--medal" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <linearGradient id="val-medal-gold-v" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#FFD700"/>
+                  <stop offset="45%" stop-color="#D4AF37"/>
+                  <stop offset="100%" stop-color="#C5A059"/>
+                </linearGradient>
+                <linearGradient id="val-medal-gold-h" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stop-color="#FFD700" stop-opacity="0"/>
+                  <stop offset="42%" stop-color="#FFF3B0" stop-opacity="0.95"/>
+                  <stop offset="100%" stop-color="#FFD700" stop-opacity="0"/>
+                </linearGradient>
+                <linearGradient id="val-medal-inner" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#D4AF37"/>
+                  <stop offset="100%" stop-color="#9A7B1A"/>
+                </linearGradient>
+                <linearGradient id="val-medal-ribbon" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#FFD700"/>
+                  <stop offset="60%" stop-color="#D4AF37"/>
+                  <stop offset="100%" stop-color="#C5A059"/>
+                </linearGradient>
+                <radialGradient id="val-medal-shine" cx="35%" cy="28%" r="50%">
+                  <stop offset="0%" stop-color="#FFF8D4" stop-opacity="0.95"/>
+                  <stop offset="55%" stop-color="#FFD700" stop-opacity="0.35"/>
+                  <stop offset="100%" stop-color="#C5A059" stop-opacity="0"/>
+                </radialGradient>
+                <clipPath id="val-medal-clip">
+                  <circle cx="40" cy="34" r="22"/>
+                </clipPath>
+              </defs>
+              <ellipse cx="40" cy="76" rx="22" ry="3" fill="#000" opacity="0.28"/>
+              <!-- Cintas -->
+              <path d="M33 54L24 74L32 74L37 56Z" fill="url(#val-medal-ribbon)" stroke="#9A7B1A" stroke-width="0.9" stroke-linejoin="round"/>
+              <path d="M47 54L56 74L48 74L43 56Z" fill="url(#val-medal-ribbon)" stroke="#9A7B1A" stroke-width="0.9" stroke-linejoin="round"/>
+              <path d="M28 74L32 74" stroke="#FFD700" stroke-width="0.8" stroke-linecap="round" opacity="0.5"/>
+              <path d="M48 74L52 74" stroke="#FFD700" stroke-width="0.8" stroke-linecap="round" opacity="0.5"/>
+              <!-- Colgante -->
+              <circle cx="40" cy="13" r="3.2" fill="url(#val-medal-gold-v)" stroke="#9A7B1A" stroke-width="0.8"/>
+              <path d="M40 16V18" stroke="#C5A059" stroke-width="1.6" stroke-linecap="round"/>
+              <!-- Medalla exterior -->
+              <circle cx="40" cy="34" r="22" fill="url(#val-medal-gold-v)" stroke="#9A7B1A" stroke-width="1.4"/>
+              <circle cx="40" cy="34" r="22" fill="url(#val-medal-shine)" opacity="0.65"/>
+              <!-- Anillo decorativo -->
+              <circle cx="40" cy="34" r="17" fill="none" stroke="#FFD700" stroke-width="1" opacity="0.55"/>
+              <!-- Medalla interior -->
+              <circle cx="40" cy="34" r="14" fill="url(#val-medal-inner)" stroke="#C5A059" stroke-width="0.9"/>
+              <circle cx="40" cy="34" r="14" fill="url(#val-medal-gold-h)" opacity="0.35"/>
+              <!-- Rayos decorativos -->
+              <path d="M40 14V18M40 50V54M18 34H22M58 34H62M23 17L26 20M54 48L57 51M57 17L54 20M26 48L23 51" stroke="#FFD700" stroke-width="1" stroke-linecap="round" opacity="0.45"/>
+              <!-- Estrella de fondo -->
+              <path d="M40 24L42.2 30.5H49L43.4 34.5L45.6 41L40 37L34.4 41L36.6 34.5L31 30.5H37.8L40 24Z" fill="url(#val-medal-gold-v)" stroke="#9A7B1A" stroke-width="0.7" opacity="0.85"/>
+              <!-- Check de garantía -->
+              <path d="M31 35L37 41L50 28" stroke="#FFD700" stroke-width="3.6" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M31 35L37 41L50 28" stroke="url(#val-medal-gold-h)" stroke-width="1.3" stroke-linecap="round" stroke-linejoin="round" opacity="0.85"/>
+              <!-- Brillo -->
+              <rect x="14" y="14" width="52" height="28" fill="url(#val-medal-gold-h)" opacity="0.32" clip-path="url(#val-medal-clip)"/>
+              <circle cx="52" cy="22" r="1.4" fill="#FFF8D4" opacity="0.9"/>
+              <circle cx="56" cy="28" r="0.9" fill="#FFD700" opacity="0.75"/>
             </svg>
           </div>
           <div class="about-value__text">
@@ -243,7 +501,57 @@
       <h2 class="section__title section__title--center">Creamos recuerdos que se convierten en arte</h2>
       <div class="services">
         <article class="service-card">
-          <div class="service-card__icon service-card__icon--pets" aria-hidden="true">🐾</div>
+          <div class="service-card__icon service-card__icon--pets" aria-hidden="true">
+            <svg class="service-card__icon-svg" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <linearGradient id="pets-paw-gold-v" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#FFD700"/>
+                  <stop offset="45%" stop-color="#D4AF37"/>
+                  <stop offset="100%" stop-color="#C5A059"/>
+                </linearGradient>
+                <linearGradient id="pets-paw-gold-h" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stop-color="#FFD700" stop-opacity="0"/>
+                  <stop offset="42%" stop-color="#FFF3B0" stop-opacity="0.95"/>
+                  <stop offset="100%" stop-color="#FFD700" stop-opacity="0"/>
+                </linearGradient>
+                <radialGradient id="pets-paw-shine" cx="35%" cy="28%" r="50%">
+                  <stop offset="0%" stop-color="#FFF8D4" stop-opacity="0.95"/>
+                  <stop offset="55%" stop-color="#FFD700" stop-opacity="0.35"/>
+                  <stop offset="100%" stop-color="#C5A059" stop-opacity="0"/>
+                </radialGradient>
+                <clipPath id="pets-paw-clip">
+                  <ellipse cx="40" cy="54" rx="18" ry="15"/>
+                  <ellipse cx="20" cy="34" rx="8" ry="10"/>
+                  <ellipse cx="31" cy="24" rx="7.5" ry="9.5"/>
+                  <ellipse cx="49" cy="24" rx="7.5" ry="9.5"/>
+                  <ellipse cx="60" cy="34" rx="8" ry="10"/>
+                </clipPath>
+              </defs>
+              <ellipse cx="40" cy="74" rx="22" ry="3" fill="#000" opacity="0.25"/>
+              <!-- Almohadillas de los dedos -->
+              <ellipse cx="20" cy="34" rx="7.5" ry="9.5" transform="rotate(-16 20 34)" fill="url(#pets-paw-gold-v)" stroke="#9A7B1A" stroke-width="1.1"/>
+              <ellipse cx="31" cy="24" rx="7" ry="9" fill="url(#pets-paw-gold-v)" stroke="#9A7B1A" stroke-width="1.1"/>
+              <ellipse cx="49" cy="24" rx="7" ry="9" fill="url(#pets-paw-gold-v)" stroke="#9A7B1A" stroke-width="1.1"/>
+              <ellipse cx="60" cy="34" rx="7.5" ry="9.5" transform="rotate(16 60 34)" fill="url(#pets-paw-gold-v)" stroke="#9A7B1A" stroke-width="1.1"/>
+              <!-- Almohadilla principal -->
+              <ellipse cx="40" cy="54" rx="17" ry="14" fill="url(#pets-paw-gold-v)" stroke="#9A7B1A" stroke-width="1.2"/>
+              <!-- Brillo metálico -->
+              <ellipse cx="40" cy="54" rx="17" ry="14" fill="url(#pets-paw-shine)" opacity="0.55"/>
+              <ellipse cx="31" cy="24" rx="7" ry="9" fill="url(#pets-paw-shine)" opacity="0.45"/>
+              <ellipse cx="49" cy="24" rx="7" ry="9" fill="url(#pets-paw-shine)" opacity="0.45"/>
+              <rect x="10" y="14" width="60" height="36" fill="url(#pets-paw-gold-h)" opacity="0.32" clip-path="url(#pets-paw-clip)"/>
+              <!-- Detalles internos -->
+              <ellipse cx="36" cy="50" rx="5" ry="3.5" fill="url(#pets-paw-gold-h)" opacity="0.5"/>
+              <ellipse cx="28" cy="22" rx="2.5" ry="3" fill="#FFF8D4" opacity="0.45"/>
+              <ellipse cx="46" cy="22" rx="2.5" ry="3" fill="#FFF8D4" opacity="0.45"/>
+              <ellipse cx="18" cy="31" rx="2" ry="2.5" fill="#FFF8D4" opacity="0.35"/>
+              <ellipse cx="62" cy="31" rx="2" ry="2.5" fill="#FFF8D4" opacity="0.35"/>
+              <!-- Destellos -->
+              <circle cx="56" cy="18" r="1.5" fill="#FFF8D4" opacity="0.9"/>
+              <circle cx="60" cy="24" r="1" fill="#FFD700" opacity="0.75"/>
+              <circle cx="52" cy="14" r="0.8" fill="#FFD700" opacity="0.65"/>
+            </svg>
+          </div>
           <h3>Mascotas y homenajes <span class="service-card__accent">personalizados</span></h3>
           <p class="service-card__intro">Para quienes quieren inmortalizar a sus compañeros de vida.</p>
           <ul>
@@ -253,10 +561,41 @@
             <li>Modelado desde fotografías</li>
             <li>Pintura artesanal con aerógrafo y pincel fino</li>
           </ul>
-          <p class="service-card__price">Desde $250.000 · 8 cm</p>
+          <a href="#cotizar" class="service-card__price btn btn--gold">Desde $250.000 · 8 cm</a>
         </article>
         <article class="service-card">
-          <div class="service-card__icon service-card__icon--people" aria-hidden="true">❤</div>
+          <div class="service-card__icon service-card__icon--people" aria-hidden="true">
+            <svg class="service-card__icon-svg" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <linearGradient id="svc-people-gold-v" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#FFD700"/>
+                  <stop offset="45%" stop-color="#D4AF37"/>
+                  <stop offset="100%" stop-color="#C5A059"/>
+                </linearGradient>
+                <linearGradient id="svc-people-gold-h" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stop-color="#FFD700" stop-opacity="0"/>
+                  <stop offset="42%" stop-color="#FFF3B0" stop-opacity="0.95"/>
+                  <stop offset="100%" stop-color="#FFD700" stop-opacity="0"/>
+                </linearGradient>
+                <radialGradient id="svc-people-shine" cx="35%" cy="28%" r="55%">
+                  <stop offset="0%" stop-color="#FFF8D4" stop-opacity="0.95"/>
+                  <stop offset="55%" stop-color="#FFD700" stop-opacity="0.35"/>
+                  <stop offset="100%" stop-color="#C5A059" stop-opacity="0"/>
+                </radialGradient>
+                <clipPath id="svc-people-clip">
+                  <path d="M40 14C40 6 30 2 24 6C18 10 18 20 40 52C62 20 62 10 56 6C50 2 40 6 40 14Z"/>
+                </clipPath>
+              </defs>
+              <ellipse cx="40" cy="72" rx="20" ry="3" fill="#000" opacity="0.25"/>
+              <path d="M40 14C40 6 30 2 24 6C18 10 18 20 40 52C62 20 62 10 56 6C50 2 40 6 40 14Z" fill="url(#svc-people-gold-v)" stroke="#9A7B1A" stroke-width="1.4"/>
+              <path d="M40 14C40 6 30 2 24 6C18 10 18 20 40 52C62 20 62 10 56 6C50 2 40 6 40 14Z" fill="url(#svc-people-shine)" opacity="0.72"/>
+              <path d="M40 18C40 12 32 9 28 12C24 15 24 22 40 46C56 22 56 15 52 12C48 9 40 12 40 18Z" fill="url(#svc-people-gold-h)" opacity="0.45"/>
+              <rect x="16" y="6" width="48" height="28" fill="url(#svc-people-gold-h)" opacity="0.35" clip-path="url(#svc-people-clip)"/>
+              <path d="M28 20C30 16 34 14 38 16" stroke="#FFF8D4" stroke-width="1.4" stroke-linecap="round" opacity="0.75"/>
+              <circle cx="54" cy="14" r="1.5" fill="#FFF8D4" opacity="0.9"/>
+              <circle cx="58" cy="20" r="1" fill="#FFD700" opacity="0.75"/>
+            </svg>
+          </div>
           <h3>Personas y momentos que <span class="service-card__accent">merecen permanecer</span></h3>
           <p class="service-card__intro">Para celebrar vínculos, recuerdos y personas importantes.</p>
           <ul>
@@ -268,10 +607,60 @@
             <li>Retratos personalizados</li>
             <li>Escenas conmemorativas</li>
           </ul>
-          <p class="service-card__price">Desde $250.000 - 10cm</p>
+          <a href="#cotizar" class="service-card__price btn btn--gold">Desde $250.000 - 10cm</a>
         </article>
         <article class="service-card">
-          <div class="service-card__icon service-card__icon--career" aria-hidden="true">🏆</div>
+          <div class="service-card__icon service-card__icon--career" aria-hidden="true">
+            <svg class="service-card__icon-svg" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <linearGradient id="svc-career-medal-v" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#FFD700"/>
+                  <stop offset="45%" stop-color="#D4AF37"/>
+                  <stop offset="100%" stop-color="#C5A059"/>
+                </linearGradient>
+                <linearGradient id="svc-career-medal-h" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stop-color="#FFD700" stop-opacity="0"/>
+                  <stop offset="42%" stop-color="#FFF3B0" stop-opacity="0.95"/>
+                  <stop offset="100%" stop-color="#FFD700" stop-opacity="0"/>
+                </linearGradient>
+                <linearGradient id="svc-career-medal-inner" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#D4AF37"/>
+                  <stop offset="100%" stop-color="#9A7B1A"/>
+                </linearGradient>
+                <linearGradient id="svc-career-medal-ribbon" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#FFD700"/>
+                  <stop offset="60%" stop-color="#D4AF37"/>
+                  <stop offset="100%" stop-color="#C5A059"/>
+                </linearGradient>
+                <radialGradient id="svc-career-medal-shine" cx="35%" cy="28%" r="50%">
+                  <stop offset="0%" stop-color="#FFF8D4" stop-opacity="0.95"/>
+                  <stop offset="55%" stop-color="#FFD700" stop-opacity="0.35"/>
+                  <stop offset="100%" stop-color="#C5A059" stop-opacity="0"/>
+                </radialGradient>
+                <clipPath id="svc-career-medal-clip">
+                  <circle cx="40" cy="34" r="22"/>
+                </clipPath>
+              </defs>
+              <ellipse cx="40" cy="76" rx="22" ry="3" fill="#000" opacity="0.28"/>
+              <path d="M33 54L24 74L32 74L37 56Z" fill="url(#svc-career-medal-ribbon)" stroke="#9A7B1A" stroke-width="0.9" stroke-linejoin="round"/>
+              <path d="M47 54L56 74L48 74L43 56Z" fill="url(#svc-career-medal-ribbon)" stroke="#9A7B1A" stroke-width="0.9" stroke-linejoin="round"/>
+              <path d="M28 74L32 74" stroke="#FFD700" stroke-width="0.8" stroke-linecap="round" opacity="0.5"/>
+              <path d="M48 74L52 74" stroke="#FFD700" stroke-width="0.8" stroke-linecap="round" opacity="0.5"/>
+              <circle cx="40" cy="13" r="3.2" fill="url(#svc-career-medal-v)" stroke="#9A7B1A" stroke-width="0.8"/>
+              <path d="M40 16V18" stroke="#C5A059" stroke-width="1.6" stroke-linecap="round"/>
+              <circle cx="40" cy="34" r="22" fill="url(#svc-career-medal-v)" stroke="#9A7B1A" stroke-width="1.4"/>
+              <circle cx="40" cy="34" r="22" fill="url(#svc-career-medal-shine)" opacity="0.65"/>
+              <circle cx="40" cy="34" r="17" fill="none" stroke="#FFD700" stroke-width="1" opacity="0.55"/>
+              <circle cx="40" cy="34" r="14" fill="url(#svc-career-medal-inner)" stroke="#C5A059" stroke-width="0.9"/>
+              <circle cx="40" cy="34" r="14" fill="url(#svc-career-medal-h)" opacity="0.35"/>
+              <path d="M40 14V18M40 50V54M18 34H22M58 34H62M23 17L26 20M54 48L57 51M57 17L54 20M26 48L23 51" stroke="#FFD700" stroke-width="1" stroke-linecap="round" opacity="0.45"/>
+              <path d="M40 22L43.5 32H54L45.5 38.5L49 49L40 42.5L31 49L34.5 38.5L26 32H36.5L40 22Z" fill="url(#svc-career-medal-v)" stroke="#9A7B1A" stroke-width="0.8"/>
+              <path d="M40 22L43.5 32H54L45.5 38.5L49 49L40 42.5L31 49L34.5 38.5L26 32H36.5L40 22Z" fill="url(#svc-career-medal-h)" opacity="0.45"/>
+              <rect x="14" y="14" width="52" height="28" fill="url(#svc-career-medal-h)" opacity="0.32" clip-path="url(#svc-career-medal-clip)"/>
+              <circle cx="52" cy="22" r="1.4" fill="#FFF8D4" opacity="0.9"/>
+              <circle cx="56" cy="28" r="0.9" fill="#FFD700" opacity="0.75"/>
+            </svg>
+          </div>
           <h3>Profesiones, <span class="service-card__accent">logros y pasiones</span></h3>
           <p class="service-card__intro">Convertimos vocaciones, hobbies y grandes logros en piezas únicas de colección.</p>
           <ul>
@@ -284,10 +673,61 @@
             <li>Graduaciones, ascensos y jubilaciones</li>
             <li>Reconocimientos empresariales</li>
           </ul>
-          <p class="service-card__price">Cotización personalizada</p>
+          <a href="#cotizar" class="service-card__price btn btn--gold">Cotización personalizada</a>
         </article>
         <article class="service-card">
-          <div class="service-card__icon service-card__icon--history" aria-hidden="true">♞</div>
+          <div class="service-card__icon service-card__icon--history" aria-hidden="true">
+            <svg class="service-card__icon-svg" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <linearGradient id="svc-rook-gold-v" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#FFD700"/>
+                  <stop offset="45%" stop-color="#D4AF37"/>
+                  <stop offset="100%" stop-color="#C5A059"/>
+                </linearGradient>
+                <linearGradient id="svc-rook-gold-h" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stop-color="#FFD700" stop-opacity="0"/>
+                  <stop offset="42%" stop-color="#FFF3B0" stop-opacity="0.95"/>
+                  <stop offset="100%" stop-color="#FFD700" stop-opacity="0"/>
+                </linearGradient>
+                <radialGradient id="svc-rook-shine" cx="40%" cy="25%" r="50%">
+                  <stop offset="0%" stop-color="#FFF8D4" stop-opacity="0.95"/>
+                  <stop offset="55%" stop-color="#FFD700" stop-opacity="0.35"/>
+                  <stop offset="100%" stop-color="#C5A059" stop-opacity="0"/>
+                </radialGradient>
+                <clipPath id="svc-rook-clip">
+                  <path d="M20 66H60L56 56H24L20 66Z M26 56L24 40H56L54 56H26Z M22 40L20 24H60L58 40H22Z"/>
+                </clipPath>
+              </defs>
+              <ellipse cx="40" cy="74" rx="22" ry="3" fill="#000" opacity="0.25"/>
+              <!-- Base -->
+              <path d="M18 66H62L58 56H22L18 66Z" fill="url(#svc-rook-gold-v)" stroke="#9A7B1A" stroke-width="1.1" stroke-linejoin="round"/>
+              <!-- Cuerpo inferior -->
+              <path d="M26 56L24 44H56L54 56H26Z" fill="url(#svc-rook-gold-v)" stroke="#9A7B1A" stroke-width="1"/>
+              <!-- Collar -->
+              <path d="M22 44L20 36H60L58 44H22Z" fill="url(#svc-rook-gold-v)" stroke="#9A7B1A" stroke-width="1"/>
+              <!-- Cuello -->
+              <rect x="28" y="28" width="24" height="8" fill="url(#svc-rook-gold-v)" stroke="#9A7B1A" stroke-width="0.9"/>
+              <!-- Plataforma superior -->
+              <rect x="18" y="20" width="44" height="8" rx="1.5" fill="url(#svc-rook-gold-v)" stroke="#9A7B1A" stroke-width="1"/>
+              <!-- Almenas (torre) -->
+              <rect x="18" y="8" width="7" height="12" rx="1" fill="url(#svc-rook-gold-v)" stroke="#9A7B1A" stroke-width="0.8"/>
+              <rect x="27" y="8" width="7" height="12" rx="1" fill="url(#svc-rook-gold-v)" stroke="#9A7B1A" stroke-width="0.8"/>
+              <rect x="36" y="6" width="8" height="14" rx="1" fill="url(#svc-rook-gold-v)" stroke="#9A7B1A" stroke-width="0.8"/>
+              <rect x="46" y="8" width="7" height="12" rx="1" fill="url(#svc-rook-gold-v)" stroke="#9A7B1A" stroke-width="0.8"/>
+              <rect x="55" y="8" width="7" height="12" rx="1" fill="url(#svc-rook-gold-v)" stroke="#9A7B1A" stroke-width="0.8"/>
+              <!-- Brillo metálico -->
+              <path d="M18 66H62L58 56H22L18 66Z" fill="url(#svc-rook-shine)" opacity="0.45"/>
+              <rect x="18" y="6" width="48" height="28" fill="url(#svc-rook-gold-h)" opacity="0.32" clip-path="url(#svc-rook-clip)"/>
+              <rect x="20" y="22" width="20" height="4" rx="1" fill="url(#svc-rook-gold-h)" opacity="0.55"/>
+              <!-- Detalles -->
+              <path d="M24 60H56" stroke="#FFD700" stroke-width="0.8" stroke-linecap="round" opacity="0.45"/>
+              <path d="M26 48H54" stroke="#C5A059" stroke-width="0.7" stroke-linecap="round" opacity="0.4"/>
+              <!-- Destellos -->
+              <circle cx="54" cy="14" r="1.4" fill="#FFF8D4" opacity="0.9"/>
+              <circle cx="58" cy="20" r="0.9" fill="#FFD700" opacity="0.75"/>
+              <circle cx="50" cy="10" r="0.7" fill="#FFD700" opacity="0.65"/>
+            </svg>
+          </div>
           <h3>Modelos históricos <span class="service-card__accent">y coleccionables</span></h3>
           <ul>
             <li>Personajes históricos</li>
@@ -296,10 +736,50 @@
             <li>Escenas temáticas</li>
             <li>Proyectos de exhibición</li>
           </ul>
-          <p class="service-card__price">Cotización personalizada</p>
+          <a href="#cotizar" class="service-card__price btn btn--gold">Cotización personalizada</a>
         </article>
         <article class="service-card">
-          <div class="service-card__icon service-card__icon--group" aria-hidden="true">👨‍👩‍👧‍👦</div>
+          <div class="service-card__icon service-card__icon--group" aria-hidden="true">
+            <svg class="service-card__icon-svg" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <linearGradient id="svc-group-gold-v" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#FFD700"/>
+                  <stop offset="45%" stop-color="#D4AF37"/>
+                  <stop offset="100%" stop-color="#C5A059"/>
+                </linearGradient>
+                <linearGradient id="svc-group-gold-h" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stop-color="#FFD700" stop-opacity="0"/>
+                  <stop offset="42%" stop-color="#FFF3B0" stop-opacity="0.95"/>
+                  <stop offset="100%" stop-color="#FFD700" stop-opacity="0"/>
+                </linearGradient>
+                <radialGradient id="svc-group-shine" cx="50%" cy="30%" r="50%">
+                  <stop offset="0%" stop-color="#FFF8D4" stop-opacity="0.95"/>
+                  <stop offset="55%" stop-color="#FFD700" stop-opacity="0.35"/>
+                  <stop offset="100%" stop-color="#C5A059" stop-opacity="0"/>
+                </radialGradient>
+              </defs>
+              <ellipse cx="40" cy="74" rx="24" ry="3" fill="#000" opacity="0.25"/>
+              <!-- Persona izquierda -->
+              <circle cx="22" cy="28" r="8" fill="url(#svc-group-gold-v)" stroke="#9A7B1A" stroke-width="1.1"/>
+              <path d="M22 36C14 36 10 48 10 58H34C34 48 30 36 22 36Z" fill="url(#svc-group-gold-v)" stroke="#9A7B1A" stroke-width="1" stroke-linejoin="round"/>
+              <!-- Persona central -->
+              <circle cx="40" cy="22" r="9" fill="url(#svc-group-gold-v)" stroke="#9A7B1A" stroke-width="1.2"/>
+              <path d="M40 31C30 31 24 44 24 58H56C56 44 50 31 40 31Z" fill="url(#svc-group-gold-v)" stroke="#9A7B1A" stroke-width="1.1" stroke-linejoin="round"/>
+              <!-- Persona derecha -->
+              <circle cx="58" cy="28" r="8" fill="url(#svc-group-gold-v)" stroke="#9A7B1A" stroke-width="1.1"/>
+              <path d="M58 36C66 36 70 48 70 58H46C46 48 50 36 58 36Z" fill="url(#svc-group-gold-v)" stroke="#9A7B1A" stroke-width="1" stroke-linejoin="round"/>
+              <!-- Brillo -->
+              <circle cx="40" cy="22" r="9" fill="url(#svc-group-shine)" opacity="0.55"/>
+              <circle cx="22" cy="28" r="8" fill="url(#svc-group-shine)" opacity="0.4"/>
+              <circle cx="58" cy="28" r="8" fill="url(#svc-group-shine)" opacity="0.4"/>
+              <rect x="8" y="14" width="64" height="28" fill="url(#svc-group-gold-h)" opacity="0.25"/>
+              <circle cx="18" cy="24" r="2" fill="#FFF8D4" opacity="0.5"/>
+              <circle cx="38" cy="18" r="2.5" fill="#FFF8D4" opacity="0.55"/>
+              <circle cx="56" cy="24" r="2" fill="#FFF8D4" opacity="0.5"/>
+              <circle cx="62" cy="14" r="1.4" fill="#FFF8D4" opacity="0.9"/>
+              <circle cx="66" cy="20" r="0.9" fill="#FFD700" opacity="0.75"/>
+            </svg>
+          </div>
           <h3>Composiciones <span class="service-card__accent">múltiples</span></h3>
           <p class="service-card__intro">Familias, parejas y escenas personalizadas.</p>
           <ul>
@@ -309,7 +789,7 @@
             <li>Escenas especiales</li>
             <li>Momentos únicos</li>
           </ul>
-          <p class="service-card__price">Cotización personalizada</p>
+          <a href="#cotizar" class="service-card__price btn btn--gold">Cotización personalizada</a>
         </article>
       </div>
       <p class="services__note">Precio aplica para una figura individual. Modelos históricos y coleccionables se cotizan según complejidad. Composiciones múltiples tienen costo adicional. Envío no incluido.</p>
@@ -329,7 +809,7 @@
           <h3>Cuéntanos tu idea</h3>
           <p>Recibimos tus fotos e ideas por WhatsApp y creamos una propuesta personalizada para tu pieza.</p>
           <div class="workflow__media">
-            <img src="assets/workflow/paso-01-whatsapp.jpg" alt="Cliente enviando fotos de su mascota por WhatsApp a FlippArt" loading="lazy">
+            <img src="assets/workflow/paso-01-whatsapp.png" alt="Cliente compartiendo fotos por WhatsApp con FlippArt" loading="lazy">
           </div>
         </article>
         <article class="workflow__step">
@@ -339,7 +819,7 @@
           <h3>Diseñamos tu pieza</h3>
           <p>Modelamos digitalmente tu figura para definir proporciones, detalles, tamaño y acabados.</p>
           <div class="workflow__media">
-            <img src="assets/workflow/paso-02-diseno.jpg" alt="Modelado 3D digital de figura personalizada en pantalla" loading="lazy">
+            <img src="assets/workflow/paso-02-diseno.png" alt="Modelo 3D compartido por WhatsApp con el cliente durante el diseño" loading="lazy">
           </div>
         </article>
         <article class="workflow__step">
@@ -349,7 +829,7 @@
           <h3>Creamos cada detalle</h3>
           <p>Imprimimos y pintamos a mano cada pieza con técnicas artesanales para lograr un acabado realista.</p>
           <div class="workflow__media">
-            <img src="assets/workflow/paso-03-pintura.jpg" alt="Pintura artesanal de figura personalizada con pincel fino" loading="lazy">
+            <img src="assets/workflow/paso-03-pintura.png" alt="Figuras impresas en 3D con acabado artesanal antes del detalle final" loading="lazy">
           </div>
         </article>
         <article class="workflow__step">
@@ -359,7 +839,7 @@
           <h3>Entrega y experiencia premium</h3>
           <p>Empacamos tu obra con cuidado para que recibirla sea una experiencia especial de principio a fin.</p>
           <div class="workflow__media">
-            <img src="assets/workflow/paso-04-entrega.jpg" alt="Empaque premium FlippArt con figura terminada y tarjeta de agradecimiento" loading="lazy">
+            <img src="assets/workflow/paso-04-entrega.png" alt="Vitrina LED iluminada con figuras personalizadas y tarjeta de regalo FlippArt" loading="lazy">
           </div>
         </article>
       </div>
@@ -448,7 +928,7 @@
         <button class="filter-btn active" data-filter="all">Todos</button>
         <button class="filter-btn" data-filter="mascotas">Mascotas</button>
         <button class="filter-btn" data-filter="personas">Personas</button>
-        <button class="filter-btn" data-filter="proceso">Proceso</button>
+        <button class="filter-btn" data-filter="modelos-historicos">Modelos históricos</button>
       </div>
       <div class="gallery" id="gallery"></div>
     </div>
@@ -456,34 +936,37 @@
 
   <section class="section section--testimonials" id="testimonios">
     <div class="container">
-      <span class="section__label section__label--center">Prueba social</span>
+      <span class="section__label section__label--center">Experiencias FlippArt</span>
       <h2 class="section__title section__title--center">Lo que dicen nuestros clientes</h2>
       <div class="testimonials">
         <blockquote class="testimonial">
           <img src="media/Mascotas/Bengi/listo.jpeg" alt="Figura memorial de Benji hecha por FlippArt" class="testimonial__img" loading="lazy">
-          <div class="testimonial__stars" aria-label="5 estrellas">★★★★★</div>
-          <p>"Pedí la figura de Benji después de perderlo. Al abrir la urna con la luz LED se me llenaron los ojos. El pelaje, la expresión… parece que va a mover la cola. Gracias FlippArt por hacer eterno nuestro amor."</p>
+          <div class="testimonial__stars" aria-label="5 estrellas">⭐⭐⭐⭐⭐</div>
+          <p>"Cuando abrimos la vitrina fue imposible no emocionarnos. Capturaron su expresión, su mirada y esos pequeños detalles que lo hacían único. Gracias por ayudarnos a conservar su recuerdo de una forma tan especial."</p>
           <footer>
             <strong>María Fernanda R.</strong>
-            <span>Memorial Benji · Bogotá</span>
+            <span>📍 Villavicencio, Meta</span>
+            <span>🐾 Homenaje a Benji</span>
           </footer>
         </blockquote>
-        <blockquote class="testimonial testimonial--featured">
+        <blockquote class="testimonial">
           <img src="media/Mascotas/Coco/Figura Coco.png" alt="Figura personalizada de Coco el bulldog con cadena dorada" class="testimonial__img" loading="lazy">
-          <div class="testimonial__stars" aria-label="5 estrellas">★★★★★</div>
-          <p>"Coco fue el alma de la casa. La figura quedó idéntica: hasta la cadena y la carita de travieso. El empaque premium hizo que recibirla fuera todo un momento especial para la familia."</p>
+          <div class="testimonial__stars" aria-label="5 estrellas">⭐⭐⭐⭐⭐</div>
+          <p>"La figura de Coco quedó idéntica. Cada detalle reflejaba su personalidad y verla iluminada hizo que ese momento fuera muy especial. Superó por completo nuestras expectativas."</p>
           <footer>
-            <strong>Carolina y familia</strong>
-            <span>Memorial Coco · Cundinamarca</span>
+            <strong>Paola Martinez O.</strong>
+            <span>📍 Bogotá, Colombia</span>
+            <span>🐶 Homenaje a Coco</span>
           </footer>
         </blockquote>
         <blockquote class="testimonial">
           <img src="media/Personas/Reconocimientos Juez/Juez Sandra/Juez figura Sandra.jpeg" alt="Figura de reconocimiento para Juez Sandra con uniforme detallado" class="testimonial__img" loading="lazy">
-          <div class="testimonial__stars" aria-label="5 estrellas">★★★★★</div>
-          <p>"Le regalé la figura a mi jefa por su reconocimiento. El uniforme, la postura y la base iluminada la dejaron sin palabras. Es un regalo que ningún otro detalle puede igualar."</p>
+          <div class="testimonial__stars" aria-label="5 estrellas">⭐⭐⭐⭐⭐</div>
+          <p>"Fue el regalo perfecto para reconocer una trayectoria llena de esfuerzo y dedicación. Cada detalle de la figura superó nuestras expectativas y logró transmitir exactamente lo que queríamos expresar."</p>
           <footer>
-            <strong>Andrea M.</strong>
-            <span>Reconocimiento profesional · Colombia</span>
+            <strong>Sandra L.</strong>
+            <span>📍 Bogotá, Colombia</span>
+            <span>⚖️ Reconocimiento profesional</span>
           </footer>
         </blockquote>
       </div>
@@ -502,47 +985,76 @@
   <section class="section section--pricing" id="precios">
     <div class="container">
       <span class="section__label section__label--center">Inversión</span>
-      <h2 class="section__title section__title--center">Un regalo que dura toda la vida</h2>
-      <div class="value-anchor">
-        <p class="value-anchor__lead">Lo que cuesta un detalle genérico que se olvida en semanas — pero hecho a mano, con alma, iluminación LED y un unboxing que emociona.</p>
-        <div class="value-anchor__compare">
-          <div class="value-anchor__item value-anchor__item--muted">
-            <span class="value-anchor__label">Regalo común</span>
-            <p>Se guarda en un cajón</p>
-            <p>Sin personalización</p>
-            <p>Olvido en meses</p>
+      <h2 class="section__title section__title--center">Mucho más que un regalo, un recuerdo que permanece para siempre</h2>
+      <p class="pricing__intro">Cada pieza FlippArt es creada artesanalmente para convertir tus momentos más importantes en obras de arte únicas, con alma y detalles que emocionan.</p>
+
+      <div class="pricing-compare">
+        <div class="pricing-compare__panel pricing-compare__panel--muted">
+          <h3 class="pricing-compare__title">Regalo cualquiera</h3>
+          <div class="pricing-compare__visual pricing-compare__visual--generic">
+            <img src="assets/pricing/regalo-dorado.svg" alt="Regalo genérico en caja dorada elegante" class="pricing-compare__img pricing-compare__img--generic" loading="lazy">
           </div>
-          <div class="value-anchor__item value-anchor__item--gold">
-            <span class="value-anchor__label">FlippArt</span>
-            <p>Obra de arte permanente</p>
-            <p>100% desde tus fotos</p>
-            <p>Urna LED + caballete + dedicatoria</p>
-          </div>
-        </div>
-      </div>
-      <div class="pricing">
-        <div class="pricing__card">
-          <h3>🐾 Mascotas</h3>
-          <p class="pricing__amount">Desde $250.000</p>
-          <p>8 cm · Base iluminada · Nombre personalizado</p>
-          <ul class="pricing__includes">
-            <li>Pintura híbrida aerógrafo + pincel</li>
-            <li>Urna premium con LED</li>
-            <li>Caballete con dedicatoria</li>
+          <ul class="pricing-compare__list pricing-compare__list--negative">
+            <li>Se olvida con el tiempo</li>
+            <li>Sin personalización</li>
+            <li>No genera conexión</li>
+            <li>Más objetos, menos significado</li>
           </ul>
         </div>
-        <div class="pricing__card pricing__card--highlight">
-          <h3>👤 Personas</h3>
-          <p class="pricing__amount">Desde $250.000</p>
-          <p>12 cm · Base iluminada · Detalles personalizados</p>
-          <ul class="pricing__includes">
-            <li>Resina o filamento según pieza</li>
-            <li>Presentación de unboxing completa</li>
-            <li>Avance antes del pago final</li>
+        <div class="pricing-compare__vs" aria-hidden="true">VS</div>
+        <div class="pricing-compare__panel pricing-compare__panel--gold">
+          <h3 class="pricing-compare__title pricing-compare__title--gold">FlippArt</h3>
+          <div class="pricing-compare__visual">
+            <img src="assets/pricing/flippart-showcase.png" alt="Colección de figuras personalizadas FlippArt en vitrinas iluminadas" class="pricing-compare__img" loading="lazy">
+          </div>
+          <ul class="pricing-compare__list pricing-compare__list--positive">
+            <li>Hecho 100% personalizado</li>
+            <li>Creado artesanalmente</li>
+            <li>Con iluminación LED</li>
+            <li>Un recuerdo que dura toda la vida</li>
+            <li>Con un unboxing que emociona</li>
           </ul>
         </div>
       </div>
-      <p class="pricing__note">Precio aplica para una figura individual. Modelos históricos y coleccionables se cotizan según complejidad. Composiciones múltiples tienen costo adicional. Envío no incluido.</p>
+
+      <div class="pricing-offers">
+        <article class="pricing-offer">
+          <div class="pricing-offer__media">
+            <img src="assets/gallery/benji/figura.png" alt="Figura personalizada de mascota en vitrina iluminada FlippArt" loading="lazy">
+          </div>
+          <div class="pricing-offer__body">
+            <h3 class="pricing-offer__category">🐾 Mascotas</h3>
+            <p class="pricing-offer__amount">Desde $250.000</p>
+            <p class="pricing-offer__meta">8 cm · Vitrina iluminada · Nombre personalizado</p>
+            <ul class="pricing-offer__includes">
+              <li>Modelado personalizado</li>
+              <li>Pintura artesanal</li>
+              <li>Vitrina premium con LED</li>
+              <li>Caballete con dedicatoria</li>
+            </ul>
+          </div>
+        </article>
+        <article class="pricing-offer pricing-offer--reverse">
+          <div class="pricing-offer__body">
+            <h3 class="pricing-offer__category">👤 Personas</h3>
+            <p class="pricing-offer__amount">Desde $250.000</p>
+            <p class="pricing-offer__meta">12 cm · Vitrina iluminada · Base personalizada</p>
+            <ul class="pricing-offer__includes">
+              <li>Modelado personalizado</li>
+              <li>Pintura artesanal</li>
+              <li>Vitrina premium con LED</li>
+              <li>Caballete con dedicatoria</li>
+            </ul>
+          </div>
+          <div class="pricing-offer__media">
+            <img src="assets/services/personas-alicia-figura.png" alt="Figura personalizada de persona en vitrina iluminada FlippArt" loading="lazy">
+          </div>
+        </article>
+      </div>
+
+      <div class="pricing-footer-bar">
+        <p>Cada proyecto es único. El valor final depende del tamaño, la cantidad de figuras y el nivel de personalización requerido.</p>
+      </div>
     </div>
   </section>
 
@@ -550,37 +1062,528 @@
     <div class="container">
       <span class="section__label section__label--center">Tu pedido</span>
       <h2 class="section__title section__title--center">¿Cómo realizar tu pedido?</h2>
-      <ol class="steps">
-        <li>
-          <span class="steps__num">1</span>
-          <p>Envíanos la fotografía por WhatsApp</p>
-        </li>
-        <li>
-          <span class="steps__num">2</span>
-          <p>Confirmamos detalles y características</p>
-        </li>
-        <li>
-          <span class="steps__num">3</span>
-          <p>Realizas el 50% de anticipo para iniciar</p>
-        </li>
-        <li>
-          <span class="steps__num">4</span>
-          <p>Te enviamos avance del trabajo</p>
-        </li>
-        <li>
-          <span class="steps__num">5</span>
-          <p>Cancelas el 50% restante y gestionamos el envío</p>
-        </li>
-      </ol>
-      <div class="terms">
-        <h3>Términos importantes</h3>
-        <ul>
-          <li>Pedidos con mínimo <strong>7 días</strong> de anticipación.</li>
-          <li>El 50% de anticipo es necesario para agendar la producción.</li>
-          <li>El anticipo no es reembolsable en caso de cancelación.</li>
-          <li>Entrega presencial o envío nacional por Interrapidísimo (costo del cliente).</li>
-        </ul>
+      <p class="steps__intro">Solo necesitas cinco pasos para convertir tu recuerdo en una pieza única.</p>
+
+      <div class="steps-flow">
+        <article class="step-card">
+          <span class="step-card__num">1</span>
+          <div class="step-card__icon step-card__icon--camera" aria-hidden="true">
+            <svg class="step-card__icon-svg step-card__icon-svg--camera" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <linearGradient id="cam-gold-v" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#FFD700"/>
+                  <stop offset="48%" stop-color="#D4AF37"/>
+                  <stop offset="100%" stop-color="#C5A059"/>
+                </linearGradient>
+                <linearGradient id="cam-gold-h" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stop-color="#FFD700" stop-opacity="0"/>
+                  <stop offset="42%" stop-color="#FFF3B0" stop-opacity="0.95"/>
+                  <stop offset="100%" stop-color="#FFD700" stop-opacity="0"/>
+                </linearGradient>
+                <linearGradient id="cam-gold-d" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#D4AF37"/>
+                  <stop offset="100%" stop-color="#FFD700"/>
+                </linearGradient>
+                <radialGradient id="cam-lens-glass" cx="38%" cy="35%" r="65%">
+                  <stop offset="0%" stop-color="#3a3530"/>
+                  <stop offset="45%" stop-color="#141210"/>
+                  <stop offset="100%" stop-color="#0a0a0a"/>
+                </radialGradient>
+                <radialGradient id="cam-lens-shine" cx="35%" cy="30%" r="40%">
+                  <stop offset="0%" stop-color="#FFF8D4" stop-opacity="0.85"/>
+                  <stop offset="100%" stop-color="#FFD700" stop-opacity="0"/>
+                </radialGradient>
+                <radialGradient id="cam-flash" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#FFF8D4"/>
+                  <stop offset="100%" stop-color="#FFD700" stop-opacity="0.3"/>
+                </radialGradient>
+              </defs>
+              <ellipse cx="40" cy="70" rx="28" ry="3.2" fill="#000" opacity="0.24"/>
+              <!-- Cuerpo principal -->
+              <rect x="10" y="28" width="56" height="36" rx="6" fill="url(#cam-gold-v)" stroke="#9A7B1A" stroke-width="1.1"/>
+              <rect x="13" y="31" width="50" height="8" rx="4" fill="url(#cam-gold-h)" opacity="0.78"/>
+              <!-- Visor -->
+              <path d="M28 28V22C28 19 30 17 34 17H46C50 17 52 19 52 22V28" fill="url(#cam-gold-v)" stroke="#9A7B1A" stroke-width="0.9"/>
+              <rect x="32" y="18.5" width="16" height="5" rx="2.5" fill="url(#cam-gold-h)" opacity="0.55"/>
+              <!-- Empuñadura -->
+              <path d="M58 34C63 34 66 38 66 44V58C66 62 63 64 58 64H54V34H58Z" fill="url(#cam-gold-d)" stroke="#9A7B1A" stroke-width="0.9"/>
+              <path d="M59 38V58" stroke="#FFF8D4" stroke-width="0.7" opacity="0.35"/>
+              <!-- Objetivo -->
+              <circle cx="36" cy="46" r="16" fill="url(#cam-gold-v)" stroke="#9A7B1A" stroke-width="1.2"/>
+              <circle cx="36" cy="46" r="13" fill="#1a1814" stroke="#C5A059" stroke-width="0.8"/>
+              <circle cx="36" cy="46" r="10.5" fill="url(#cam-lens-glass)" stroke="#D4AF37" stroke-width="0.6"/>
+              <circle cx="36" cy="46" r="7.5" fill="#0a0a0a" stroke="#9A7B1A" stroke-width="0.5" opacity="0.9"/>
+              <ellipse cx="32" cy="42" rx="4" ry="3" fill="url(#cam-lens-shine)" opacity="0.9"/>
+              <path d="M30 50C33 53 39 53 42 50" stroke="#FFD700" stroke-width="0.6" opacity="0.25"/>
+              <!-- Flash -->
+              <rect x="50" y="32" width="8" height="5" rx="1.5" fill="url(#cam-gold-v)" stroke="#9A7B1A" stroke-width="0.6"/>
+              <circle cx="54" cy="34.5" r="1.4" fill="url(#cam-flash)"/>
+              <!-- Botón disparador -->
+              <circle cx="58" cy="30" r="2.8" fill="url(#cam-gold-d)" stroke="#9A7B1A" stroke-width="0.6"/>
+              <circle cx="57.5" cy="29.5" r="1" fill="#FFF8D4" opacity="0.65"/>
+              <!-- Detalle correa -->
+              <path d="M14 28C14 24 18 20 22 20" stroke="#C5A059" stroke-width="1.2" stroke-linecap="round" opacity="0.7"/>
+              <!-- Brillo lateral -->
+              <path d="M14 52L18 48" stroke="#FFF8D4" stroke-width="1" stroke-linecap="round" opacity="0.45"/>
+            </svg>
+          </div>
+          <h3 class="step-card__title">Comparte tu idea</h3>
+          <p class="step-card__text">Envíanos tus fotografías o referencias por WhatsApp.</p>
+        </article>
+        <span class="steps-flow__arrow" aria-hidden="true">›</span>
+        <article class="step-card">
+          <span class="step-card__num">2</span>
+          <div class="step-card__icon step-card__icon--notify" aria-hidden="true">
+            <svg class="step-card__icon-svg step-card__icon-svg--notify" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <linearGradient id="notify-gold-v" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#FFD700"/>
+                  <stop offset="48%" stop-color="#D4AF37"/>
+                  <stop offset="100%" stop-color="#C5A059"/>
+                </linearGradient>
+                <linearGradient id="notify-gold-h" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stop-color="#FFD700" stop-opacity="0"/>
+                  <stop offset="42%" stop-color="#FFF3B0" stop-opacity="0.95"/>
+                  <stop offset="100%" stop-color="#FFD700" stop-opacity="0"/>
+                </linearGradient>
+                <linearGradient id="notify-gold-d" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#D4AF37"/>
+                  <stop offset="100%" stop-color="#FFD700"/>
+                </linearGradient>
+                <radialGradient id="notify-spark" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#FFF8D4"/>
+                  <stop offset="100%" stop-color="#FFD700" stop-opacity="0"/>
+                </radialGradient>
+              </defs>
+              <ellipse cx="40" cy="68" rx="26" ry="3" fill="#000" opacity="0.22"/>
+              <!-- Burbuja trasera -->
+              <path d="M46 30H64C67.3 30 70 32.7 70 36V46C70 49.3 67.3 52 64 52H54L50 57L51.5 52H46C42.7 52 40 49.3 40 46V36C40 32.7 42.7 30 46 30Z" fill="url(#notify-gold-d)" stroke="#9A7B1A" stroke-width="1" stroke-linejoin="round" opacity="0.85"/>
+              <!-- Burbuja principal -->
+              <path d="M16 24H48C52.4 24 56 27.6 56 32V44C56 48.4 52.4 52 48 52H28L22 58L24.5 52H16C11.6 52 8 48.4 8 44V32C8 27.6 11.6 24 16 24Z" fill="url(#notify-gold-v)" stroke="#9A7B1A" stroke-width="1.1" stroke-linejoin="round"/>
+              <ellipse cx="28" cy="30" rx="16" ry="7" fill="url(#notify-gold-h)" opacity="0.65"/>
+              <!-- Tres puntos -->
+              <circle cx="24" cy="38" r="2.2" fill="#9A7B1A" opacity="0.7"/>
+              <circle cx="32" cy="38" r="2.2" fill="#C5A059"/>
+              <circle cx="40" cy="38" r="2.2" fill="#FFD700"/>
+              <!-- Brillo -->
+              <path d="M14 28C18 25 24 24 30 26" stroke="#FFF8D4" stroke-width="1.2" stroke-linecap="round" opacity="0.55"/>
+              <circle cx="54" cy="34" r="1.3" fill="url(#notify-spark)" opacity="0.85"/>
+            </svg>
+          </div>
+          <h3 class="step-card__title">Personalizamos tu proyecto</h3>
+          <p class="step-card__text">Definimos tamaño, detalles, base y características de tu figura.</p>
+        </article>
+        <span class="steps-flow__arrow" aria-hidden="true">›</span>
+        <article class="step-card">
+          <span class="step-card__num">3</span>
+          <div class="step-card__icon step-card__icon--payment" aria-hidden="true">
+            <svg class="step-card__icon-svg step-card__icon-svg--payment" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <linearGradient id="pay-gold-v" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#FFD700"/>
+                  <stop offset="48%" stop-color="#D4AF37"/>
+                  <stop offset="100%" stop-color="#C5A059"/>
+                </linearGradient>
+                <linearGradient id="pay-gold-h" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stop-color="#FFD700" stop-opacity="0"/>
+                  <stop offset="42%" stop-color="#FFF3B0" stop-opacity="0.95"/>
+                  <stop offset="100%" stop-color="#FFD700" stop-opacity="0"/>
+                </linearGradient>
+                <linearGradient id="pay-gold-d" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#D4AF37"/>
+                  <stop offset="100%" stop-color="#FFD700"/>
+                </linearGradient>
+                <linearGradient id="pay-chip" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#FFF3B0"/>
+                  <stop offset="50%" stop-color="#D4AF37"/>
+                  <stop offset="100%" stop-color="#9A7B1A"/>
+                </linearGradient>
+                <radialGradient id="pay-spark" cx="50%" cy="50%" r="50%">
+                  <stop offset="0%" stop-color="#FFF8D4"/>
+                  <stop offset="100%" stop-color="#FFD700" stop-opacity="0"/>
+                </radialGradient>
+              </defs>
+              <ellipse cx="40" cy="68" rx="28" ry="3" fill="#000" opacity="0.22"/>
+              <g transform="rotate(-10 40 40)">
+                <!-- Tarjeta -->
+                <rect x="12" y="22" width="56" height="36" rx="5" fill="url(#pay-gold-v)" stroke="#9A7B1A" stroke-width="1.1"/>
+                <rect x="14" y="24" width="52" height="10" rx="2" fill="#1a1510" opacity="0.35"/>
+                <rect x="14" y="24.5" width="52" height="4" rx="1.5" fill="url(#pay-gold-h)" opacity="0.25"/>
+                <!-- Brillo diagonal -->
+                <path d="M14 24L58 24L52 32L14 32Z" fill="url(#pay-gold-h)" opacity="0.55"/>
+                <path d="M18 48L48 28" stroke="#FFF8D4" stroke-width="1.2" stroke-linecap="round" opacity="0.35"/>
+                <!-- Chip EMV -->
+                <rect x="18" y="38" width="12" height="10" rx="1.5" fill="url(#pay-chip)" stroke="#9A7B1A" stroke-width="0.7"/>
+                <path d="M20 40H28M20 43H28M20 46H28M24 40V46" stroke="#5C4A12" stroke-width="0.6" opacity="0.55"/>
+                <rect x="19" y="39" width="10" height="8" rx="1" fill="none" stroke="#FFF8D4" stroke-width="0.4" opacity="0.4"/>
+                <!-- Número tarjeta -->
+                <rect x="34" y="40" width="5" height="2" rx="1" fill="#1a1510" opacity="0.45"/>
+                <rect x="41" y="40" width="5" height="2" rx="1" fill="#1a1510" opacity="0.45"/>
+                <rect x="48" y="40" width="5" height="2" rx="1" fill="#1a1510" opacity="0.45"/>
+                <rect x="55" y="40" width="5" height="2" rx="1" fill="#1a1510" opacity="0.35"/>
+                <rect x="34" y="44" width="8" height="2" rx="1" fill="#9A7B1A" opacity="0.5"/>
+                <rect x="44" y="44" width="10" height="2" rx="1" fill="#9A7B1A" opacity="0.4"/>
+                <!-- Contactless -->
+                <path d="M52 48C54 46 56 46 58 48" stroke="#FFD700" stroke-width="1" stroke-linecap="round" opacity="0.75"/>
+                <path d="M54 48C55.5 47 57 47 58.5 48" stroke="#FFF8D4" stroke-width="0.8" stroke-linecap="round" opacity="0.6"/>
+                <path d="M56 48C56.8 47.5 57.6 47.5 58.4 48" stroke="#C5A059" stroke-width="0.7" stroke-linecap="round" opacity="0.55"/>
+                <!-- Marca -->
+                <circle cx="58" cy="52" r="3.5" fill="url(#pay-gold-d)" stroke="#9A7B1A" stroke-width="0.5" opacity="0.85"/>
+                <circle cx="56.5" cy="51" r="1" fill="#FFF8D4" opacity="0.6"/>
+              </g>
+              <!-- Destellos -->
+              <circle cx="24" cy="18" r="1.4" fill="url(#pay-spark)" opacity="0.85"/>
+              <circle cx="62" cy="26" r="1.1" fill="url(#pay-spark)" opacity="0.7"/>
+            </svg>
+          </div>
+          <h3 class="step-card__title">Confirma tu pedido</h3>
+          <p class="step-card__text">Realiza el 50% de anticipo para iniciar la producción.</p>
+        </article>
+        <span class="steps-flow__arrow" aria-hidden="true">›</span>
+        <article class="step-card">
+          <span class="step-card__num">4</span>
+          <div class="step-card__icon step-card__icon--brush" aria-hidden="true">
+            <svg class="step-card__icon-svg step-card__icon-svg--brush" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <linearGradient id="brush-gold-v" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#FFD700"/>
+                  <stop offset="48%" stop-color="#D4AF37"/>
+                  <stop offset="100%" stop-color="#C5A059"/>
+                </linearGradient>
+                <linearGradient id="brush-gold-h" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stop-color="#FFD700" stop-opacity="0"/>
+                  <stop offset="42%" stop-color="#FFF3B0" stop-opacity="0.95"/>
+                  <stop offset="100%" stop-color="#FFD700" stop-opacity="0"/>
+                </linearGradient>
+                <linearGradient id="brush-gold-d" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#D4AF37"/>
+                  <stop offset="100%" stop-color="#FFD700"/>
+                </linearGradient>
+                <linearGradient id="brush-bristle" x1="0" y1="1" x2="0" y2="0">
+                  <stop offset="0%" stop-color="#C5A059"/>
+                  <stop offset="55%" stop-color="#FFD700"/>
+                  <stop offset="100%" stop-color="#FFF3B0"/>
+                </linearGradient>
+              </defs>
+              <ellipse cx="38" cy="72" rx="22" ry="3" fill="#000" opacity="0.2"/>
+              <!-- Mango del pincel -->
+              <path d="M24 66C22 68 20 67 21 65L44 30L48 32L26 67C25 68 24 67 24 66Z" fill="url(#brush-gold-v)" stroke="#9A7B1A" stroke-width="1" stroke-linejoin="round"/>
+              <path d="M28 60L42 38" stroke="url(#brush-gold-h)" stroke-width="2" stroke-linecap="round" opacity="0.6"/>
+              <!-- Virola -->
+              <path d="M44 30L52 22L56 24L48 32Z" fill="url(#brush-gold-d)" stroke="#9A7B1A" stroke-width="0.9" stroke-linejoin="round"/>
+              <!-- Cerdas -->
+              <path d="M48 32C44 24 42 16 44 10C46 8 50 8 54 12C58 16 58 24 54 30C52 32 50 33 48 32Z" fill="url(#brush-bristle)" stroke="#9A7B1A" stroke-width="0.8" stroke-linejoin="round"/>
+              <path d="M46 14C47 11 50 10 52 12" stroke="#FFF8D4" stroke-width="0.8" stroke-linecap="round" opacity="0.45"/>
+              <path d="M48 18L50 28M50 16L52 28M52 14L54 28" stroke="#C5A059" stroke-width="0.7" stroke-linecap="round" opacity="0.55"/>
+              <!-- Trazo de pintura -->
+              <path d="M14 58C18 54 26 52 32 56C36 59 34 64 28 65C22 66 16 63 14 58Z" fill="url(#brush-gold-v)" opacity="0.3" stroke="#C5A059" stroke-width="0.6"/>
+            </svg>
+          </div>
+          <h3 class="step-card__title">Seguimiento del proceso</h3>
+          <p class="step-card__text">Te compartimos fotografías del avance antes de finalizar la pieza.</p>
+        </article>
+        <span class="steps-flow__arrow" aria-hidden="true">›</span>
+        <article class="step-card">
+          <span class="step-card__num">5</span>
+          <div class="step-card__icon step-card__icon--package" aria-hidden="true">
+            <svg class="step-card__icon-svg step-card__icon-svg--package" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <defs>
+                <linearGradient id="pkg-gold-v" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#FFD700"/>
+                  <stop offset="48%" stop-color="#D4AF37"/>
+                  <stop offset="100%" stop-color="#C5A059"/>
+                </linearGradient>
+                <linearGradient id="pkg-gold-h" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stop-color="#FFD700" stop-opacity="0"/>
+                  <stop offset="42%" stop-color="#FFF3B0" stop-opacity="0.95"/>
+                  <stop offset="100%" stop-color="#FFD700" stop-opacity="0"/>
+                </linearGradient>
+                <linearGradient id="pkg-gold-d" x1="0" y1="0" x2="1" y2="1">
+                  <stop offset="0%" stop-color="#D4AF37"/>
+                  <stop offset="100%" stop-color="#FFD700"/>
+                </linearGradient>
+                <linearGradient id="pkg-side" x1="0" y1="0" x2="1" y2="0">
+                  <stop offset="0%" stop-color="#9A7B1A"/>
+                  <stop offset="100%" stop-color="#C5A059"/>
+                </linearGradient>
+                <linearGradient id="pkg-lid" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#FFF3B0"/>
+                  <stop offset="55%" stop-color="#FFD700"/>
+                  <stop offset="100%" stop-color="#D4AF37"/>
+                </linearGradient>
+                <linearGradient id="pkg-ribbon" x1="0" y1="0" x2="0" y2="1">
+                  <stop offset="0%" stop-color="#FFF8D4"/>
+                  <stop offset="50%" stop-color="#FFD700"/>
+                  <stop offset="100%" stop-color="#C5A059"/>
+                </linearGradient>
+              </defs>
+              <ellipse cx="40" cy="72" rx="26" ry="3" fill="#000" opacity="0.2"/>
+              <!-- Caja lateral -->
+              <path d="M14 38L22 32V58L14 64V38Z" fill="url(#pkg-side)" stroke="#9A7B1A" stroke-width="0.9" stroke-linejoin="round"/>
+              <!-- Tapa -->
+              <path d="M22 32L50 32L58 26L30 26L22 32Z" fill="url(#pkg-lid)" stroke="#9A7B1A" stroke-width="0.9" stroke-linejoin="round"/>
+              <!-- Caja frontal -->
+              <rect x="22" y="32" width="36" height="32" rx="2" fill="url(#pkg-gold-v)" stroke="#9A7B1A" stroke-width="1"/>
+              <rect x="24" y="34" width="32" height="9" rx="1.5" fill="url(#pkg-gold-h)" opacity="0.5"/>
+              <!-- Cinta -->
+              <rect x="37" y="32" width="6" height="32" fill="url(#pkg-ribbon)" stroke="#9A7B1A" stroke-width="0.5"/>
+              <rect x="22" y="28" width="36" height="5" fill="url(#pkg-ribbon)" stroke="#9A7B1A" stroke-width="0.5"/>
+              <!-- Lazo -->
+              <ellipse cx="34" cy="24" rx="5.5" ry="4.5" fill="none" stroke="url(#pkg-ribbon)" stroke-width="2.2"/>
+              <ellipse cx="46" cy="24" rx="5.5" ry="4.5" fill="none" stroke="url(#pkg-ribbon)" stroke-width="2.2"/>
+              <circle cx="40" cy="24" r="2.2" fill="url(#pkg-gold-v)" stroke="#9A7B1A" stroke-width="0.5"/>
+              <path d="M40 26V32" stroke="url(#pkg-ribbon)" stroke-width="2.5" stroke-linecap="round"/>
+              <!-- Sello de entrega -->
+              <circle cx="52" cy="48" r="5" fill="url(#pkg-gold-d)" stroke="#9A7B1A" stroke-width="0.6"/>
+              <path d="M52 45.5L53 47.5L55 47.8L53.5 49.2L54 51.2L52 50.2L50 51.2L50.5 49.2L49 47.8L51 47.5Z" fill="#FFF8D4" opacity="0.8"/>
+              <!-- Cinta de envío -->
+              <rect x="22" y="44" width="36" height="3.5" fill="url(#pkg-gold-h)" opacity="0.22" rx="0.5"/>
+            </svg>
+          </div>
+          <h3 class="step-card__title">Recibe tu figura</h3>
+          <p class="step-card__text">Una vez aprobado el resultado, realizas el pago restante y coordinamos la entrega o el envío de tu pieza.</p>
+        </article>
       </div>
+
+      <div class="steps-info">
+        <h3 class="steps-info__title">
+          <svg class="steps-info__title-icon" viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.8"/><path d="M12 10V16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/><circle cx="12" cy="7.5" r="1" fill="currentColor"/></svg>
+          Información importante
+        </h3>
+        <div class="steps-info__grid">
+          <div class="steps-info__item">
+            <div class="steps-info__icon steps-info__icon--calendar" aria-hidden="true">
+              <svg class="steps-info__icon-svg steps-info__icon-svg--calendar" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <defs>
+                  <linearGradient id="cal-gold-v" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#FFD700"/>
+                    <stop offset="48%" stop-color="#D4AF37"/>
+                    <stop offset="100%" stop-color="#C5A059"/>
+                  </linearGradient>
+                  <linearGradient id="cal-gold-h" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0%" stop-color="#FFD700" stop-opacity="0"/>
+                    <stop offset="42%" stop-color="#FFF3B0" stop-opacity="0.95"/>
+                    <stop offset="100%" stop-color="#FFD700" stop-opacity="0"/>
+                  </linearGradient>
+                  <linearGradient id="cal-header" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#FFF3B0"/>
+                    <stop offset="55%" stop-color="#FFD700"/>
+                    <stop offset="100%" stop-color="#C5A059"/>
+                  </linearGradient>
+                  <linearGradient id="cal-cell" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#2a2418"/>
+                    <stop offset="100%" stop-color="#141210"/>
+                  </linearGradient>
+                  <radialGradient id="cal-spark" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stop-color="#FFF8D4"/>
+                    <stop offset="100%" stop-color="#FFD700" stop-opacity="0"/>
+                  </radialGradient>
+                </defs>
+                <ellipse cx="40" cy="72" rx="26" ry="3" fill="#000" opacity="0.22"/>
+                <!-- Anillas -->
+                <rect x="26" y="14" width="4" height="12" rx="2" fill="url(#cal-gold-v)" stroke="#9A7B1A" stroke-width="0.7"/>
+                <rect x="50" y="14" width="4" height="12" rx="2" fill="url(#cal-gold-v)" stroke="#9A7B1A" stroke-width="0.7"/>
+                <rect x="27" y="15" width="1.5" height="8" rx="0.75" fill="#FFF8D4" opacity="0.45"/>
+                <rect x="51" y="15" width="1.5" height="8" rx="0.75" fill="#FFF8D4" opacity="0.45"/>
+                <!-- Cuerpo -->
+                <rect x="14" y="22" width="52" height="46" rx="6" fill="url(#cal-gold-v)" stroke="#9A7B1A" stroke-width="1.1"/>
+                <!-- Cabecera -->
+                <path d="M14 28C14 24.7 16.7 22 20 22H60C63.3 22 66 24.7 66 28V36H14V28Z" fill="url(#cal-header)" stroke="#9A7B1A" stroke-width="0.8"/>
+                <rect x="16" y="24" width="48" height="5" rx="2.5" fill="url(#cal-gold-h)" opacity="0.6"/>
+                <!-- Separador -->
+                <path d="M14 36H66" stroke="#9A7B1A" stroke-width="0.8" opacity="0.6"/>
+                <!-- Cuadrícula de días -->
+                <rect x="20" y="40" width="8" height="8" rx="1.5" fill="url(#cal-cell)" stroke="#C5A059" stroke-width="0.4" opacity="0.85"/>
+                <rect x="30" y="40" width="8" height="8" rx="1.5" fill="url(#cal-cell)" stroke="#C5A059" stroke-width="0.4" opacity="0.85"/>
+                <rect x="40" y="40" width="8" height="8" rx="1.5" fill="url(#cal-cell)" stroke="#C5A059" stroke-width="0.4" opacity="0.85"/>
+                <rect x="50" y="40" width="8" height="8" rx="1.5" fill="url(#cal-cell)" stroke="#C5A059" stroke-width="0.4" opacity="0.85"/>
+                <rect x="20" y="50" width="8" height="8" rx="1.5" fill="url(#cal-cell)" stroke="#C5A059" stroke-width="0.4" opacity="0.85"/>
+                <rect x="30" y="50" width="8" height="8" rx="1.5" fill="url(#cal-cell)" stroke="#C5A059" stroke-width="0.4" opacity="0.85"/>
+                <!-- Día destacado: 7 -->
+                <rect x="40" y="50" width="8" height="8" rx="1.5" fill="url(#cal-header)" stroke="#FFD700" stroke-width="0.8"/>
+                <text x="44" y="56.5" text-anchor="middle" fill="#1a1510" font-size="6.5" font-weight="700" font-family="system-ui, sans-serif">7</text>
+                <rect x="50" y="50" width="8" height="8" rx="1.5" fill="url(#cal-cell)" stroke="#C5A059" stroke-width="0.4" opacity="0.85"/>
+                <!-- Brillo -->
+                <path d="M18 44L58 44" stroke="#FFF8D4" stroke-width="0.6" opacity="0.2"/>
+                <path d="M58 26L62 24" stroke="#FFF8D4" stroke-width="1" stroke-linecap="round" opacity="0.45"/>
+                <!-- Destellos -->
+                <circle cx="62" cy="20" r="1.3" fill="url(#cal-spark)" opacity="0.85"/>
+                <circle cx="18" cy="30" r="1" fill="url(#cal-spark)" opacity="0.7"/>
+              </svg>
+            </div>
+            <p>Tiempo de elaboración desde <strong>7 días hábiles</strong>, según la complejidad del proyecto.</p>
+          </div>
+          <div class="steps-info__item">
+            <div class="steps-info__icon steps-info__icon--coin" aria-hidden="true">
+              <svg class="steps-info__icon-svg steps-info__icon-svg--coin" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <defs>
+                  <linearGradient id="coin-gold-v" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#FFD700"/>
+                    <stop offset="48%" stop-color="#D4AF37"/>
+                    <stop offset="100%" stop-color="#C5A059"/>
+                  </linearGradient>
+                  <linearGradient id="coin-gold-h" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0%" stop-color="#FFD700" stop-opacity="0"/>
+                    <stop offset="42%" stop-color="#FFF3B0" stop-opacity="0.95"/>
+                    <stop offset="100%" stop-color="#FFD700" stop-opacity="0"/>
+                  </linearGradient>
+                  <radialGradient id="coin-face" cx="38%" cy="32%" r="65%">
+                    <stop offset="0%" stop-color="#FFF3B0"/>
+                    <stop offset="45%" stop-color="#FFD700"/>
+                    <stop offset="100%" stop-color="#C5A059"/>
+                  </radialGradient>
+                  <radialGradient id="coin-shine" cx="32%" cy="28%" r="45%">
+                    <stop offset="0%" stop-color="#FFF8D4" stop-opacity="0.95"/>
+                    <stop offset="100%" stop-color="#FFD700" stop-opacity="0"/>
+                  </radialGradient>
+                  <radialGradient id="coin-spark" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stop-color="#FFF8D4"/>
+                    <stop offset="100%" stop-color="#FFD700" stop-opacity="0"/>
+                  </radialGradient>
+                </defs>
+                <ellipse cx="40" cy="72" rx="24" ry="3" fill="#000" opacity="0.22"/>
+                <!-- Borde acuñado -->
+                <circle cx="40" cy="38" r="30" fill="url(#coin-gold-v)" stroke="#9A7B1A" stroke-width="1.4"/>
+                <circle cx="40" cy="38" r="27.5" fill="none" stroke="#9A7B1A" stroke-width="0.6" opacity="0.55"/>
+                <circle cx="40" cy="38" r="25.5" fill="url(#coin-face)" stroke="#C5A059" stroke-width="0.8"/>
+                <!-- Muescas del borde -->
+                <g stroke="#9A7B1A" stroke-width="1.1" stroke-linecap="round" opacity="0.65">
+                  <path d="M40 8V11"/><path d="M56.4 11.6L54.8 14"/><path d="M68.4 24.6L66 26.2"/>
+                  <path d="M72 38H69"/><path d="M68.4 51.4L66 49.8"/><path d="M56.4 64.4L54.8 62"/>
+                  <path d="M40 68V65"/><path d="M23.6 64.4L25.2 62"/><path d="M11.6 51.4L14 49.8"/>
+                  <path d="M8 38H11"/><path d="M11.6 24.6L14 26.2"/><path d="M23.6 11.6L25.2 14"/>
+                </g>
+                <!-- Anillo interior -->
+                <circle cx="40" cy="38" r="21" fill="none" stroke="url(#coin-gold-h)" stroke-width="1.2" opacity="0.55"/>
+                <!-- Brillo -->
+                <ellipse cx="32" cy="28" rx="12" ry="8" fill="url(#coin-shine)" opacity="0.75"/>
+                <!-- Signo pesos -->
+                <text x="40" y="46" text-anchor="middle" fill="#1a1510" font-size="26" font-weight="700" font-family="Georgia, 'Times New Roman', serif">$</text>
+                <text x="40" y="46" text-anchor="middle" fill="url(#coin-gold-h)" font-size="26" font-weight="700" font-family="Georgia, 'Times New Roman', serif" opacity="0.35">$</text>
+                <!-- Detalle 50% sutil -->
+                <path d="M28 54C32 57 48 57 52 54" stroke="#9A7B1A" stroke-width="0.8" fill="none" opacity="0.45"/>
+                <text x="40" y="58" text-anchor="middle" fill="#9A7B1A" font-size="5.5" font-weight="600" font-family="system-ui, sans-serif" opacity="0.7">50%</text>
+                <!-- Destellos -->
+                <circle cx="58" cy="18" r="1.4" fill="url(#coin-spark)" opacity="0.9"/>
+                <circle cx="20" cy="32" r="1.1" fill="url(#coin-spark)" opacity="0.75"/>
+                <path d="M62 24L63.5 21.5M64 28L66 27" stroke="#FFD700" stroke-width="0.7" stroke-linecap="round" opacity="0.6"/>
+              </svg>
+            </div>
+            <p>El <strong>50% de anticipo</strong> confirma el inicio de la producción.</p>
+          </div>
+          <div class="steps-info__item">
+            <div class="steps-info__icon steps-info__icon--shield" aria-hidden="true">
+              <svg class="steps-info__icon-svg steps-info__icon-svg--shield" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <defs>
+                  <linearGradient id="shield-gold-v" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#FFD700"/>
+                    <stop offset="48%" stop-color="#D4AF37"/>
+                    <stop offset="100%" stop-color="#C5A059"/>
+                  </linearGradient>
+                  <linearGradient id="shield-gold-h" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0%" stop-color="#FFD700" stop-opacity="0"/>
+                    <stop offset="42%" stop-color="#FFF3B0" stop-opacity="0.95"/>
+                    <stop offset="100%" stop-color="#FFD700" stop-opacity="0"/>
+                  </linearGradient>
+                  <linearGradient id="shield-gold-d" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#D4AF37"/>
+                    <stop offset="100%" stop-color="#FFD700"/>
+                  </linearGradient>
+                  <radialGradient id="shield-shine" cx="35%" cy="28%" r="50%">
+                    <stop offset="0%" stop-color="#FFF8D4" stop-opacity="0.9"/>
+                    <stop offset="100%" stop-color="#FFD700" stop-opacity="0"/>
+                  </radialGradient>
+                  <radialGradient id="shield-spark" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stop-color="#FFF8D4"/>
+                    <stop offset="100%" stop-color="#FFD700" stop-opacity="0"/>
+                  </radialGradient>
+                </defs>
+                <ellipse cx="40" cy="72" rx="22" ry="3" fill="#000" opacity="0.22"/>
+                <!-- Escudo -->
+                <path d="M40 10L58 18V34C58 48 48 58 40 62C32 58 22 48 22 34V18L40 10Z" fill="url(#shield-gold-v)" stroke="#9A7B1A" stroke-width="1.2" stroke-linejoin="round"/>
+                <path d="M40 14L54 20.5V33.5C54 45 46 53 40 57C34 53 26 45 26 33.5V20.5L40 14Z" fill="none" stroke="url(#shield-gold-h)" stroke-width="0.8" opacity="0.45"/>
+                <ellipse cx="34" cy="26" rx="10" ry="12" fill="url(#shield-shine)" opacity="0.55"/>
+                <!-- X -->
+                <path d="M31 28L49 46" stroke="#1a1510" stroke-width="4.5" stroke-linecap="round" opacity="0.35"/>
+                <path d="M49 28L31 46" stroke="#1a1510" stroke-width="4.5" stroke-linecap="round" opacity="0.35"/>
+                <path d="M31 28L49 46" stroke="url(#shield-gold-d)" stroke-width="3.2" stroke-linecap="round"/>
+                <path d="M49 28L31 46" stroke="url(#shield-gold-d)" stroke-width="3.2" stroke-linecap="round"/>
+                <path d="M32 29L48 45" stroke="#FFF8D4" stroke-width="1" stroke-linecap="round" opacity="0.55"/>
+                <path d="M48 29L32 45" stroke="#FFF8D4" stroke-width="1" stroke-linecap="round" opacity="0.55"/>
+                <!-- Detalle corona superior -->
+                <path d="M40 10L42 14L40 16L38 14Z" fill="url(#shield-gold-d)" stroke="#9A7B1A" stroke-width="0.5"/>
+                <!-- Destellos -->
+                <circle cx="58" cy="16" r="1.3" fill="url(#shield-spark)" opacity="0.85"/>
+                <circle cx="22" cy="28" r="1" fill="url(#shield-spark)" opacity="0.7"/>
+                <path d="M62 22L63.5 19.5M64 26L66 25" stroke="#FFD700" stroke-width="0.7" stroke-linecap="round" opacity="0.6"/>
+              </svg>
+            </div>
+            <p>El anticipo corresponde al desarrollo personalizado de la pieza y <strong>no es reembolsable</strong> en caso de cancelación.</p>
+          </div>
+          <div class="steps-info__item">
+            <div class="steps-info__icon steps-info__icon--truck" aria-hidden="true">
+              <svg class="steps-info__icon-svg steps-info__icon-svg--truck" viewBox="0 0 80 80" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <defs>
+                  <linearGradient id="truck-gold-v" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#FFD700"/>
+                    <stop offset="48%" stop-color="#D4AF37"/>
+                    <stop offset="100%" stop-color="#C5A059"/>
+                  </linearGradient>
+                  <linearGradient id="truck-gold-h" x1="0" y1="0" x2="1" y2="0">
+                    <stop offset="0%" stop-color="#FFD700" stop-opacity="0"/>
+                    <stop offset="42%" stop-color="#FFF3B0" stop-opacity="0.95"/>
+                    <stop offset="100%" stop-color="#FFD700" stop-opacity="0"/>
+                  </linearGradient>
+                  <linearGradient id="truck-gold-d" x1="0" y1="0" x2="1" y2="1">
+                    <stop offset="0%" stop-color="#D4AF37"/>
+                    <stop offset="100%" stop-color="#FFD700"/>
+                  </linearGradient>
+                  <linearGradient id="truck-window" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#3a3530"/>
+                    <stop offset="100%" stop-color="#141210"/>
+                  </linearGradient>
+                  <radialGradient id="truck-spark" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stop-color="#FFF8D4"/>
+                    <stop offset="100%" stop-color="#FFD700" stop-opacity="0"/>
+                  </radialGradient>
+                </defs>
+                <ellipse cx="40" cy="72" rx="30" ry="3" fill="#000" opacity="0.22"/>
+                <!-- Caja de carga -->
+                <rect x="8" y="26" width="40" height="26" rx="3" fill="url(#truck-gold-v)" stroke="#9A7B1A" stroke-width="1.1"/>
+                <rect x="10" y="28" width="36" height="8" rx="2" fill="url(#truck-gold-h)" opacity="0.55"/>
+                <path d="M10 38H46" stroke="#9A7B1A" stroke-width="0.7" opacity="0.45"/>
+                <rect x="14" y="40" width="10" height="8" rx="1.5" fill="url(#truck-gold-d)" stroke="#9A7B1A" stroke-width="0.5" opacity="0.75"/>
+                <path d="M16 42H22M16 45H22" stroke="#9A7B1A" stroke-width="0.6" opacity="0.5"/>
+                <!-- Cabina -->
+                <path d="M48 30H66C68 30 70 32 70 34V46H48V30Z" fill="url(#truck-gold-v)" stroke="#9A7B1A" stroke-width="1" stroke-linejoin="round"/>
+                <path d="M50 32H64C65.1 32 66 32.9 66 34V38H50V32Z" fill="url(#truck-window)" stroke="#C5A059" stroke-width="0.7"/>
+                <path d="M51 33H63" stroke="#FFF8D4" stroke-width="0.5" opacity="0.35"/>
+                <rect x="48" y="44" width="22" height="4" rx="1" fill="#9A7B1A" opacity="0.35"/>
+                <!-- Parachoques y faro -->
+                <rect x="68" y="40" width="4" height="8" rx="1" fill="url(#truck-gold-d)" stroke="#9A7B1A" stroke-width="0.5"/>
+                <circle cx="70" cy="42" r="1.5" fill="#FFF8D4" opacity="0.85"/>
+                <!-- Ruedas -->
+                <circle cx="22" cy="56" r="7" fill="#1a1510" stroke="#9A7B1A" stroke-width="1"/>
+                <circle cx="22" cy="56" r="4.5" fill="url(#truck-gold-v)" stroke="#C5A059" stroke-width="0.6"/>
+                <circle cx="22" cy="56" r="1.8" fill="#9A7B1A" opacity="0.6"/>
+                <circle cx="58" cy="56" r="7" fill="#1a1510" stroke="#9A7B1A" stroke-width="1"/>
+                <circle cx="58" cy="56" r="4.5" fill="url(#truck-gold-v)" stroke="#C5A059" stroke-width="0.6"/>
+                <circle cx="58" cy="56" r="1.8" fill="#9A7B1A" opacity="0.6"/>
+                <!-- Brillo -->
+                <path d="M12 28L42 28" stroke="#FFF8D4" stroke-width="1" stroke-linecap="round" opacity="0.4"/>
+                <path d="M50 32L62 32" stroke="#FFF8D4" stroke-width="0.6" opacity="0.35"/>
+                <!-- Destellos -->
+                <circle cx="14" cy="20" r="1.3" fill="url(#truck-spark)" opacity="0.85"/>
+                <circle cx="68" cy="24" r="1.1" fill="url(#truck-spark)" opacity="0.7"/>
+                <path d="M72 18L73.5 15.5M74 22L76 21" stroke="#FFD700" stroke-width="0.7" stroke-linecap="round" opacity="0.6"/>
+              </svg>
+            </div>
+            <p>Realizamos entregas en Bogotá y envíos a todo Colombia a través de <strong>Interrapidísimo</strong> (costo del envío asumido por el cliente).</p>
+          </div>
+        </div>
+      </div>
+
+      <p class="steps__closing">Cuidamos cada detalle para que recibas una pieza única, hecha con amor y dedicación. 💛</p>
     </div>
   </section>
 
@@ -589,7 +1592,28 @@
       <span class="section__label section__label--center">Resolvemos tus dudas</span>
       <h2 class="section__title section__title--center">Preguntas frecuentes</h2>
       <div class="faq" id="faqList">
-        <details class="faq__item" open>
+        <div class="faq__hint-arrow" id="faqHintArrow" aria-hidden="true">
+          <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="faq-arrow-gold" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#FFD700"/>
+                <stop offset="50%" stop-color="#D4AF37"/>
+                <stop offset="100%" stop-color="#C5A059"/>
+              </linearGradient>
+              <linearGradient id="faq-arrow-shine" x1="0" y1="0" x2="1" y2="0">
+                <stop offset="0%" stop-color="#FFD700" stop-opacity="0"/>
+                <stop offset="45%" stop-color="#FFF3B0" stop-opacity="0.95"/>
+                <stop offset="100%" stop-color="#FFD700" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <path d="M10 32H34" stroke="url(#faq-arrow-gold)" stroke-width="4.5" stroke-linecap="round"/>
+            <path d="M10 32H34" stroke="url(#faq-arrow-shine)" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
+            <path d="M30 20L52 32L30 44Z" fill="url(#faq-arrow-gold)" stroke="#9A7B1A" stroke-width="1" stroke-linejoin="round"/>
+            <path d="M34 26L44 32L34 38" stroke="#FFF8D4" stroke-width="1" stroke-linecap="round" stroke-linejoin="round" opacity="0.55"/>
+            <circle cx="14" cy="32" r="2" fill="#FFD700" opacity="0.85"/>
+          </svg>
+        </div>
+        <details class="faq__item">
           <summary>¿Cuánto tarda mi pedido?</summary>
           <p>Todos los pedidos requieren mínimo <strong>7 días de anticipación</strong> para garantizar materiales, modelado y pintura con el máximo detalle. El tiempo exacto depende de la complejidad; te lo confirmamos al cotizar.</p>
         </details>
@@ -607,7 +1631,7 @@
         </details>
         <details class="faq__item">
           <summary>¿Cómo funciona el pago?</summary>
-          <p>Se solicita <strong>50% de anticipo</strong> para iniciar la producción (Nequi, Daviplata o Llave @3156247293). El 50% restante se paga cuando la pieza esté lista, antes del envío.</p>
+          <p>Se solicita <strong>50% de anticipo</strong> para iniciar la producción (Nequi, Daviplata o Llave @3182941864). El 50% restante se paga cuando la pieza esté lista, antes del envío.</p>
         </details>
         <details class="faq__item">
           <summary>¿Puedo cancelar mi pedido?</summary>
@@ -631,7 +1655,7 @@
         <div class="contact-form-wrap" id="cotizar">
           <span class="section__label">Cotiza tu figura</span>
           <h2>Cuéntanos tu idea</h2>
-          <p class="contact-form__intro">Completa el formulario y te contactamos por WhatsApp. Si adjuntas foto, recuerda enviarla también en el chat.</p>
+          <p class="contact-form__intro">Completa el formulario y envía tu cotización directamente al WhatsApp de FlippArt.</p>
           <form class="contact-form" id="leadForm" novalidate>
             <div class="form-group">
               <label for="leadName">Nombre *</label>
@@ -659,37 +1683,61 @@
             <div class="form-group">
               <label for="leadPhoto">Foto de referencia</label>
               <input type="file" id="leadPhoto" name="foto" accept="image/*">
-              <p class="form-hint">Formatos: JPG, PNG. La enviarás también por WhatsApp al abrir el chat.</p>
+              <p class="form-hint">Formatos: JPG, PNG. Se envía con tu cotización por WhatsApp.</p>
               <div class="photo-preview" id="photoPreview" hidden>
                 <img src="" alt="Vista previa de tu foto de referencia" id="photoPreviewImg">
               </div>
             </div>
-            <button type="submit" class="btn btn--gold btn--large btn--full">Enviar y abrir WhatsApp</button>
-            <p class="form-success" id="formSuccess" hidden>¡Listo! Se abrió WhatsApp con tu mensaje. Adjunta tu foto si seleccionaste una.</p>
+            <button type="submit" class="btn btn--gold btn--large btn--full">Enviar cotización</button>
+            <p class="form-success" id="formSuccess" hidden>¡Recibimos tu cotización en nuestro WhatsApp!</p>
+            <p class="form-error" id="formError" hidden></p>
           </form>
         </div>
         <div class="contact__info">
           <span class="section__label">Contáctanos</span>
           <h2>Haz eterno tu recuerdo</h2>
-          <p>También puedes escribirnos directamente por redes o teléfono.</p>
-          <div class="contact__details">
-            <a href="https://wa.me/573156247293" class="contact__link" target="_blank" rel="noopener">
-              <strong>WhatsApp</strong> 315 624 7293
+          <p class="contact__intro">También puedes escribirnos directamente por redes o teléfono.</p>
+          <div class="contact__channels">
+            <a href="https://wa.me/573182941864" class="contact__channel" target="_blank" rel="noopener">
+              <span class="contact__channel-icon contact__channel-icon--whatsapp" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.884 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              </span>
+              <span class="contact__channel-text"><strong>WhatsApp</strong> +57 318 2941864</span>
             </a>
-            <a href="https://instagram.com/Flippart.oficial" class="contact__link" target="_blank" rel="noopener">
-              <strong>Instagram</strong> @Flippart.oficial
+            <a href="https://instagram.com/Flippart.oficial" class="contact__channel" target="_blank" rel="noopener">
+              <span class="contact__channel-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+              </span>
+              <span class="contact__channel-text"><strong>Instagram</strong> @Flippart.oficial</span>
             </a>
-            <a href="tel:+573182941864" class="contact__link">
-              <strong>Teléfono</strong> (318) 294-1864
+            <a href="tel:+573182941864" class="contact__channel">
+              <span class="contact__channel-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg>
+              </span>
+              <span class="contact__channel-text"><strong>Teléfono</strong> +57 318 2941864</span>
             </a>
           </div>
-          <div class="contact__payment">
-            <h3>Métodos de pago</h3>
-            <p>Nequi · Daviplata · Llave <strong>@3156247293</strong></p>
-            <p class="contact__holder">A nombre de: Yeorgeth Rubiano</p>
+          <p class="contact__help-title">Estamos para ayudarte</p>
+          <div class="contact__perks">
+            <div class="contact__perk">
+              <span class="contact__perk-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 5.5h16a1.5 1.5 0 011.5 1.5v8a1.5 1.5 0 01-1.5 1.5H9l-4 3.5V16.5H4A1.5 1.5 0 012.5 15V7A1.5 1.5 0 014 5.5z"/><circle cx="8.5" cy="11" r="1" fill="currentColor" stroke="none"/><circle cx="12" cy="11" r="1" fill="currentColor" stroke="none"/><circle cx="15.5" cy="11" r="1" fill="currentColor" stroke="none"/></svg>
+              </span>
+              <span>Asesoría<br>personalizada</span>
+            </div>
+            <div class="contact__perk">
+              <span class="contact__perk-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 3l7 3v6c0 4.5-3.5 7.5-7 9-3.5-1.5-7-4.5-7-9V6l7-3z"/><path d="M9.5 12.5l2 2 4-4"/></svg>
+              </span>
+              <span>Pago seguro<br>y confiable</span>
+            </div>
+            <div class="contact__perk">
+              <span class="contact__perk-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 7h11v8H3z"/><path d="M14 10h3l3 3v2h-6v-5z"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>
+              </span>
+              <span>Envíos a<br>toda Colombia</span>
+            </div>
           </div>
-          <img src="assets/logo/logo.jpeg" alt="FlippArt — figuras personalizadas con presentación premium y base LED" class="contact__logo">
-          <p class="contact__delivery">Entrega presencial cerca a la estación Comuneros. Envío nacional disponible.</p>
         </div>
       </div>
     </div>
@@ -700,47 +1748,93 @@
   <footer class="footer">
     <div class="container footer__grid">
       <div class="footer__brand">
-        <img src="assets/logo/logo.jpeg" alt="FlippArt logo" class="footer__logo" width="48" height="48">
-        <p class="footer__tagline">Arte que permanece</p>
+        <img src="assets/logo/logo.jpeg" alt="FlippArt logo" class="footer__logo" width="56" height="56">
+        <p class="footer__tagline">Recuerdos convertidos en arte.</p>
         <p class="footer__copy">© 2026 FlippArt. Todos los derechos reservados.</p>
       </div>
       <div class="footer__col">
         <h4>Navegación</h4>
         <ul>
+          <li><a href="#nosotros">Nosotros</a></li>
           <li><a href="#servicios">Qué hacemos</a></li>
-          <li><a href="#vitrina">Vitrina premium</a></li>
+          <li><a href="#como-funciona">Proceso</a></li>
           <li><a href="#galeria">Galería</a></li>
-          <li><a href="#precios">Precios</a></li>
+          <li><a href="#testimonios">Testimonios</a></li>
           <li><a href="#faq">Preguntas frecuentes</a></li>
           <li><a href="#cotizar">Cotizar</a></li>
         </ul>
       </div>
       <div class="footer__col">
         <h4>Contacto</h4>
-        <ul>
-          <li><a href="https://wa.me/573156247293" target="_blank" rel="noopener">WhatsApp 315 624 7293</a></li>
-          <li><a href="tel:+573182941864">(318) 294-1864</a></li>
-          <li><a href="https://instagram.com/Flippart.oficial" target="_blank" rel="noopener">@Flippart.oficial</a></li>
+        <ul class="footer__icon-list">
+          <li>
+            <a href="https://wa.me/573182941864" target="_blank" rel="noopener">
+              <span class="footer__item-icon footer__item-icon--whatsapp" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.884 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+              </span>
+              WhatsApp
+            </a>
+          </li>
+          <li>
+            <a href="https://instagram.com/Flippart.oficial" target="_blank" rel="noopener">
+              <span class="footer__item-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/></svg>
+              </span>
+              Instagram
+            </a>
+          </li>
+          <li>
+            <a href="mailto:flippart04@gmail.com">
+              <span class="footer__item-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+              </span>
+              Correo electrónico
+            </a>
+          </li>
+          <li>
+            <span class="footer__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 21s6-5.2 6-10a6 6 0 10-12 0c0 4.8 6 10 6 10z"/><circle cx="12" cy="11" r="2.5"/></svg>
+            </span>
+            Bogotá, Colombia
+          </li>
         </ul>
       </div>
       <div class="footer__col">
-        <h4>Pago</h4>
-        <p>Nequi · Daviplata</p>
-        <p>Llave <strong>@3156247293</strong></p>
-        <p class="footer__holder">Yeorgeth Rubiano</p>
-        <div class="footer__social">
-          <a href="https://instagram.com/Flippart.oficial" target="_blank" rel="noopener" aria-label="Instagram FlippArt">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
-          </a>
-          <a href="https://wa.me/573156247293" target="_blank" rel="noopener" aria-label="WhatsApp FlippArt">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="20" height="20"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.884 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
-          </a>
-        </div>
+        <h4>Información</h4>
+        <ul class="footer__icon-list">
+          <li>
+            <span class="footer__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="6" width="18" height="12" rx="2"/><path d="M3 10h18"/></svg>
+            </span>
+            Nequi · Daviplata · Transferencia bancaria
+          </li>
+          <li>
+            <span class="footer__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M14.5 8.5C14 7 12.8 6.5 11 6.5c-2 0-3.2 1.1-3.2 2.6 0 1.5 1.2 2.2 3 2.7 2.2.6 3.5 1.4 3.5 3.2 0 1.9-1.6 3-3.8 3-2.2 0-3.7-1.1-4-2.8"/><path d="M12 5.5v13"/></svg>
+            </span>
+            50% de anticipo para iniciar
+          </li>
+          <li>
+            <span class="footer__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M3 7h11v8H3z"/><path d="M14 10h3l3 3v2h-6v-5z"/><circle cx="7" cy="17" r="2"/><circle cx="17" cy="17" r="2"/></svg>
+            </span>
+            Envíos a toda Colombia
+          </li>
+          <li>
+            <span class="footer__item-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M12 3l2.4 4.9 5.4.8-3.9 3.8.9 5.3L12 15.8 7.2 17.8l.9-5.3L4.2 8.7l5.4-.8L12 3z"/></svg>
+            </span>
+            Cada pieza se fabrica bajo pedido
+          </li>
+        </ul>
       </div>
+    </div>
+    <div class="footer__motto">
+      <p>💛 Cada pieza comienza con una historia y termina convirtiéndose en un recuerdo para toda la vida. 💛</p>
     </div>
   </footer>
 
-  <a href="https://wa.me/573156247293?text=Hola%20FlippArt%2C%20me%20interesa%20una%20figura%20personalizada" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">
+  <a href="https://wa.me/573182941864?text=Hola%20FlippArt%2C%20me%20interesa%20una%20figura%20personalizada" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp">
     <svg viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.435 9.884-9.884 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
   </a>
 
@@ -761,6 +1855,6 @@
   </div>
 
   <script src="js/seo.js?v=1"></script>
-  <script src="js/main.js?v=10"></script>
+  <script src="js/main.js?v=17"></script>
 </body>
 </html>

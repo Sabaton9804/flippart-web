@@ -64,11 +64,11 @@ function buildStructuredData(base) {
         description: 'Figuras personalizadas de mascotas, familias y recuerdos hechas a mano en Colombia.',
         sameAs: [
           'https://instagram.com/Flippart.oficial',
-          'https://wa.me/573156247293',
+          'https://wa.me/573182941864',
         ],
         contactPoint: {
           '@type': 'ContactPoint',
-          telephone: '+57-315-624-7293',
+          telephone: '+57-318-294-1864',
           contactType: 'customer service',
           areaServed: 'CO',
           availableLanguage: ['Spanish'],
@@ -82,7 +82,7 @@ function buildStructuredData(base) {
         image: `${base}/assets/og-image.jpg`,
         logo: `${base}/assets/logo/logo.jpeg`,
         description: 'Figuras personalizadas de mascotas y familias con vitrina LED. Conmemora momentos especiales con arte hecho a mano en Colombia.',
-        telephone: '+57-315-624-7293',
+        telephone: '+57-318-294-1864',
         priceRange: '$$',
         currenciesAccepted: 'COP',
         paymentAccepted: 'Nequi, Daviplata, Transferencia',
