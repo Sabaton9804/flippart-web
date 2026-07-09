@@ -1,23 +1,37 @@
-# Publicar FlippArt en Netlify (gratis)
+# Publicar FlippArt en Hostinger (via GitHub)
+# Hostinger está conectado a este repo: un push a main despliega automáticamente.
+$ErrorActionPreference = "Stop"
 $root = $PSScriptRoot
-$web = Join-Path $root "web"
-$zip = Join-Path $root "flippart-web.zip"
 
-Write-Host "Creando paquete de despliegue..."
-if (Test-Path $zip) { Remove-Item $zip -Force }
-Compress-Archive -Path "$web\*" -DestinationPath $zip -Force
+Write-Host ""
+Write-Host "=== FlippArt - Publicar en Hostinger ===" -ForegroundColor Cyan
+Write-Host ""
+Write-Host "El sitio se despliega solo al hacer push a GitHub (rama main)." -ForegroundColor White
+Write-Host "Hostinger descarga el repo y publica web/ gracias a .htaccess." -ForegroundColor White
+Write-Host ""
 
-Write-Host "Paquete listo: $zip"
+$status = git -C $root status --porcelain 2>&1
+if (-not $status) {
+  Write-Host "No hay cambios locales. Comprueba si ya están en GitHub:" -ForegroundColor Yellow
+  git -C $root log -1 --oneline
+  Write-Host ""
+  Write-Host "Si Hostinger no actualizó, entra al panel de Hostinger -> Git -> Deploy now" -ForegroundColor Yellow
+  exit 0
+}
+
+Write-Host "Cambios pendientes:" -ForegroundColor Yellow
+git -C $root status --short
 Write-Host ""
-Write-Host "=== DESPLIEGUE ==="
-Write-Host "1. Abre https://app.netlify.com/drop y arrastra flippart-web.zip"
-Write-Host "2. En Netlify: Site settings -> Environment variables, agrega:"
-Write-Host "     CALLMEBOT_API_KEY  (registro gratis en callmebot.com)"
-Write-Host "     SUPABASE_SERVICE_ROLE_KEY  (Supabase -> Settings -> API)"
-Write-Host "3. Vuelve a desplegar despues de agregar variables"
+
+$msg = Read-Host "Mensaje del commit (Enter = 'Actualizar sitio FlippArt')"
+if (-not $msg) { $msg = "Actualizar sitio FlippArt" }
+
+git -C $root add -A
+git -C $root commit -m $msg
+git -C $root push origin main
+
 Write-Host ""
-Write-Host "=== SUPABASE (SQL Editor, una sola vez) ==="
-Write-Host "Copia y ejecuta: supabase/migrations/20260630_lead_photos.sql"
+Write-Host "Push completado. Hostinger tardará 1-5 min en actualizar." -ForegroundColor Green
+Write-Host "Sitio: https://flippart.com.co" -ForegroundColor White
+Write-Host "Si no carga, ejecuta: scripts\verificar-dominio.ps1" -ForegroundColor DarkGray
 Write-Host ""
-Start-Process "https://app.netlify.com/drop"
-Start-Process explorer.exe -ArgumentList "/select,`"$zip`""

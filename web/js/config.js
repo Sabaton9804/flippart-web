@@ -29,8 +29,8 @@ const FLIPPART_CONFIG = {
    */
   leadNotifyFunction: 'notify-lead',
 
-  /** Endpoint del backend (Netlify Function). Dejar vacío para envío directo. */
-  leadSubmitUrl: '/.netlify/functions/submit-lead',
+  /** Endpoint del backend. Vacío en Hostinger (usa Supabase + WhatsApp). */
+  leadSubmitUrl: '',
 
   /** Teléfono donde llegan alertas de cotización (CallMeBot / WhatsApp API) */
   notifyPhone: '573182941864',
