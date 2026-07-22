@@ -8,8 +8,8 @@ const FLIPPART_CONFIG = {
   supabaseUrl: 'https://xoakbkmfnoiwmjtrnscy.supabase.co',
   supabaseAnonKey: 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InhvYWtia21mbm9pd21qdHJuc2N5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTk5MDM1NzMsImV4cCI6MjA3NTQ3OTU3M30.CydhAQrumD6JxH6Aoc0UkZyh0h2jPdWrVFX9TvI1zlc',
 
-  /** Google Search Console — pega el código HTML (meta tag) desde search.google.com/search-console */
-  googleSiteVerification: '',
+  /** Google Search Console — verificación DNS + meta tag */
+  googleSiteVerification: 'l3mk0FH4SNiNGvsDKHhKjBhEObNnZDkIuPfM2J5z6D8',
 
   /** Google Analytics 4 — ejemplo: G-XXXXXXXXXX */
   gaId: '',
