@@ -579,9 +579,17 @@ function initFaqReveal() {
   const items = [...document.querySelectorAll('.faq__item')];
   if (!section || !items.length) return;
 
+  const showAll = () => {
+    items.forEach((item, index) => {
+      item.classList.add('faq-reveal', 'is-visible');
+      item.style.transitionDelay = `${index * 0.08}s`;
+    });
+  };
+
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (reducedMotion) {
-    items.forEach((item) => item.classList.add('is-visible'));
+  const isMobile = window.matchMedia('(max-width: 900px)').matches;
+  if (reducedMotion || isMobile) {
+    showAll();
     return;
   }
 
@@ -684,19 +692,49 @@ function initSectionTracking() {
 }
 
 function initScrollReveal() {
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  const reveals = [...document.querySelectorAll('.section > .container')];
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const isMobile = () => window.matchMedia('(max-width: 900px)').matches;
 
-  document.querySelectorAll('.section > .container').forEach((el) => {
-    el.classList.add('reveal');
-  });
+  const revealOnce = (el) => {
+    el.classList.add('reveal', 'is-visible');
+  };
+
+  if (prefersReducedMotion || isMobile()) {
+    reveals.forEach(revealOnce);
+    return;
+  }
+
+  reveals.forEach((el) => el.classList.add('reveal'));
+
+  const isInViewport = (el) => {
+    const rect = el.getBoundingClientRect();
+    return rect.top < window.innerHeight * 0.94 && rect.bottom > 0;
+  };
+
+  const revealVisibleNow = () => {
+    reveals.forEach((el) => {
+      if (isInViewport(el)) revealOnce(el);
+    });
+  };
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
-      entry.target.classList.toggle('is-visible', entry.isIntersecting);
+      if (entry.isIntersecting) revealOnce(entry.target);
     });
-  }, { threshold: 0.12, rootMargin: '0px 0px -48px 0px' });
+  }, { threshold: 0.04, rootMargin: '0px 0px -10% 0px' });
 
-  document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
+  reveals.forEach((el) => {
+    observer.observe(el);
+  });
+
+  revealVisibleNow();
+  window.addEventListener('load', () => {
+    requestAnimationFrame(revealVisibleNow);
+    window.setTimeout(revealVisibleNow, 120);
+  });
+  window.addEventListener('hashchange', revealVisibleNow);
+  window.addEventListener('resize', revealVisibleNow, { passive: true });
 }
 
 initSectionTracking();
