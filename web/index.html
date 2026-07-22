@@ -41,7 +41,14 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="css/style.css?v=36">
+  <script>
+    (function () {
+      var dev = /^(localhost|127\.0\.0\.1)$/i.test(location.hostname);
+      var css = dev ? 'css/style.css?dev=' + Date.now() : 'css/style.css?v=41';
+      document.write('<link rel="stylesheet" href="' + css + '">');
+    })();
+  </script>
+  <noscript><link rel="stylesheet" href="css/style.css?v=41"></noscript>
   <script src="js/config.js"></script>
 </head>
 <body>
@@ -808,8 +815,8 @@
           </div>
           <h3>Cuéntanos tu idea</h3>
           <p>Recibimos tus fotos e ideas por WhatsApp y creamos una propuesta personalizada para tu pieza.</p>
-          <div class="workflow__media">
-            <img src="assets/workflow/paso-01-whatsapp.png" alt="Cliente compartiendo fotos por WhatsApp con FlippArt" loading="lazy">
+          <div class="workflow__media workflow__media--whatsapp">
+            <img src="assets/workflow/paso-01-whatsapp.png" alt="Dos amigas en una terraza compartiendo el momento que inspira su figura personalizada" loading="lazy">
           </div>
         </article>
         <article class="workflow__step">
@@ -818,8 +825,8 @@
           </div>
           <h3>Diseñamos tu pieza</h3>
           <p>Modelamos digitalmente tu figura para definir proporciones, detalles, tamaño y acabados.</p>
-          <div class="workflow__media">
-            <img src="assets/workflow/paso-02-diseno.png" alt="Modelo 3D compartido por WhatsApp con el cliente durante el diseño" loading="lazy">
+          <div class="workflow__media workflow__media--diseno">
+            <img src="assets/workflow/paso-02-diseno.png" alt="Modelo 3D digital de dos figuras durante el diseño de la pieza" loading="lazy">
           </div>
         </article>
         <article class="workflow__step">
@@ -828,8 +835,8 @@
           </div>
           <h3>Creamos cada detalle</h3>
           <p>Imprimimos y pintamos a mano cada pieza con técnicas artesanales para lograr un acabado realista.</p>
-          <div class="workflow__media">
-            <img src="assets/workflow/paso-03-pintura.png" alt="Figuras impresas en 3D con acabado artesanal antes del detalle final" loading="lazy">
+          <div class="workflow__media workflow__media--pintura">
+            <img src="assets/workflow/paso-03-pintura.png" alt="Figuras impresas en 3D con acabado artesanal y pintura a mano" loading="lazy">
           </div>
         </article>
         <article class="workflow__step">
@@ -992,7 +999,7 @@
         <div class="pricing-compare__panel pricing-compare__panel--muted">
           <h3 class="pricing-compare__title">Regalo cualquiera</h3>
           <div class="pricing-compare__visual pricing-compare__visual--generic">
-            <img src="assets/pricing/regalo-dorado.svg" alt="Regalo genérico en caja dorada elegante" class="pricing-compare__img pricing-compare__img--generic" loading="lazy">
+            <img src="assets/pricing/regalo-caja.png" alt="Caja de regalo genérica con moño dorado" class="pricing-compare__img pricing-compare__img--generic" loading="lazy">
           </div>
           <ul class="pricing-compare__list pricing-compare__list--negative">
             <li>Se olvida con el tiempo</li>
@@ -1696,7 +1703,7 @@
         <div class="contact__info">
           <span class="section__label">Contáctanos</span>
           <h2>Haz eterno tu recuerdo</h2>
-          <p class="contact__intro">También puedes escribirnos directamente por redes o teléfono.</p>
+          <p class="contact__intro">También puedes escribirnos directamente por redes.</p>
           <div class="contact__channels">
             <a href="https://wa.me/573182941864" class="contact__channel" target="_blank" rel="noopener">
               <span class="contact__channel-icon contact__channel-icon--whatsapp" aria-hidden="true">
@@ -1709,12 +1716,6 @@
                 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
               </span>
               <span class="contact__channel-text"><strong>Instagram</strong> @Flippart.oficial</span>
-            </a>
-            <a href="tel:+573182941864" class="contact__channel">
-              <span class="contact__channel-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 005 5L15 13l5 2v4a2 2 0 01-2 2A16 16 0 013 6a2 2 0 012-2z"/></svg>
-              </span>
-              <span class="contact__channel-text"><strong>Teléfono</strong> +57 318 2941864</span>
             </a>
           </div>
           <p class="contact__help-title">Estamos para ayudarte</p>

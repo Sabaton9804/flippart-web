@@ -2,11 +2,14 @@
   "name": "flippart-web",
   "private": true,
   "scripts": {
-    "start": "python -m http.server 5500",
+    "dev": "live-server . --port=5500 --host=127.0.0.1 --no-browser --wait=250",
+    "start": "serve -l 5500",
     "test:visual": "playwright test",
     "test:visual:ui": "playwright test --ui"
   },
   "devDependencies": {
-    "@playwright/test": "^1.49.0"
+    "@playwright/test": "^1.49.0",
+    "live-server": "^1.2.2",
+    "serve": "^14.2.6"
   }
 }
