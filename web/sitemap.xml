@@ -3,16 +3,30 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://flippart.com.co/</loc>
-    <lastmod>2026-06-22</lastmod>
+    <lastmod>2026-07-22</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://flippart.com.co/assets/hero/familia-carolina-vitrina.jpg</image:loc>
-      <image:title>Figura familiar personalizada FlippArt en vitrina premium</image:title>
-    </image:image>
-    <image:image>
       <image:loc>https://flippart.com.co/assets/og-image.jpg</image:loc>
       <image:title>FlippArt — figuras personalizadas de mascotas y familias en Colombia</image:title>
+      <image:caption>Vitrina LED premium con figuras artesanales personalizadas</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://flippart.com.co/assets/hero/familia-carolina-vitrina.jpg</image:loc>
+      <image:title>Figura familiar personalizada FlippArt en vitrina premium</image:title>
+      <image:caption>Figura de familia con vitrina iluminada y base personalizada</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://flippart.com.co/media/Mascotas/Coco/Figura%20Coco.png</image:loc>
+      <image:title>Figura personalizada de mascota Coco en vitrina FlippArt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://flippart.com.co/media/Mascotas/Bengi/listo.jpeg</image:loc>
+      <image:title>Memorial personalizado de mascota Benji — FlippArt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://flippart.com.co/assets/pricing/flippart-showcase.png</image:loc>
+      <image:title>Colección de figuras personalizadas FlippArt con vitrina LED</image:title>
     </image:image>
   </url>
 </urlset>
