@@ -20,6 +20,9 @@ const FLIPPART_CONFIG = {
   /** Microsoft Clarity — ejemplo: abcdefghij */
   clarityId: '',
 
+  /** Tamaño de las figuras de personas. main.js lo escribe en cada elemento con data-tamano-persona. */
+  tamanoFiguraPersona: '12 cm aprox.',
+
   /** Instagram — usado en schema sameAs y meta social */
   instagram: 'https://instagram.com/Flippart.oficial',
 

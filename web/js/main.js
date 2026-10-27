@@ -299,6 +299,12 @@ function initNav() {
   });
 }
 
+function initTamanos() {
+  const tamano = typeof FLIPPART_CONFIG !== 'undefined' && FLIPPART_CONFIG.tamanoFiguraPersona;
+  if (!tamano) return;
+  document.querySelectorAll('[data-tamano-persona]').forEach((el) => { el.textContent = tamano; });
+}
+
 async function trackEvent(eventName, metadata = {}) {
   if (typeof FLIPPART_CONFIG === 'undefined') return;
   const { supabaseUrl, supabaseAnonKey } = FLIPPART_CONFIG;
@@ -509,6 +515,7 @@ function initSectionTracking() {
   });
 }
 
+initTamanos();
 initNav();
 initLightbox();
 initGalleryFilters();
