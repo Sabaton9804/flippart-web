@@ -119,7 +119,7 @@ function buildStructuredData(base) {
             description: 'Figura personalizada de mascota, pintada a mano desde tus fotos.',
             areaServed: 'Colombia',
           },
-          price: '250000',
+          price: '120000',
           priceCurrency: 'COP',
         },
         {
@@ -130,7 +130,7 @@ function buildStructuredData(base) {
             description: 'Retratos y composiciones familiares para conmemorar momentos especiales.',
             areaServed: 'Colombia',
           },
-          price: '250000',
+          price: '120000',
           priceCurrency: 'COP',
         },
         {
@@ -208,7 +208,7 @@ function buildStructuredData(base) {
         '@id': `${base}/#webpage`,
         url: `${base}/`,
         name: 'Figuras pintadas a mano desde tus fotos | FlippArt Bogotá',
-        description: 'Mascotas, familias y logros que merecen quedarse. Hechas una a una en Bogotá, con envío a toda Colombia. Desde $250.000.',
+        description: 'Mascotas, familias y logros que merecen quedarse. Hechas una a una en Bogotá, con envío a toda Colombia. Desde $120.000.',
         isPartOf: { '@id': `${base}/#website` },
         about: { '@id': `${base}/#business` },
         inLanguage: 'es-CO',
