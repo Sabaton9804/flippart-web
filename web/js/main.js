@@ -1,132 +1,139 @@
 const MEDIA = 'media';
-const ASSETS = 'assets';
+const GALERIA = 'assets/portafolio/galeria';
 
 const portfolioItems = [
   {
     category: 'mascotas',
+    slug: 'benji',
     name: 'Benji',
     subtitle: 'Huellas imborrables',
     type: 'compare',
-    original: `${ASSETS}/gallery/benji/original.png`,
-    result: `${ASSETS}/gallery/benji/figura.png`,
-    fallbackOriginal: `${MEDIA}/Mascotas/Bengi/Orginal.jpeg`,
-    fallbackResult: `${MEDIA}/Mascotas/Bengi/listo.jpeg`,
+    original: `${GALERIA}/benji-original.webp`,
+    result: `${GALERIA}/benji-figura.webp`,
   },
   {
     category: 'mascotas',
+    slug: 'coco',
     name: 'Coco',
     subtitle: 'Un recuerdo que permanece',
     type: 'compare',
-    original: `${MEDIA}/Mascotas/Coco/Original Coco.jpeg`,
-    result: `${MEDIA}/Mascotas/Coco/Figura Coco.png`,
+    original: `${GALERIA}/coco-original.webp`,
+    result: 'assets/portafolio/coco-figura-vitrina.webp',
   },
   {
     category: 'mascotas',
+    slug: 'estrella',
     name: 'Estrella',
     subtitle: 'Amor que ilumina',
     type: 'compare',
-    original: `${MEDIA}/Mascotas/Estrella/original.png`,
-    result: `${MEDIA}/Mascotas/Estrella/Caja oficial.png`,
+    original: `${GALERIA}/estrella-original.webp`,
+    result: `${GALERIA}/estrella-figura.webp`,
   },
   {
     category: 'mascotas',
+    slug: 'max',
     name: 'Max',
     subtitle: 'El rey de la casa',
     type: 'compare',
-    original: `${MEDIA}/Mascotas/Max/original.jpeg`,
-    result: `${MEDIA}/Mascotas/Max/Max.jpeg`,
+    original: `${GALERIA}/max-original.webp`,
+    result: `${GALERIA}/max-figura.webp`,
   },
   {
     category: 'mascotas',
+    slug: 'toby',
     name: 'Toby',
     subtitle: 'La alegría del hogar',
     type: 'compare',
-    original: `${ASSETS}/gallery/toby/original.png`,
-    result: `${MEDIA}/Mascotas/Toby/Toby.jpeg`,
+    original: `${GALERIA}/toby-original.webp`,
+    result: `${GALERIA}/toby-figura.webp`,
   },
   {
     category: 'mascotas',
+    slug: 'rocco',
     name: 'Rocco',
     subtitle: 'El más consentido',
     type: 'compare',
-    original: `${ASSETS}/gallery/rocco/original.png`,
-    result: `${ASSETS}/gallery/rocco/figura.png`,
-    fallbackResult: `${MEDIA}/Mascotas/Rocco/Rocco.jpeg`,
+    original: `${GALERIA}/rocco-original.webp`,
+    result: `${GALERIA}/rocco-figura.webp`,
   },
   {
     category: 'personas',
+    slug: 'abuelos_pedro_rebeca',
     name: 'Boda de Diamantes',
     subtitle: 'Sesenta años de amor convertidos en arte',
     type: 'compare',
-    original: `${MEDIA}/Personas/Familiares/Abuelos Pedro y Rebeca/Abuelos.jpeg`,
-    result: `${MEDIA}/Personas/Familiares/Abuelos Pedro y Rebeca/Figura Abuelos.jpeg`,
+    original: `${GALERIA}/abuelos-original.webp`,
+    result: `${GALERIA}/abuelos-figura.webp`,
   },
   {
     category: 'personas',
+    slug: 'familia_carolina',
     name: 'Un amor que crece en familia',
     subtitle: 'Un recuerdo de fe y amor',
     type: 'compare',
-    original: `${ASSETS}/gallery/familia/original.png`,
-    result: `${MEDIA}/Personas/Familiares/Familia Carolina/Figura familia.jpeg`,
+    original: `${GALERIA}/familia-original.webp`,
+    result: `${GALERIA}/familia-figura.webp`,
     originalLabel: 'Imagen original',
   },
   {
     category: 'personas',
+    slug: 'chica_salsa',
     name: 'Cada paso cuenta una historia',
     subtitle: 'Un homenaje al talento y a la alegría de bailar.',
     type: 'compare',
-    original: `${ASSETS}/gallery/chica-salsa/original.png`,
-    result: `${MEDIA}/Personas/Hobbies/Chica Salsa/Figura chica salsa.jpeg`,
-    fallbackOriginal: `${MEDIA}/Personas/Hobbies/Chica Salsa/Original.jpeg`,
+    original: `${GALERIA}/salsa-original.webp`,
+    result: `${GALERIA}/salsa-figura.webp`,
   },
   {
     category: 'personas',
+    slug: 'motera_antonia',
     name: 'Pasión sin límites',
     subtitle: 'La libertad sobre dos ruedas',
     type: 'compare',
-    original: `${MEDIA}/Personas/Hobbies/Motero Antonia/Motero.jpeg`,
-    result: `${MEDIA}/Personas/Hobbies/Motero Antonia/WhatsApp Image 2026-05-17 at 5.17.25 PM (6).jpeg`,
+    original: `${GALERIA}/antonia-original.webp`,
+    result: `${GALERIA}/antonia-figura.webp`,
   },
   {
     category: 'personas',
+    slug: 'motero_mi_nena',
     name: 'Donde comienza la aventura',
     subtitle: 'Una pasión convertida en una pieza única para recordar cada aventura.',
     type: 'compare',
-    original: `${MEDIA}/Personas/Hobbies/Motero Mi Nena/Original .jpeg`,
-    result: `${ASSETS}/gallery/motero-mi-nena/figura.png`,
-    fallbackResult: `${MEDIA}/Personas/Hobbies/Motero Mi Nena/Figura.jpeg`,
+    original: `${GALERIA}/mi-nena-original.webp`,
+    result: `${GALERIA}/mi-nena-figura.webp`,
   },
   {
     category: 'personas',
+    slug: 'juez_gloria',
     name: 'Vocación y compromiso',
     subtitle: 'Cada detalle rinde homenaje a una trayectoria construida con ética, compromiso y dedicación',
     type: 'single',
-    image: `${MEDIA}/Personas/Reconocimientos Juez/Juez Gloria/Figura Juez Gloria M .png`,
+    image: `${GALERIA}/juez-gloria-figura.webp`,
   },
   {
     category: 'personas',
+    slug: 'juez_sandra',
     name: 'El honor de servir',
     subtitle: 'Cada detalle rinde homenaje a una trayectoria construida con ética, compromiso y dedicación.',
     type: 'compare',
-    original: `${MEDIA}/Personas/Reconocimientos Juez/Juez Sandra/Original.jpg`,
-    result: `${MEDIA}/Personas/Reconocimientos Juez/Juez Sandra/Juez figura Sandra.jpeg`,
+    original: `${GALERIA}/juez-sandra-original.webp`,
+    result: `${GALERIA}/juez-sandra-figura.webp`,
   },
 ];
 
 const processVideos = [
-  `${MEDIA}/Proceso/proceso-3.mp4`,
-  `${MEDIA}/Proceso/proceso-4.mp4`,
-  `${MEDIA}/Proceso/proceso-moto.mp4`,
-  `${MEDIA}/Proceso/proceso-1.mp4`,
+  { src: `${MEDIA}/Proceso/proceso-3.mp4`, poster: 'assets/proceso/poster-proceso-3.jpg' },
+  { src: `${MEDIA}/Proceso/proceso-4.mp4`, poster: 'assets/proceso/poster-proceso-4.jpg' },
+  { src: `${MEDIA}/Proceso/proceso-moto.mp4`, poster: 'assets/proceso/poster-proceso-moto.jpg' },
+  { src: `${MEDIA}/Proceso/proceso-1.mp4`, poster: 'assets/proceso/poster-proceso-1.jpg' },
 ];
 
 function encodePath(path) {
   return path.split('/').map((part) => encodeURIComponent(part)).join('/');
 }
 
-function imageFallbackAttr(item, fallbackKey) {
-  if (!fallbackKey || !item[fallbackKey]) return '';
-  return ` data-fallback="${encodePath(item[fallbackKey])}"`;
+function trackPortfolioOpen(itemName) {
+  if (window.FlippartTracking) window.FlippartTracking.portfolioOpen(itemName);
 }
 
 function renderGallery(filter = 'all') {
@@ -138,57 +145,56 @@ function renderGallery(filter = 'all') {
     if (filter !== 'all' && item.category !== filter) return;
 
     const el = document.createElement('article');
-    el.className = 'gallery__item';
+    el.className = 'gallery__item gallery__item--figure';
     el.dataset.category = item.category;
+    el.tabIndex = 0;
+    el.setAttribute('role', 'button');
 
     const subtitle = item.subtitle?.trim();
     const subtitleHtml = subtitle
       ? `<p class="gallery__figure-subtitle">${subtitle.endsWith('.') ? subtitle : `${subtitle}.`}</p>`
       : '';
 
+    let open;
     if (item.type === 'compare') {
-      el.classList.add('gallery__item--figure');
+      const label = item.originalLabel || 'Foto original';
+      el.setAttribute('aria-label', `${item.name}: ver ${label.toLowerCase()} en grande`);
       el.innerHTML = `
         <h4 class="gallery__figure-title">${item.name}</h4>
         ${subtitleHtml}
         <div class="gallery__figure-row">
           <div class="gallery__figure-media">
-            <img class="gallery__figure-img" src="${encodePath(item.result)}"${imageFallbackAttr(item, 'fallbackResult')} alt="Figura FlippArt de ${item.name}" loading="lazy">
+            <img class="gallery__figure-img" src="${encodePath(item.result)}" alt="Figura FlippArt pintada a mano: ${item.name}" loading="lazy" decoding="async">
           </div>
           <aside class="gallery__figure-popover" aria-hidden="true">
-            <img src="${encodePath(item.original)}"${imageFallbackAttr(item, 'fallbackOriginal')} alt="${item.originalLabel || 'Foto original'} de ${item.name}" loading="lazy">
-            <span>${item.originalLabel || 'Foto original'}</span>
+            <img src="${encodePath(item.original)}" alt="${label} de ${item.name}" loading="lazy" decoding="async">
+            <span>${label}</span>
           </aside>
         </div>
       `;
-      el.addEventListener('click', () => openLightbox(
-        el.querySelector('.gallery__figure-popover img')?.src || encodePath(item.original),
-        item.name,
-      ));
+      open = () => openLightbox(encodePath(item.original), item.name, item.slug, el);
     } else {
-      el.classList.add('gallery__item--figure');
+      el.setAttribute('aria-label', `${item.name}: ver figura en grande`);
       el.innerHTML = `
         <h4 class="gallery__figure-title">${item.name}</h4>
         ${subtitleHtml}
         <div class="gallery__figure-row">
           <div class="gallery__figure-media">
-            <img class="gallery__figure-img" src="${encodePath(item.image)}" alt="Obra FlippArt: ${item.name} — figura personalizada artesanal" loading="lazy">
+            <img class="gallery__figure-img" src="${encodePath(item.image)}" alt="Figura FlippArt pintada a mano: ${item.name}" loading="lazy" decoding="async">
           </div>
         </div>
       `;
-      el.addEventListener('click', () => openLightbox(encodePath(item.image), item.name));
+      open = () => openLightbox(encodePath(item.image), item.name, item.slug, el);
     }
 
+    el.addEventListener('click', open);
+    el.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        open();
+      }
+    });
     gallery.appendChild(el);
-  });
-
-  gallery.querySelectorAll('img[data-fallback]').forEach((img) => {
-    img.addEventListener('error', function handleFallback() {
-      const fallback = this.dataset.fallback;
-      if (!fallback || this.dataset.fallbackUsed === 'true') return;
-      this.dataset.fallbackUsed = 'true';
-      this.src = fallback;
-    }, { once: true });
   });
 }
 
@@ -197,116 +203,100 @@ function renderVideos() {
   if (!container) return;
   container.innerHTML = '';
 
-  processVideos.forEach((src, i) => {
+  processVideos.forEach(({ src, poster }, i) => {
     const card = document.createElement('div');
     card.className = 'video-card';
 
     const video = document.createElement('video');
     video.src = encodePath(src);
+    video.poster = poster;
     video.controls = true;
     video.muted = true;
     video.setAttribute('muted', '');
     video.playsInline = true;
-    video.preload = 'metadata';
+    video.preload = 'none';
     video.setAttribute('aria-label', `Video del proceso FlippArt ${i + 1}`);
-
-    video.addEventListener('loadeddata', () => {
-      if (video.currentTime === 0) video.currentTime = 0.5;
-    });
 
     card.appendChild(video);
     container.appendChild(card);
   });
 }
 
-function openLightbox(src, caption) {
+let lightboxOpener = null;
+
+function openLightbox(src, caption, itemName, opener) {
   const lightbox = document.getElementById('lightbox');
+  if (!lightbox) return;
   const img = document.getElementById('lightboxImg');
-  const compare = document.getElementById('lightboxCompare');
-  const cap = document.getElementById('lightboxCaption');
-  compare.hidden = true;
+  document.getElementById('lightboxCompare').hidden = true;
   img.hidden = false;
   img.src = src;
   img.alt = caption;
-  cap.textContent = caption;
+  document.getElementById('lightboxCaption').textContent = caption;
   lightbox.hidden = false;
   document.body.style.overflow = 'hidden';
+  lightboxOpener = opener || document.activeElement;
+  document.getElementById('lightboxClose').focus();
+  trackPortfolioOpen(itemName);
 }
 
 function closeLightbox() {
-  document.getElementById('lightbox').hidden = true;
+  const lightbox = document.getElementById('lightbox');
+  if (!lightbox || lightbox.hidden) return;
+  lightbox.hidden = true;
   document.getElementById('lightboxCompare').hidden = true;
   document.getElementById('lightboxImg').hidden = false;
   document.body.style.overflow = '';
+  if (lightboxOpener && typeof lightboxOpener.focus === 'function') lightboxOpener.focus();
+  lightboxOpener = null;
 }
 
-document.getElementById('galleryFilters').addEventListener('click', (e) => {
-  const btn = e.target.closest('.filter-btn');
-  if (!btn) return;
-  document.querySelectorAll('.filter-btn').forEach((b) => b.classList.remove('active'));
-  btn.classList.add('active');
-  renderGallery(btn.dataset.filter);
-});
-
-document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
-document.getElementById('lightbox').addEventListener('click', (e) => {
-  if (e.target.id === 'lightbox') closeLightbox();
-});
-
-document.getElementById('navToggle').addEventListener('click', () => {
-  document.getElementById('navLinks').classList.toggle('open');
-});
-
-document.querySelectorAll('.nav__links a').forEach((link) => {
-  link.addEventListener('click', () => {
-    document.getElementById('navLinks').classList.remove('open');
+function initLightbox() {
+  const lightbox = document.getElementById('lightbox');
+  if (!lightbox) return;
+  document.getElementById('lightboxClose').addEventListener('click', closeLightbox);
+  lightbox.addEventListener('click', (e) => {
+    if (e.target.id === 'lightbox') closeLightbox();
   });
-});
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeLightbox();
+  });
 
-window.addEventListener('scroll', () => {
-  const nav = document.getElementById('nav');
-  nav.style.background = window.scrollY > 60
-    ? 'rgba(10, 10, 10, 0.95)'
-    : 'rgba(10, 10, 10, 0.85)';
-});
+  document.querySelectorAll('[data-lightbox]').forEach((btn) => {
+    btn.addEventListener('click', () => {
+      openLightbox(btn.dataset.lightbox, btn.dataset.caption || '', btn.dataset.item, btn);
+    });
+  });
+}
 
-function initAnalytics() {
-  if (typeof FLIPPART_CONFIG === 'undefined') return;
+function initGalleryFilters() {
+  const filters = document.getElementById('galleryFilters');
+  if (!filters) return;
+  filters.addEventListener('click', (e) => {
+    const btn = e.target.closest('.filter-btn');
+    if (!btn) return;
+    filters.querySelectorAll('.filter-btn').forEach((b) => {
+      b.classList.toggle('active', b === btn);
+      b.setAttribute('aria-pressed', String(b === btn));
+    });
+    renderGallery(btn.dataset.filter);
+  });
+}
 
-  trackEvent('page_view', { path: window.location.pathname });
-
-  if (FLIPPART_CONFIG.gaId) {
-    const s = document.createElement('script');
-    s.async = true;
-    s.src = `https://www.googletagmanager.com/gtag/js?id=${FLIPPART_CONFIG.gaId}`;
-    document.head.appendChild(s);
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function gtag() { window.dataLayer.push(arguments); };
-    window.gtag('js', new Date());
-    window.gtag('config', FLIPPART_CONFIG.gaId);
-  }
-
-  if (FLIPPART_CONFIG.metaPixelId) {
-    !(function (f, b, e, v, n, t, s) {
-      if (f.fbq) return;
-      n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments); };
-      if (!f._fbq) f._fbq = n;
-      n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = [];
-      t = b.createElement(e); t.async = !0;
-      t.src = v; s = b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t, s);
-    }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js'));
-    window.fbq('init', FLIPPART_CONFIG.metaPixelId);
-    window.fbq('track', 'PageView');
-  }
-
-  if (FLIPPART_CONFIG.clarityId) {
-    (function (c, l, a, r, i, t, y) {
-      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
-      t = l.createElement(r); t.async = 1; t.src = 'https://www.clarity.ms/tag/' + i;
-      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
-    }(window, document, 'clarity', 'script', FLIPPART_CONFIG.clarityId));
-  }
+function initNav() {
+  const toggle = document.getElementById('navToggle');
+  const links = document.getElementById('navLinks');
+  if (!toggle || !links) return;
+  toggle.addEventListener('click', () => {
+    const open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', String(open));
+  });
+  links.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', () => {
+      links.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
+  });
 }
 
 async function trackEvent(eventName, metadata = {}) {
@@ -334,36 +324,9 @@ async function trackEvent(eventName, metadata = {}) {
   } catch (_) { /* silencioso */ }
 }
 
-async function uploadLeadPhoto(file) {
-  const { supabaseUrl, supabaseAnonKey, storageBucket = 'lead-photos' } = FLIPPART_CONFIG || {};
-  if (!supabaseUrl || !supabaseAnonKey || !file) return null;
-
-  const safeName = file.name.replace(/[^\w.\-]+/g, '_').slice(0, 80);
-  const path = `${Date.now()}-${safeName}`;
-
-  try {
-    const res = await fetch(`${supabaseUrl}/storage/v1/object/${storageBucket}/${path}`, {
-      method: 'POST',
-      headers: {
-        apikey: supabaseAnonKey,
-        Authorization: `Bearer ${supabaseAnonKey}`,
-        'Content-Type': file.type || 'application/octet-stream',
-      },
-      body: file,
-    });
-    if (!res.ok) return null;
-    return `${supabaseUrl}/storage/v1/object/public/${storageBucket}/${path}`;
-  } catch (_) {
-    return null;
-  }
-}
-
-async function saveLead({ nombre, telefono, tipo, mensaje, foto_url }) {
+async function saveLead({ nombre, telefono, tipo, mensaje }) {
   const { supabaseUrl, supabaseAnonKey } = FLIPPART_CONFIG || {};
   if (!supabaseUrl || !supabaseAnonKey) return false;
-
-  const payload = { nombre, telefono, tipo, mensaje: mensaje || null };
-  if (foto_url) payload.foto_url = foto_url;
 
   const res = await fetch(`${supabaseUrl}/rest/v1/flippart_leads`, {
     method: 'POST',
@@ -373,19 +336,18 @@ async function saveLead({ nombre, telefono, tipo, mensaje, foto_url }) {
       Authorization: `Bearer ${supabaseAnonKey}`,
       Prefer: 'return=minimal',
     },
-    body: JSON.stringify(payload),
+    body: JSON.stringify({ nombre, telefono, tipo, mensaje: mensaje || null }),
   });
   return res.ok;
 }
 
-function buildLeadWhatsAppText({ nombre, telefono, tipo, mensaje, hasPhoto }) {
+function buildLeadWhatsAppText({ nombre, telefono, tipo, mensaje }) {
   return [
     'Hola FlippArt, quiero cotizar una figura.',
     `Nombre: ${nombre}`,
     `Teléfono: ${telefono}`,
     `Tipo: ${tipo}`,
     mensaje ? `Detalle: ${mensaje}` : '',
-    hasPhoto ? 'Adjuntaré mi foto de referencia en este chat.' : '',
   ].filter(Boolean).join('\n');
 }
 
@@ -403,9 +365,10 @@ async function notifyFlippArtCallMeBot(text) {
   }
 }
 
-function openWhatsAppToFlippArt(text) {
+function whatsAppUrl(text) {
+  if (window.FlippartTracking) return window.FlippartTracking.buildWhatsAppUrl(text);
   const wa = FLIPPART_CONFIG?.whatsapp || '573182941864';
-  window.open(`https://wa.me/${wa}?text=${encodeURIComponent(text)}`, '_blank');
+  return `https://wa.me/${wa}?text=${encodeURIComponent(text)}`;
 }
 
 async function notifyLeadWhatsApp(payload) {
@@ -427,7 +390,7 @@ async function notifyLeadWhatsApp(payload) {
   }
 }
 
-async function submitLeadViaBackend({ nombre, telefono, tipo, mensaje, photoFile }) {
+async function submitLeadViaBackend({ nombre, telefono, tipo, mensaje }) {
   const submitUrl = FLIPPART_CONFIG?.leadSubmitUrl;
   if (!submitUrl) return null;
 
@@ -436,7 +399,6 @@ async function submitLeadViaBackend({ nombre, telefono, tipo, mensaje, photoFile
   fd.append('telefono', telefono);
   fd.append('tipo', tipo);
   fd.append('mensaje', mensaje || '');
-  if (photoFile) fd.append('foto', photoFile, photoFile.name);
 
   try {
     const res = await fetch(submitUrl, { method: 'POST', body: fd });
@@ -448,64 +410,28 @@ async function submitLeadViaBackend({ nombre, telefono, tipo, mensaje, photoFile
   }
 }
 
-async function submitLeadFallback({ nombre, telefono, tipo, mensaje, photoFile }) {
-  let fotoUrl = null;
-  if (photoFile) fotoUrl = await uploadLeadPhoto(photoFile);
-
-  const payload = { nombre, telefono, tipo, mensaje, foto_url: fotoUrl };
-  const text = buildLeadWhatsAppText({
-    nombre,
-    telefono,
-    tipo,
-    mensaje,
-    hasPhoto: Boolean(photoFile),
-  });
-
+async function submitLeadFallback(lead) {
   const [leadOk, callMeBotOk, edgeOk] = await Promise.all([
-    saveLead({ nombre, telefono, tipo, mensaje, foto_url: fotoUrl }).catch(() => false),
-    notifyFlippArtCallMeBot(text),
-    notifyLeadWhatsApp(payload),
+    saveLead(lead).catch(() => false),
+    notifyFlippArtCallMeBot(buildLeadWhatsAppText(lead)),
+    notifyLeadWhatsApp(lead),
   ]);
 
-  let whatsappOk = callMeBotOk || edgeOk;
-  let whatsappMode = whatsappOk ? 'auto' : '';
-
-  if (!whatsappOk && FLIPPART_CONFIG?.fallbackOpenWhatsApp !== false) {
-    openWhatsAppToFlippArt(text);
-    whatsappOk = true;
-    whatsappMode = 'wa_me';
-  }
-
   return {
-    ok: leadOk || whatsappOk,
+    ok: leadOk || callMeBotOk || edgeOk,
     lead: leadOk,
-    whatsapp: whatsappOk,
-    whatsappMode,
-    foto_url: fotoUrl,
+    whatsapp: callMeBotOk || edgeOk,
+    whatsappMode: callMeBotOk || edgeOk ? 'auto' : '',
   };
 }
 
 function initLeadForm() {
   const form = document.getElementById('leadForm');
-  const photoInput = document.getElementById('leadPhoto');
-  const preview = document.getElementById('photoPreview');
-  const previewImg = document.getElementById('photoPreviewImg');
-  const success = document.getElementById('formSuccess');
-
   if (!form) return;
 
-  photoInput?.addEventListener('change', () => {
-    const file = photoInput.files?.[0];
-    if (!file) {
-      preview.hidden = true;
-      return;
-    }
-    previewImg.src = URL.createObjectURL(file);
-    preview.hidden = false;
-  });
-
-  const submitBtn = form.querySelector('[type="submit"]');
+  const success = document.getElementById('formSuccess');
   const errorEl = document.getElementById('formError');
+  const submitBtn = form.querySelector('[type="submit"]');
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -514,171 +440,63 @@ function initLeadForm() {
       return;
     }
 
-    const nombre = document.getElementById('leadName').value.trim();
-    const telefono = document.getElementById('leadPhone').value.trim();
-    const tipo = document.getElementById('leadType').value;
-    const mensaje = document.getElementById('leadMessage').value.trim();
-    const photoFile = photoInput.files?.[0] || null;
+    const lead = {
+      nombre: document.getElementById('leadName').value.trim(),
+      telefono: document.getElementById('leadPhone').value.trim(),
+      tipo: document.getElementById('leadType').value,
+      mensaje: document.getElementById('leadMessage').value.trim(),
+    };
+
+    // Safari en iPhone bloquea window.open si llega después de un await: WhatsApp se abre aquí, en el mismo clic.
+    let openedWhatsApp = false;
+    if (FLIPPART_CONFIG?.fallbackOpenWhatsApp !== false) {
+      const waWindow = window.open(whatsAppUrl(buildLeadWhatsAppText(lead)), '_blank');
+      if (waWindow) {
+        waWindow.opener = null;
+        openedWhatsApp = true;
+      }
+    }
 
     success.hidden = true;
-    if (errorEl) errorEl.hidden = true;
-
+    errorEl.hidden = true;
     const defaultLabel = submitBtn.textContent;
     submitBtn.disabled = true;
     submitBtn.textContent = 'Enviando…';
 
-    const result = (await submitLeadViaBackend({ nombre, telefono, tipo, mensaje, photoFile }))
-      || (await submitLeadFallback({ nombre, telefono, tipo, mensaje, photoFile }));
-
-    if (result?.ok && !result.whatsapp && FLIPPART_CONFIG?.fallbackOpenWhatsApp !== false) {
-      const text = buildLeadWhatsAppText({
-        nombre,
-        telefono,
-        tipo,
-        mensaje,
-        hasPhoto: Boolean(photoFile),
-      });
-      openWhatsAppToFlippArt(text);
-      result.whatsapp = true;
-      result.whatsappMode = 'wa_me';
-    }
-
-    trackEvent('generate_lead', { tipo, has_photo: Boolean(photoFile) });
-    if (typeof gtag === 'function') gtag('event', 'generate_lead', { method: 'form' });
-    if (typeof fbq === 'function') fbq('track', 'Lead');
+    const result = (await submitLeadViaBackend(lead)) || (await submitLeadFallback(lead));
 
     submitBtn.disabled = false;
     submitBtn.textContent = defaultLabel;
 
     if (!result?.ok) {
-      if (errorEl) {
-        errorEl.textContent = 'No pudimos enviar tu cotización. Escríbenos por WhatsApp al +57 318 294 1864.';
-        errorEl.hidden = false;
-      }
+      errorEl.textContent = 'No pudimos enviar tu cotización. Escríbenos por WhatsApp al +57 318 294 1864.';
+      errorEl.hidden = false;
       return;
     }
 
+    trackEvent('generate_lead', { tipo: lead.tipo });
+    if (window.FlippartTracking) window.FlippartTracking.formSubmitted(form.dataset.formName || 'cotizacion');
+
     if (result.whatsappMode === 'auto') {
       success.textContent = '¡Recibimos tu cotización en nuestro WhatsApp! Te contactaremos pronto al número que indicaste.';
-    } else if (result.whatsappMode === 'wa_me') {
-      success.textContent = 'Confirma el envío en WhatsApp. Si adjuntaste foto, inclúyela también en el chat.';
-    } else if (result.whatsapp) {
-      success.textContent = '¡Recibimos tu cotización! Te contactaremos pronto por WhatsApp.';
+    } else if (openedWhatsApp) {
+      success.textContent = '¡Recibimos tu cotización! Confirma el envío en el chat de WhatsApp y adjunta ahí tus fotos de referencia.';
     } else {
       success.textContent = '¡Recibimos tu cotización! Te contactaremos pronto al número que indicaste.';
     }
-
     success.hidden = false;
     form.reset();
-    preview.hidden = true;
   });
 }
 
-function initFaqReveal() {
-  const section = document.getElementById('faq');
-  const items = [...document.querySelectorAll('.faq__item')];
-  if (!section || !items.length) return;
-
-  const showAll = () => {
-    items.forEach((item, index) => {
-      item.classList.add('faq-reveal', 'is-visible');
-      item.style.transitionDelay = `${index * 0.08}s`;
-    });
-  };
-
-  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const isMobile = window.matchMedia('(max-width: 900px)').matches;
-  if (reducedMotion || isMobile) {
-    showAll();
-    return;
-  }
-
-  items.forEach((item) => item.classList.add('faq-reveal'));
-
-  let revealed = false;
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting || revealed) return;
-      revealed = true;
-      items.forEach((item, index) => {
-        item.style.transitionDelay = `${index * 0.08}s`;
-        item.classList.add('is-visible');
-      });
-      observer.disconnect();
-    });
-  }, { threshold: 0.18, rootMargin: '0px 0px -40px 0px' });
-
-  observer.observe(section);
-}
-
-function initFaqHint() {
-  const section = document.getElementById('faq');
-  const faq = document.getElementById('faqList');
-  const hint = document.getElementById('faqHintArrow');
-  if (!section || !faq || !hint) return;
-
-  const storageKey = 'flippart-faq-hint-shown';
-  if (sessionStorage.getItem(storageKey)) {
-    hint.remove();
-    return;
-  }
-
-  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const hintDurationMs = 3000;
-  let shown = false;
-
-  function positionHint() {
-    const targetItem = [...faq.querySelectorAll('.faq__item')].find((item) => !item.open)
-      || faq.querySelector('.faq__item');
-    const summary = targetItem?.querySelector('summary');
-    if (!summary) return;
-
-    const top = summary.offsetTop + summary.offsetHeight / 2 - hint.offsetHeight / 2;
-    hint.style.top = `${Math.max(0, top)}px`;
-  }
-
-  function hideHint() {
-    hint.classList.remove('is-visible');
-    hint.classList.add('is-fading');
-    sessionStorage.setItem(storageKey, '1');
-    window.setTimeout(() => hint.remove(), 500);
-  }
-
-  function showHint() {
-    if (shown) return;
-    shown = true;
-    sessionStorage.setItem(storageKey, '1');
-    positionHint();
-    hint.classList.add('is-visible');
-    window.setTimeout(hideHint, hintDurationMs);
-    observer.disconnect();
-  }
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) showHint();
-    });
-  }, { threshold: 0.3 });
-
-  observer.observe(section);
-  window.addEventListener('resize', () => {
-    if (hint.isConnected && hint.classList.contains('is-visible')) positionHint();
-  }, { passive: true });
-
-  if (reducedMotion) {
-    observer.disconnect();
-    hint.remove();
-  }
-}
-
 function initSectionTracking() {
-  const sections = ['vitrina', 'servicios', 'galeria', 'precios', 'cotizar', 'faq'];
+  const sections = ['vitrina', 'servicios', 'galeria', 'precios', 'cotizar', 'faq', 'regalo-grado-ascenso'];
   const seen = new Set();
 
   const observer = new IntersectionObserver((entries) => {
     entries.forEach((entry) => {
       if (!entry.isIntersecting) return;
-      const id = entry.target.id;
+      const { id } = entry.target;
       if (!id || seen.has(id)) return;
       seen.add(id);
       trackEvent('section_view', { section: id });
@@ -691,58 +509,12 @@ function initSectionTracking() {
   });
 }
 
-function initScrollReveal() {
-  const reveals = [...document.querySelectorAll('.section > .container')];
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const isMobile = () => window.matchMedia('(max-width: 900px)').matches;
-
-  const revealOnce = (el) => {
-    el.classList.add('reveal', 'is-visible');
-  };
-
-  if (prefersReducedMotion || isMobile()) {
-    reveals.forEach(revealOnce);
-    return;
-  }
-
-  reveals.forEach((el) => el.classList.add('reveal'));
-
-  const isInViewport = (el) => {
-    const rect = el.getBoundingClientRect();
-    return rect.top < window.innerHeight * 0.94 && rect.bottom > 0;
-  };
-
-  const revealVisibleNow = () => {
-    reveals.forEach((el) => {
-      if (isInViewport(el)) revealOnce(el);
-    });
-  };
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) revealOnce(entry.target);
-    });
-  }, { threshold: 0.04, rootMargin: '0px 0px -10% 0px' });
-
-  reveals.forEach((el) => {
-    observer.observe(el);
-  });
-
-  revealVisibleNow();
-  window.addEventListener('load', () => {
-    requestAnimationFrame(revealVisibleNow);
-    window.setTimeout(revealVisibleNow, 120);
-  });
-  window.addEventListener('hashchange', revealVisibleNow);
-  window.addEventListener('resize', revealVisibleNow, { passive: true });
-}
-
-initSectionTracking();
-initScrollReveal();
-initFaqReveal();
-initFaqHint();
+initNav();
+initLightbox();
+initGalleryFilters();
 renderGallery();
 renderVideos();
-initSEO();
-initAnalytics();
+if (typeof initSEO === 'function') initSEO();
+trackEvent('page_view', { path: window.location.pathname });
+initSectionTracking();
 initLeadForm();

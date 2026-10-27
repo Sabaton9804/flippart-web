@@ -14,8 +14,8 @@ const FLIPPART_CONFIG = {
   /** Google Analytics 4 — ejemplo: G-XXXXXXXXXX */
   gaId: '',
 
-  /** Meta Pixel — ejemplo: 1234567890123456 */
-  metaPixelId: '',
+  /** Meta Pixel FlippArt (lo carga js/tracking.js) */
+  metaPixelId: '1137674532109255',
 
   /** Microsoft Clarity — ejemplo: abcdefghij */
   clarityId: '',
@@ -41,6 +41,6 @@ const FLIPPART_CONFIG = {
   /** API key CallMeBot → alertas automáticas a tu WhatsApp (callmebot.com) */
   callMeBotApiKey: '',
 
-  /** Si no hay API automática, abre chat con FlippArt para enviar la cotización */
+  /** Al enviar el formulario abre (en el mismo clic) el chat de WhatsApp con los datos de la cotización */
   fallbackOpenWhatsApp: true,
 };
