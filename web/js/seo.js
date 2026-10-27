@@ -52,31 +52,6 @@ function buildFaqItems() {
   }).filter(Boolean);
 }
 
-/**
- * DESACTIVADA: los testimonios de index.html están ocultos hasta que Camilo confirme que son reales.
- * No publicar Review ni AggregateRating sin reseñas verificables (política de Google).
- * Para reactivarla, quitar el `return []` cuando los testimonios vuelvan a estar visibles.
- */
-function buildReviews() {
-  return [];
-  // eslint-disable-next-line no-unreachable
-  return [...document.querySelectorAll('.testimonial')].map((item) => {
-    const author = item.querySelector('footer strong')?.textContent?.trim();
-    const body = item.querySelector('p')?.textContent?.trim()?.replace(/^["“]|["”]$/g, '');
-    if (!author || !body) return null;
-    return {
-      '@type': 'Review',
-      author: { '@type': 'Person', name: author },
-      reviewRating: {
-        '@type': 'Rating',
-        ratingValue: '5',
-        bestRating: '5',
-      },
-      reviewBody: body,
-    };
-  }).filter(Boolean);
-}
-
 function buildVideoItems(base) {
   const videos = [...document.querySelectorAll('#processVideos video[src]')];
   return videos.map((video, index) => {
@@ -101,7 +76,6 @@ function buildVideoItems(base) {
 
 function buildStructuredData(base) {
   const faqItems = buildFaqItems();
-  const reviews = buildReviews();
   const videos = buildVideoItems(base);
 
   const localBusiness = {
@@ -183,16 +157,6 @@ function buildStructuredData(base) {
       ],
     },
   };
-
-  if (reviews.length) {
-    localBusiness.aggregateRating = {
-      '@type': 'AggregateRating',
-      ratingValue: '5',
-      reviewCount: String(reviews.length),
-      bestRating: '5',
-    };
-    localBusiness.review = reviews;
-  }
 
   return {
     '@context': 'https://schema.org',
