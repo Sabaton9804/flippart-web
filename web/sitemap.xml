@@ -3,30 +3,46 @@
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
   <url>
     <loc>https://flippart.com.co/</loc>
-    <lastmod>2026-07-22</lastmod>
+    <lastmod>2026-10-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
     <image:image>
       <image:loc>https://flippart.com.co/assets/og-image.jpg</image:loc>
-      <image:title>FlippArt — figuras personalizadas de mascotas y familias en Colombia</image:title>
-      <image:caption>Vitrina LED premium con figuras artesanales personalizadas</image:caption>
+      <image:title>FlippArt: figuras pintadas a mano desde tus fotos</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://flippart.com.co/assets/hero/familia-carolina-vitrina.jpg</image:loc>
-      <image:title>Figura familiar personalizada FlippArt en vitrina premium</image:title>
-      <image:caption>Figura de familia con vitrina iluminada y base personalizada</image:caption>
+      <image:loc>https://flippart.com.co/assets/grado/sc-calderon-hero-1600.jpg</image:loc>
+      <image:title>Figura personalizada en uniforme de SC Calderón, pintada a mano por FlippArt</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://flippart.com.co/media/Mascotas/Coco/Figura%20Coco.png</image:loc>
-      <image:title>Figura personalizada de mascota Coco en vitrina FlippArt</image:title>
+      <image:loc>https://flippart.com.co/assets/portafolio/coco-figura-vitrina.jpg</image:loc>
+      <image:title>Figura personalizada de la mascota Coco en vitrina FlippArt</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://flippart.com.co/media/Mascotas/Bengi/listo.jpeg</image:loc>
-      <image:title>Memorial personalizado de mascota Benji — FlippArt</image:title>
+      <image:loc>https://flippart.com.co/assets/portafolio/coco-foto-original-960.jpg</image:loc>
+      <image:title>Foto original de Coco usada como referencia para su figura</image:title>
     </image:image>
     <image:image>
-      <image:loc>https://flippart.com.co/assets/pricing/flippart-showcase.png</image:loc>
-      <image:title>Colección de figuras personalizadas FlippArt con vitrina LED</image:title>
+      <image:loc>https://flippart.com.co/assets/pricing/flippart-showcase.jpg</image:loc>
+      <image:title>Colección de figuras personalizadas FlippArt</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://flippart.com.co/grado-ascenso</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://flippart.com.co/assets/grado/sc-calderon-hero-1600.jpg</image:loc>
+      <image:title>Regalo de grado y ascenso: figura de SC Calderón en uniforme, pintada a mano</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://flippart.com.co/assets/grado/sc-calderon-frontal-1600.jpg</image:loc>
+      <image:title>Vista frontal de la figura de SC Calderón con uniforme de gala y condecoraciones</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://flippart.com.co/assets/grado/sc-calderon-placa-1600.jpg</image:loc>
+      <image:title>Base negra con placa personalizada de SC Calderón</image:title>
     </image:image>
   </url>
 </urlset>

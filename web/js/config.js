@@ -14,11 +14,34 @@ const FLIPPART_CONFIG = {
   /** Google Analytics 4 — ejemplo: G-XXXXXXXXXX */
   gaId: '',
 
-  /** Meta Pixel — ejemplo: 1234567890123456 */
-  metaPixelId: '',
+  /** Meta Pixel FlippArt (lo carga js/tracking.js) */
+  metaPixelId: '1137674532109255',
 
   /** Microsoft Clarity — ejemplo: abcdefghij */
   clarityId: '',
+
+  /**
+   * Política de tratamiento de datos (Ley 1581). El aviso de cookies la enlaza solo si hay URL.
+   * TODO(Camilo): el sitio aún no tiene política de datos publicada; poner aquí su URL cuando exista.
+   */
+  politicaDatosUrl: '',
+
+  /** Tamaño de las figuras de personas. main.js lo escribe en cada elemento con data-tamano-persona. */
+  tamanoFiguraPersona: '12 cm aprox.',
+
+  /**
+   * Precios base en COP. PROVISIONALES: hay un estudio de mercado en curso.
+   * main.js los escribe (como "$150.000") en cada elemento con data-precio="clave" y en las ofertas del JSON-LD
+   * de /grado-ascenso; seo.js los usa en el schema de la home y tracking.js en los mensajes de WhatsApp.
+   * Al cambiarlos, actualizar también el texto de respaldo del HTML (lo exige tests/precios.spec.js) y las
+   * meta description/og/twitter de index.html y grado-ascenso.html, que son estáticas.
+   */
+  precios: {
+    mascotas: 150000,
+    personas: 250000,
+    esencialMini: 120000,
+    honor: 300000,
+  },
 
   /** Instagram — usado en schema sameAs y meta social */
   instagram: 'https://instagram.com/Flippart.oficial',
@@ -41,6 +64,11 @@ const FLIPPART_CONFIG = {
   /** API key CallMeBot → alertas automáticas a tu WhatsApp (callmebot.com) */
   callMeBotApiKey: '',
 
-  /** Si no hay API automática, abre chat con FlippArt para enviar la cotización */
+  /** Al enviar el formulario abre (en el mismo clic) el chat de WhatsApp con los datos de la cotización */
   fallbackOpenWhatsApp: true,
 };
+
+/** 150000 → "$150.000" (es-CO). */
+function formatearPrecio(valor) {
+  return `$${Number(valor).toLocaleString('es-CO')}`;
+}

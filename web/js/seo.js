@@ -52,24 +52,6 @@ function buildFaqItems() {
   }).filter(Boolean);
 }
 
-function buildReviews() {
-  return [...document.querySelectorAll('.testimonial')].map((item) => {
-    const author = item.querySelector('footer strong')?.textContent?.trim();
-    const body = item.querySelector('p')?.textContent?.trim()?.replace(/^["“]|["”]$/g, '');
-    if (!author || !body) return null;
-    return {
-      '@type': 'Review',
-      author: { '@type': 'Person', name: author },
-      reviewRating: {
-        '@type': 'Rating',
-        ratingValue: '5',
-        bestRating: '5',
-      },
-      reviewBody: body,
-    };
-  }).filter(Boolean);
-}
-
 function buildVideoItems(base) {
   const videos = [...document.querySelectorAll('#processVideos video[src]')];
   return videos.map((video, index) => {
@@ -83,7 +65,9 @@ function buildVideoItems(base) {
       name: title,
       description: 'Video del proceso artesanal de creación de figuras personalizadas FlippArt.',
       contentUrl: url,
-      thumbnailUrl: `${base}/assets/hero/familia-carolina-vitrina.jpg`,
+      thumbnailUrl: video.getAttribute('poster')
+      ? `${base}/${video.getAttribute('poster').replace(/^\//, '')}`
+      : `${base}/assets/og-image.jpg`,
       uploadDate: '2026-01-01',
       inLanguage: 'es-CO',
     };
@@ -92,8 +76,10 @@ function buildVideoItems(base) {
 
 function buildStructuredData(base) {
   const faqItems = buildFaqItems();
-  const reviews = buildReviews();
   const videos = buildVideoItems(base);
+  const precios = (typeof FLIPPART_CONFIG !== 'undefined' && FLIPPART_CONFIG.precios) || {};
+  const precio = (clave) => (precios[clave] ? String(precios[clave]) : undefined);
+  const desdeMini = precios.esencialMini ? ` Desde ${formatearPrecio(precios.esencialMini)} (versión mini).` : '';
 
   const localBusiness = {
     '@type': 'LocalBusiness',
@@ -102,7 +88,7 @@ function buildStructuredData(base) {
     url: `${base}/`,
     image: `${base}/assets/og-image.jpg`,
     logo: `${base}/assets/logo/logo.jpeg`,
-    description: 'Figuras personalizadas de mascotas y familias con vitrina LED. Conmemora momentos especiales con arte hecho a mano en Colombia.',
+    description: 'Figuras pintadas a mano desde tus fotos: mascotas, familias y logros. Hechas una a una en Bogotá, con envío a toda Colombia.',
     telephone: '+57-318-294-1864',
     priceRange: '$$',
     currenciesAccepted: 'COP',
@@ -133,10 +119,10 @@ function buildStructuredData(base) {
           itemOffered: {
             '@type': 'Service',
             name: 'Figura personalizada de mascota',
-            description: 'Memorial y homenaje para mascotas con vitrina LED y base iluminada.',
+            description: 'Figura personalizada de mascota, pintada a mano desde tus fotos.',
             areaServed: 'Colombia',
           },
-          price: '250000',
+          price: precio('mascotas'),
           priceCurrency: 'COP',
         },
         {
@@ -144,10 +130,36 @@ function buildStructuredData(base) {
           itemOffered: {
             '@type': 'Service',
             name: 'Figura personalizada de familia o persona',
-            description: 'Retratos y composiciones familiares para conmemorar momentos especiales.',
+            description: 'Figura completa de persona, retratos y composiciones familiares para conmemorar momentos especiales.',
             areaServed: 'Colombia',
           },
-          price: '250000',
+          price: precio('personas'),
+          priceCurrency: 'COP',
+        },
+        {
+          '@type': 'Offer',
+          name: 'Edición Esencial (versión mini)',
+          url: `${base}/grado-ascenso`,
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Regalo de grado y ascenso: Edición Esencial (versión mini)',
+            description: 'Figura personalizada en uniforme, versión mini, para policías, militares y sus familias, pintada a mano en Bogotá.',
+            areaServed: 'Colombia',
+          },
+          price: precio('esencialMini'),
+          priceCurrency: 'COP',
+        },
+        {
+          '@type': 'Offer',
+          name: 'Edición Honor',
+          url: `${base}/grado-ascenso`,
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Regalo de grado y ascenso: Edición Honor',
+            description: 'Figura personalizada en uniforme con mayor detalle en insignias, placa dorada grabada, caja de regalo y certificado, pintada a mano en Bogotá.',
+            areaServed: 'Colombia',
+          },
+          price: precio('honor'),
           priceCurrency: 'COP',
         },
         {
@@ -162,16 +174,6 @@ function buildStructuredData(base) {
       ],
     },
   };
-
-  if (reviews.length) {
-    localBusiness.aggregateRating = {
-      '@type': 'AggregateRating',
-      ratingValue: '5',
-      reviewCount: String(reviews.length),
-      bestRating: '5',
-    };
-    localBusiness.review = reviews;
-  }
 
   return {
     '@context': 'https://schema.org',
@@ -222,8 +224,8 @@ function buildStructuredData(base) {
         '@type': 'WebPage',
         '@id': `${base}/#webpage`,
         url: `${base}/`,
-        name: 'Figuras Personalizadas de Mascotas y Familias en Colombia | FlippArt',
-        description: 'Figuras personalizadas de mascotas y familias para conmemorar momentos. Vitrina LED, unboxing premium y envío a Colombia.',
+        name: 'Figuras pintadas a mano desde tus fotos | FlippArt Bogotá',
+        description: `Mascotas, familias y logros que merecen quedarse. Hechas una a una en Bogotá, con envío a toda Colombia.${desdeMini}`,
         isPartOf: { '@id': `${base}/#website` },
         about: { '@id': `${base}/#business` },
         inLanguage: 'es-CO',
@@ -239,7 +241,7 @@ function buildStructuredData(base) {
         itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Figuras personalizadas de mascotas' },
           { '@type': 'ListItem', position: 2, name: 'Figuras de personas y familias' },
-          { '@type': 'ListItem', position: 3, name: 'Reconocimientos y profesiones' },
+          { '@type': 'ListItem', position: 3, name: 'Regalo de grado y ascenso', url: `${base}/grado-ascenso` },
           { '@type': 'ListItem', position: 4, name: 'Modelos históricos y coleccionables' },
         ],
       },
