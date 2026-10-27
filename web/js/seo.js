@@ -52,7 +52,14 @@ function buildFaqItems() {
   }).filter(Boolean);
 }
 
+/**
+ * DESACTIVADA: los testimonios de index.html están ocultos hasta que Camilo confirme que son reales.
+ * No publicar Review ni AggregateRating sin reseñas verificables (política de Google).
+ * Para reactivarla, quitar el `return []` cuando los testimonios vuelvan a estar visibles.
+ */
 function buildReviews() {
+  return [];
+  // eslint-disable-next-line no-unreachable
   return [...document.querySelectorAll('.testimonial')].map((item) => {
     const author = item.querySelector('footer strong')?.textContent?.trim();
     const body = item.querySelector('p')?.textContent?.trim()?.replace(/^["“]|["”]$/g, '');
@@ -83,7 +90,9 @@ function buildVideoItems(base) {
       name: title,
       description: 'Video del proceso artesanal de creación de figuras personalizadas FlippArt.',
       contentUrl: url,
-      thumbnailUrl: `${base}/assets/hero/familia-carolina-vitrina.jpg`,
+      thumbnailUrl: video.getAttribute('poster')
+      ? `${base}/${video.getAttribute('poster').replace(/^\//, '')}`
+      : `${base}/assets/og-image.jpg`,
       uploadDate: '2026-01-01',
       inLanguage: 'es-CO',
     };
@@ -102,7 +111,7 @@ function buildStructuredData(base) {
     url: `${base}/`,
     image: `${base}/assets/og-image.jpg`,
     logo: `${base}/assets/logo/logo.jpeg`,
-    description: 'Figuras personalizadas de mascotas y familias con vitrina LED. Conmemora momentos especiales con arte hecho a mano en Colombia.',
+    description: 'Figuras pintadas a mano desde tus fotos: mascotas, familias y logros. Hechas una a una en Bogotá, con envío a toda Colombia.',
     telephone: '+57-318-294-1864',
     priceRange: '$$',
     currenciesAccepted: 'COP',
@@ -133,7 +142,7 @@ function buildStructuredData(base) {
           itemOffered: {
             '@type': 'Service',
             name: 'Figura personalizada de mascota',
-            description: 'Memorial y homenaje para mascotas con vitrina LED y base iluminada.',
+            description: 'Figura personalizada de mascota, pintada a mano desde tus fotos.',
             areaServed: 'Colombia',
           },
           price: '250000',
@@ -148,6 +157,18 @@ function buildStructuredData(base) {
             areaServed: 'Colombia',
           },
           price: '250000',
+          priceCurrency: 'COP',
+        },
+        {
+          '@type': 'Offer',
+          url: `${base}/grado-ascenso`,
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Regalo de grado y ascenso',
+            description: 'Figura personalizada en uniforme para policías, militares y sus familias, pintada a mano en Bogotá.',
+            areaServed: 'Colombia',
+          },
+          price: '120000',
           priceCurrency: 'COP',
         },
         {
@@ -222,8 +243,8 @@ function buildStructuredData(base) {
         '@type': 'WebPage',
         '@id': `${base}/#webpage`,
         url: `${base}/`,
-        name: 'Figuras Personalizadas de Mascotas y Familias en Colombia | FlippArt',
-        description: 'Figuras personalizadas de mascotas y familias para conmemorar momentos. Vitrina LED, unboxing premium y envío a Colombia.',
+        name: 'Figuras pintadas a mano desde tus fotos | FlippArt Bogotá',
+        description: 'Mascotas, familias y logros que merecen quedarse. Hechas una a una en Bogotá, con envío a toda Colombia. Desde $250.000.',
         isPartOf: { '@id': `${base}/#website` },
         about: { '@id': `${base}/#business` },
         inLanguage: 'es-CO',
@@ -239,7 +260,7 @@ function buildStructuredData(base) {
         itemListElement: [
           { '@type': 'ListItem', position: 1, name: 'Figuras personalizadas de mascotas' },
           { '@type': 'ListItem', position: 2, name: 'Figuras de personas y familias' },
-          { '@type': 'ListItem', position: 3, name: 'Reconocimientos y profesiones' },
+          { '@type': 'ListItem', position: 3, name: 'Regalo de grado y ascenso', url: `${base}/grado-ascenso` },
           { '@type': 'ListItem', position: 4, name: 'Modelos históricos y coleccionables' },
         ],
       },
