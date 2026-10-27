@@ -146,12 +146,17 @@
 
   /* ---------- 3. WhatsApp: UNA función ---------- */
   // Mensajes aprobados en el brief final (26-oct-2026). El HTML elige con data-wa-msg; si no, por data-offer.
+  // Los precios salen de FLIPPART_CONFIG.precios.
+  var PRECIOS = CFG.precios || {};
+  function precio(clave, respaldo) {
+    return PRECIOS[clave] && typeof formatearPrecio === 'function' ? formatearPrecio(PRECIOS[clave]) : respaldo;
+  }
   var WA_TEXT = {
     general: 'Hola Camilo, vi la página de FlippArt y quiero cotizar una figura personalizada de: ___',
     grado: 'Hola Camilo, vi la página de FlippArt. Quiero un regalo de grado/ascenso. Es para: ___ (Policía/Ejército/Armada/FAC). Fecha de la ceremonia: ___',
     pregunta: 'Hola Camilo, vengo de la página de FlippArt y tengo una pregunta:',
-    grado_ascenso_premium: 'Hola Camilo, me interesa la Edición Honor ($300.000) para un grado/ascenso. Es para: ___. Fecha: ___. Te envío la foto en uniforme.',
-    grado_ascenso_entrada: 'Hola Camilo, me interesa la Edición Esencial (desde $120.000) para un grado/ascenso. Es para: ___. Fecha: ___.'
+    grado_ascenso_premium: 'Hola Camilo, me interesa la Edición Honor (' + precio('honor', '$300.000') + ') para un grado/ascenso. Es para: ___. Fecha: ___. Te envío la foto en uniforme.',
+    grado_ascenso_entrada: 'Hola Camilo, me interesa la Edición Esencial (desde ' + precio('esencialMini', '$120.000') + ') para un grado/ascenso. Es para: ___. Fecha: ___.'
   };
   var LOCATIONS = ['hero', 'sticky_mobile', 'oferta_premium', 'oferta_entrada', 'portafolio', 'footer', 'cta_final'];
 

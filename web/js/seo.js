@@ -77,6 +77,9 @@ function buildVideoItems(base) {
 function buildStructuredData(base) {
   const faqItems = buildFaqItems();
   const videos = buildVideoItems(base);
+  const precios = (typeof FLIPPART_CONFIG !== 'undefined' && FLIPPART_CONFIG.precios) || {};
+  const precio = (clave) => (precios[clave] ? String(precios[clave]) : undefined);
+  const desdeMini = precios.esencialMini ? ` Desde ${formatearPrecio(precios.esencialMini)} (versión mini).` : '';
 
   const localBusiness = {
     '@type': 'LocalBusiness',
@@ -119,7 +122,7 @@ function buildStructuredData(base) {
             description: 'Figura personalizada de mascota, pintada a mano desde tus fotos.',
             areaServed: 'Colombia',
           },
-          price: '120000',
+          price: precio('mascotas'),
           priceCurrency: 'COP',
         },
         {
@@ -127,22 +130,36 @@ function buildStructuredData(base) {
           itemOffered: {
             '@type': 'Service',
             name: 'Figura personalizada de familia o persona',
-            description: 'Retratos y composiciones familiares para conmemorar momentos especiales.',
+            description: 'Figura completa de persona, retratos y composiciones familiares para conmemorar momentos especiales.',
             areaServed: 'Colombia',
           },
-          price: '120000',
+          price: precio('personas'),
           priceCurrency: 'COP',
         },
         {
           '@type': 'Offer',
+          name: 'Edición Esencial (versión mini)',
           url: `${base}/grado-ascenso`,
           itemOffered: {
             '@type': 'Service',
-            name: 'Regalo de grado y ascenso',
-            description: 'Figura personalizada en uniforme para policías, militares y sus familias, pintada a mano en Bogotá.',
+            name: 'Regalo de grado y ascenso: Edición Esencial (versión mini)',
+            description: 'Figura personalizada en uniforme, versión mini, para policías, militares y sus familias, pintada a mano en Bogotá.',
             areaServed: 'Colombia',
           },
-          price: '120000',
+          price: precio('esencialMini'),
+          priceCurrency: 'COP',
+        },
+        {
+          '@type': 'Offer',
+          name: 'Edición Honor',
+          url: `${base}/grado-ascenso`,
+          itemOffered: {
+            '@type': 'Service',
+            name: 'Regalo de grado y ascenso: Edición Honor',
+            description: 'Figura personalizada en uniforme con mayor detalle en insignias, placa dorada grabada, caja de regalo y certificado, pintada a mano en Bogotá.',
+            areaServed: 'Colombia',
+          },
+          price: precio('honor'),
           priceCurrency: 'COP',
         },
         {
@@ -208,7 +225,7 @@ function buildStructuredData(base) {
         '@id': `${base}/#webpage`,
         url: `${base}/`,
         name: 'Figuras pintadas a mano desde tus fotos | FlippArt Bogotá',
-        description: 'Mascotas, familias y logros que merecen quedarse. Hechas una a una en Bogotá, con envío a toda Colombia. Desde $120.000.',
+        description: `Mascotas, familias y logros que merecen quedarse. Hechas una a una en Bogotá, con envío a toda Colombia.${desdeMini}`,
         isPartOf: { '@id': `${base}/#website` },
         about: { '@id': `${base}/#business` },
         inLanguage: 'es-CO',

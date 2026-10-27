@@ -305,6 +305,37 @@ function initTamanos() {
   document.querySelectorAll('[data-tamano-persona]').forEach((el) => { el.textContent = tamano; });
 }
 
+/** Ofertas del JSON-LD estático (por @id) cuyo precio sale de FLIPPART_CONFIG.precios. */
+const OFERTAS_CON_PRECIO = {
+  'https://flippart.com.co/grado-ascenso#oferta-esencial': 'esencialMini',
+  'https://flippart.com.co/grado-ascenso#oferta-honor': 'honor',
+};
+
+function initPrecios() {
+  const precios = typeof FLIPPART_CONFIG !== 'undefined' && FLIPPART_CONFIG.precios;
+  if (!precios || typeof formatearPrecio !== 'function') return;
+  document.querySelectorAll('[data-precio]').forEach((el) => {
+    const valor = precios[el.dataset.precio];
+    if (valor) el.textContent = formatearPrecio(valor);
+  });
+
+  document.querySelectorAll('script[type="application/ld+json"]:not(#structured-data)').forEach((script) => {
+    let data;
+    try { data = JSON.parse(script.textContent); } catch (_) { return; }
+    let cambio = false;
+    (data['@graph'] || [data]).forEach((nodo) => {
+      (nodo.offers || []).forEach((oferta) => {
+        const valor = precios[OFERTAS_CON_PRECIO[oferta['@id']]];
+        if (!valor) return;
+        oferta.price = String(valor);
+        if (oferta.priceSpecification) oferta.priceSpecification.minPrice = String(valor);
+        cambio = true;
+      });
+    });
+    if (cambio) script.textContent = JSON.stringify(data, null, 2);
+  });
+}
+
 async function trackEvent(eventName, metadata = {}) {
   if (typeof FLIPPART_CONFIG === 'undefined') return;
   if (!window.FlippartTracking?.hayConsentimiento()) return;
@@ -517,6 +548,7 @@ function initSectionTracking() {
 }
 
 initTamanos();
+initPrecios();
 initNav();
 initLightbox();
 initGalleryFilters();

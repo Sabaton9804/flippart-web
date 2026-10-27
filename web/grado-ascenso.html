@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Regalo de grado y ascenso: figura en uniforme pintada a mano | FlippArt</title>
-  <meta name="description" content="Regalo de grado y ascenso para policías, militares y sus familias. La hago desde una foto en uniforme, a mano, en Bogotá. Desde $120.000.">
+  <meta name="description" content="Regalo de grado y ascenso para policías, militares y sus familias. La hago desde una foto en uniforme, a mano, en Bogotá. Desde $120.000 (versión mini).">
   <meta name="robots" content="index, follow, max-image-preview:large">
   <meta name="theme-color" content="#F5EFE3">
   <meta name="google-site-verification" content="l3mk0FH4SNiNGvsDKHhKjBhEObNnZDkIuPfM2J5z6D8">
@@ -13,7 +13,7 @@
   <meta property="og:locale" content="es_CO">
   <meta property="og:site_name" content="FlippArt">
   <meta property="og:title" content="Su uniforme, su grado, su logro: en una figura pintada a mano">
-  <meta property="og:description" content="Regalo de grado y ascenso para policías, militares y sus familias. Hecha a mano en Bogotá desde una foto en uniforme. Desde $120.000.">
+  <meta property="og:description" content="Regalo de grado y ascenso para policías, militares y sus familias. Hecha a mano en Bogotá desde una foto en uniforme. Desde $120.000 (versión mini).">
   <meta property="og:image" content="https://flippart.com.co/assets/grado/sc-calderon-hero-1600.jpg">
   <meta property="og:image:width" content="1600">
   <meta property="og:image:height" content="1067">
@@ -21,7 +21,7 @@
   <meta property="og:url" content="https://flippart.com.co/grado-ascenso">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Su uniforme, su grado, su logro: en una figura pintada a mano">
-  <meta name="twitter:description" content="Regalo de grado y ascenso para policías, militares y sus familias. Desde $120.000.">
+  <meta name="twitter:description" content="Regalo de grado y ascenso para policías, militares y sus familias. Desde $120.000 (versión mini).">
   <meta name="twitter:image" content="https://flippart.com.co/assets/grado/sc-calderon-hero-1600.jpg">
 
   <link rel="icon" href="/assets/favicon.ico" sizes="32x32">
@@ -43,9 +43,9 @@
     })();
   </script>
   <noscript><link rel="stylesheet" href="/css/style.css?v=46"></noscript>
-  <script src="/js/config.js?v=3"></script>
+  <script src="/js/config.js?v=4"></script>
   <!-- Meta Pixel / GA4 / Clarity: tracking.js los carga solo si su ID existe en config.js y la persona acepta el aviso de datos -->
-  <script src="/js/tracking.js?v=2"></script>
+  <script src="/js/tracking.js?v=3"></script>
 
   <script type="application/ld+json">
   {
@@ -62,13 +62,13 @@
         "@type": "Service",
         "@id": "https://flippart.com.co/grado-ascenso#servicio",
         "name": "Regalo de grado y ascenso: figura en uniforme pintada a mano",
-        "description": "Regalo de grado y ascenso para policías, militares y sus familias. La hago desde una foto en uniforme, a mano, en Bogotá. Desde $120.000.",
+        "description": "Regalo de grado y ascenso para policías, militares y sus familias. La hago desde una foto en uniforme, a mano, en Bogotá. Desde $120.000 (versión mini).",
         "provider": { "@id": "https://flippart.com.co/#business" },
         "areaServed": { "@type": "Country", "name": "Colombia" },
         "image": "https://flippart.com.co/assets/grado/sc-calderon-hero-1600.jpg",
         "offers": [
-          { "@type": "Offer", "name": "Edición Esencial", "priceCurrency": "COP", "price": "120000", "priceSpecification": { "@type": "PriceSpecification", "priceCurrency": "COP", "minPrice": "120000" } },
-          { "@type": "Offer", "name": "Edición Honor", "priceCurrency": "COP", "price": "300000" }
+          { "@type": "Offer", "@id": "https://flippart.com.co/grado-ascenso#oferta-esencial", "name": "Edición Esencial (versión mini)", "priceCurrency": "COP", "price": "120000", "priceSpecification": { "@type": "PriceSpecification", "priceCurrency": "COP", "minPrice": "120000" } },
+          { "@type": "Offer", "@id": "https://flippart.com.co/grado-ascenso#oferta-honor", "name": "Edición Honor", "priceCurrency": "COP", "price": "300000" }
         ]
       },
       {
@@ -119,7 +119,7 @@
       <div>
         <span class="label">Regalo de grado y ascenso</span>
         <h1>Su uniforme, su grado, su logro: en una figura pintada a mano</h1>
-        <p class="hero__text">Regalo de grado y ascenso para policías, militares y sus familias. La hago desde una foto en uniforme, a mano, en Bogotá. Desde $120.000.</p>
+        <p class="hero__text">Regalo de grado y ascenso para policías, militares y sus familias. La hago desde una foto en uniforme, a mano, en Bogotá. Desde <span data-precio="esencialMini">$120.000</span> (versión mini).</p>
         <div class="acciones">
           <a class="btn btn--wa" href="https://wa.me/573182941864" target="_blank" rel="noopener"
              data-cta-location="hero" data-offer="general" data-wa-msg="grado">
@@ -225,7 +225,7 @@
         <article class="plan plan--premium">
           <span class="insignia">Recomendada</span>
           <h3>Edición Honor</h3>
-          <p class="plan__precio">$300.000</p>
+          <p class="plan__precio"><span data-precio="honor">$300.000</span></p>
           <p class="plan__incluye">Incluye:</p>
           <ul>
             <li>Figura personalizada en uniforme, pintada a mano, con mayor detalle en insignias.</li>
@@ -239,10 +239,10 @@
         </article>
         <article class="plan plan--entrada">
           <h3>Edición Esencial</h3>
-          <p class="plan__precio"><small>Desde</small> $120.000 <small>según tamaño</small></p>
+          <p class="plan__precio"><small>Desde</small> <span data-precio="esencialMini">$120.000</span> <small>versión mini, según tamaño</small></p>
           <p class="plan__incluye">Incluye:</p>
           <ul>
-            <li>Figura personalizada en uniforme, pintada a mano.</li>
+            <li>Figura personalizada en uniforme, versión mini, pintada a mano.</li>
             <li>Base negra con nombre.</li>
             <li>Empaque de protección.</li>
           </ul>
@@ -361,6 +361,6 @@
     <p id="lightboxCaption"></p>
   </div>
 
-  <script src="/js/main.js?v=20"></script>
+  <script src="/js/main.js?v=21"></script>
 </body>
 </html>
