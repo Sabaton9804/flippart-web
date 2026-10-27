@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://flippart.com.co/</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://flippart.com.co/assets/og-image.jpg</image:loc>
+      <image:title>FlippArt: figuras pintadas a mano desde tus fotos</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://flippart.com.co/assets/grado/sc-calderon-hero-1600.jpg</image:loc>
+      <image:title>Figura personalizada en uniforme de SC Calderón, pintada a mano por FlippArt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://flippart.com.co/assets/portafolio/coco-figura-vitrina.jpg</image:loc>
+      <image:title>Figura personalizada de la mascota Coco en vitrina FlippArt</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://flippart.com.co/assets/portafolio/coco-foto-original-960.jpg</image:loc>
+      <image:title>Foto original de Coco usada como referencia para su figura</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://flippart.com.co/assets/pricing/flippart-showcase.jpg</image:loc>
+      <image:title>Colección de figuras personalizadas FlippArt</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://flippart.com.co/grado-ascenso</loc>
+    <lastmod>2026-10-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://flippart.com.co/assets/grado/sc-calderon-hero-1600.jpg</image:loc>
+      <image:title>Regalo de grado y ascenso: figura de SC Calderón en uniforme, pintada a mano</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://flippart.com.co/assets/grado/sc-calderon-frontal-1600.jpg</image:loc>
+      <image:title>Vista frontal de la figura de SC Calderón con uniforme de gala y condecoraciones</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://flippart.com.co/assets/grado/sc-calderon-placa-1600.jpg</image:loc>
+      <image:title>Base negra con placa personalizada de SC Calderón</image:title>
+    </image:image>
+  </url>
+</urlset>

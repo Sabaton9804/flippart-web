@@ -1,0 +1,1 @@
+Vista previa NO productiva del PR #1. No se publica en flippart.com.co. Pixel y Supabase desactivados.
