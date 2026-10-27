@@ -33,13 +33,13 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preload" as="image" type="image/webp"
-        imagesrcset="/assets/grado/sc-calderon-frontal-480.webp 480w, /assets/grado/sc-calderon-frontal-960.webp 960w"
+        imagesrcset="assets/grado/sc-calderon-frontal-480.webp 480w, assets/grado/sc-calderon-frontal-960.webp 960w"
         imagesizes="(min-width: 960px) 40vw, 100vw" fetchpriority="high">
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
   <script>
     (function () {
       var dev = /^(localhost|127\.0\.0\.1)$/i.test(location.hostname);
-      var css = dev ? '/css/style.css?dev=' + Date.now() : '/css/style.css?v=46';
+      var css = dev ? 'css/style.css?dev=' + Date.now() : 'css/style.css?v=46';
       document.write('<link rel="stylesheet" href="' + css + '">');
     })();
   </script>
@@ -94,7 +94,7 @@
     <div class="nav__inner">
       <a href="index.html" class="nav__brand">
         <picture>
-          <source type="image/webp" srcset="/assets/logo/logo-flippart-96.webp 1x, /assets/logo/logo-flippart-192.webp 2x">
+          <source type="image/webp" srcset="assets/logo/logo-flippart-96.webp 1x, assets/logo/logo-flippart-192.webp 2x">
           <img src="assets/logo/logo-flippart-96.png" alt="" class="nav__logo" width="44" height="44">
         </picture>
         <span>Flipp<span>Art</span></span>
@@ -133,9 +133,9 @@
       </div>
       <figure class="foto hero__media hero__media--retrato">
         <picture>
-          <source type="image/webp" srcset="/assets/grado/sc-calderon-frontal-480.webp 480w, /assets/grado/sc-calderon-frontal-960.webp 960w" sizes="(min-width: 960px) 40vw, 100vw">
+          <source type="image/webp" srcset="assets/grado/sc-calderon-frontal-480.webp 480w, assets/grado/sc-calderon-frontal-960.webp 960w" sizes="(min-width: 960px) 40vw, 100vw">
           <img src="assets/grado/sc-calderon-frontal-960.jpg"
-               srcset="/assets/grado/sc-calderon-frontal-480.jpg 480w, /assets/grado/sc-calderon-frontal-960.jpg 960w"
+               srcset="assets/grado/sc-calderon-frontal-480.jpg 480w, assets/grado/sc-calderon-frontal-960.jpg 960w"
                sizes="(min-width: 960px) 40vw, 100vw" width="960" height="1280"
                alt="Vista frontal de la figura pintada a mano de SC Calderón: uniforme azul oscuro de botones dorados, condecoraciones, guantes blancos y quepis en la mano, junto a un helicóptero en miniatura."
                fetchpriority="high" loading="eager" decoding="async">
@@ -172,29 +172,29 @@
       <h2 id="t-figuras">Figuras reales</h2>
       <article class="caso" style="margin-top: var(--s3)" aria-label="SC Calderón">
         <div class="caso__fotos">
-          <button class="abrir ancha" type="button" data-item="sc_calderon_pista" data-lightbox="/assets/grado/sc-calderon-hero-1600.webp" data-caption="SC Calderón con su helicóptero." aria-label="Ver en grande: SC Calderón con su helicóptero">
+          <button class="abrir ancha" type="button" data-item="sc_calderon_pista" data-lightbox="assets/grado/sc-calderon-hero-1600.webp" data-caption="SC Calderón con su helicóptero." aria-label="Ver en grande: SC Calderón con su helicóptero">
             <figure class="foto">
               <picture>
-                <source type="image/webp" srcset="/assets/grado/sc-calderon-hero-480.webp 480w, /assets/grado/sc-calderon-hero-960.webp 960w" sizes="(min-width: 960px) 36vw, 92vw">
-                <img src="assets/grado/sc-calderon-hero-960.jpg" srcset="/assets/grado/sc-calderon-hero-480.jpg 480w, /assets/grado/sc-calderon-hero-960.jpg 960w" sizes="(min-width: 960px) 36vw, 92vw" width="960" height="640" loading="lazy" decoding="async"
+                <source type="image/webp" srcset="assets/grado/sc-calderon-hero-480.webp 480w, assets/grado/sc-calderon-hero-960.webp 960w" sizes="(min-width: 960px) 36vw, 92vw">
+                <img src="assets/grado/sc-calderon-hero-960.jpg" srcset="assets/grado/sc-calderon-hero-480.jpg 480w, assets/grado/sc-calderon-hero-960.jpg 960w" sizes="(min-width: 960px) 36vw, 92vw" width="960" height="640" loading="lazy" decoding="async"
                      alt="Figura de SC Calderón en uniforme de gala con quepis y bastón, junto a un helicóptero en miniatura, sobre base negra con placa amarilla con su nombre.">
               </picture>
               <figcaption>SC Calderón, figura en uniforme con su helicóptero.</figcaption>
             </figure>
           </button>
-          <button class="abrir" type="button" data-item="sc_calderon_tres_cuartos" data-lightbox="/assets/grado/sc-calderon-tres-cuartos-1600.webp" data-caption="Vista de tres cuartos: quepis, guantes y bastón." aria-label="Ver en grande: vista de tres cuartos de SC Calderón">
+          <button class="abrir" type="button" data-item="sc_calderon_tres_cuartos" data-lightbox="assets/grado/sc-calderon-tres-cuartos-1600.webp" data-caption="Vista de tres cuartos: quepis, guantes y bastón." aria-label="Ver en grande: vista de tres cuartos de SC Calderón">
             <figure class="foto foto--g2">
               <picture>
-                <source type="image/webp" srcset="/assets/grado/sc-calderon-tres-cuartos-480.webp">
+                <source type="image/webp" srcset="assets/grado/sc-calderon-tres-cuartos-480.webp">
                 <img src="assets/grado/sc-calderon-tres-cuartos-480.jpg" width="480" height="640" loading="lazy" decoding="async"
                      alt="Figura de SC Calderón en vista de tres cuartos: sostiene el quepis con guante blanco y un bastón; a su lado, un helicóptero pintado en verde oliva.">
               </picture>
             </figure>
           </button>
-          <button class="abrir" type="button" data-item="sc_calderon_placa" data-lightbox="/assets/grado/sc-calderon-placa-1600.webp" data-caption="Base con placa personalizada “SC Calderón”." aria-label="Ver en grande: base con placa de SC Calderón">
+          <button class="abrir" type="button" data-item="sc_calderon_placa" data-lightbox="assets/grado/sc-calderon-placa-1600.webp" data-caption="Base con placa personalizada “SC Calderón”." aria-label="Ver en grande: base con placa de SC Calderón">
             <figure class="foto foto--g1">
               <picture>
-                <source type="image/webp" srcset="/assets/grado/sc-calderon-placa-480.webp">
+                <source type="image/webp" srcset="assets/grado/sc-calderon-placa-480.webp">
                 <img src="assets/grado/sc-calderon-placa-480.jpg" width="480" height="640" loading="lazy" decoding="async"
                      alt="Figura de SC Calderón y helicóptero sobre base negra con placa amarilla que dice “SC Calderón”.">
               </picture>
@@ -308,7 +308,7 @@
       <div>
         <a href="index.html" class="footer__brand">
           <picture>
-            <source type="image/webp" srcset="/assets/logo/logo-flippart-96.webp 1x, /assets/logo/logo-flippart-192.webp 2x">
+            <source type="image/webp" srcset="assets/logo/logo-flippart-96.webp 1x, assets/logo/logo-flippart-192.webp 2x">
             <img src="assets/logo/logo-flippart-96.png" alt="" class="footer__logo" width="48" height="48">
           </picture>
           <span>Flipp<span>Art</span></span>
