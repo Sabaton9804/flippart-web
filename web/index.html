@@ -49,11 +49,11 @@
   <script>
     (function () {
       var dev = /^(localhost|127\.0\.0\.1)$/i.test(location.hostname);
-      var css = dev ? 'css/style.css?dev=' + Date.now() : 'css/style.css?v=45';
+      var css = dev ? 'css/style.css?dev=' + Date.now() : 'css/style.css?v=46';
       document.write('<link rel="stylesheet" href="' + css + '">');
     })();
   </script>
-  <noscript><link rel="stylesheet" href="css/style.css?v=45"></noscript>
+  <noscript><link rel="stylesheet" href="css/style.css?v=46"></noscript>
   <script src="js/config.js?v=3"></script>
   <!-- Meta Pixel / GA4 / Clarity: tracking.js los carga solo si su ID existe en config.js y la persona acepta el aviso de datos -->
   <script src="js/tracking.js?v=2"></script>
@@ -80,6 +80,7 @@
         <li><a href="#galeria">Trabajos</a></li>
         <li><a href="#como-funciona">Proceso</a></li>
         <li><a href="#vitrina">Vitrina</a></li>
+        <li><a href="#testimonios">Testimonios</a></li>
         <li><a href="#faq">Preguntas</a></li>
         <li><a href="#contacto" class="nav__cta">Contacto</a></li>
       </ul>
@@ -362,6 +363,63 @@
     </div>
   </section>
 
+  <!-- ============ TESTIMONIOS ============
+       Clientes reales confirmados por Camilo. Solo nombre e inicial del apellido; sin estrellas ni calificaciones.
+       seo.js no publica Review/AggregateRating. -->
+  <section class="section section--lino" id="testimonios" aria-labelledby="t-testimonios">
+    <div class="container">
+      <span class="label">Clientes</span>
+      <h2 id="t-testimonios">Lo que nos han dicho</h2>
+      <ul class="testimonios">
+        <li>
+          <figure class="testimonio">
+            <div class="foto testimonio__foto">
+              <img src="media/Mascotas/Bengi/listo.jpeg" width="1200" height="1600" loading="lazy" decoding="async" alt="Figura memorial de Benji hecha por FlippArt">
+            </div>
+            <blockquote class="testimonio__cita">
+              <p>“Abrimos la vitrina y nos emocionamos. Ahí estaba Benji: su mirada, su expresión, esos detallitos que eran solo de él. Gracias por ayudarnos a guardar su recuerdo así.”</p>
+            </blockquote>
+            <figcaption class="testimonio__firma">
+              <strong>María Fernanda R.</strong>
+              <span>Villavicencio, Meta · Homenaje a Benji</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure class="testimonio">
+            <div class="foto testimonio__foto">
+              <picture>
+                <source type="image/webp" srcset="assets/portafolio/coco-figura-vitrina.webp">
+                <img src="assets/portafolio/coco-figura-vitrina.jpg" class="testimonio__img--coco" width="1200" height="952" loading="lazy" decoding="async" alt="Figura personalizada de Coco el bulldog con cadena dorada">
+              </picture>
+            </div>
+            <blockquote class="testimonio__cita">
+              <p>“Coco quedó idéntico. Se le nota la personalidad en cada detalle, y verlo iluminado fue un momento muy especial. Fue mucho más de lo que esperábamos.”</p>
+            </blockquote>
+            <figcaption class="testimonio__firma">
+              <strong>Paola M.</strong>
+              <span>Bogotá · Homenaje a Coco</span>
+            </figcaption>
+          </figure>
+        </li>
+        <li>
+          <figure class="testimonio">
+            <div class="foto testimonio__foto">
+              <img src="media/Personas/Reconocimientos Juez/Juez Sandra/Juez figura Sandra.jpeg" width="1200" height="1600" loading="lazy" decoding="async" alt="Figura de reconocimiento para Juez Sandra con uniforme detallado">
+            </div>
+            <blockquote class="testimonio__cita">
+              <p>“Queríamos reconocer una trayectoria de mucho esfuerzo, y fue el regalo perfecto. Los detalles nos sorprendieron y la figura transmitió justo lo que queríamos expresar.”</p>
+            </blockquote>
+            <figcaption class="testimonio__firma">
+              <strong>Sandra L.</strong>
+              <span>Bogotá · Reconocimiento profesional</span>
+            </figcaption>
+          </figure>
+        </li>
+      </ul>
+    </div>
+  </section>
+
   <!-- ============ PRECIOS ============ -->
   <section class="section" id="precios" aria-labelledby="t-precios">
     <div class="container">
@@ -603,6 +661,7 @@
           <li><a href="#nosotros">Nosotros</a></li>
           <li><a href="#servicios">Qué hacemos</a></li>
           <li><a href="#galeria">Trabajos</a></li>
+          <li><a href="#testimonios">Testimonios</a></li>
           <li><a href="#faq">Preguntas frecuentes</a></li>
           <li><a href="#contacto">Contacto</a></li>
         </ul>

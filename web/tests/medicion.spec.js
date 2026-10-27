@@ -279,12 +279,24 @@ test.describe('Medición FlippArt (con consentimiento)', () => {
 });
 
 test.describe('Contenido', () => {
-  test('home: sin testimonios ni Review/AggregateRating, sin $250.000 y tamaño de personas desde config.js', async ({ page }) => {
+  test('home: 3 testimonios con inicial, sin Review/AggregateRating, sin $250.000 y tamaño de personas desde config.js', async ({ page }) => {
     await preparar(page, { consentimiento: 'rechazado' });
     await page.goto('/index.html', { waitUntil: 'networkidle' });
     const html = await page.content();
-    for (const nombre of ['María Fernanda R.', 'Paola Martinez O.', 'Sandra L.']) expect(html).not.toContain(nombre);
-    expect(await page.locator('#testimonios, .testimonial').count()).toBe(0);
+
+    const testimonios = page.locator('#testimonios .testimonio');
+    await expect(testimonios).toHaveCount(3);
+    await expect(page.locator('#testimonios .testimonio__firma strong')).toHaveText(['María Fernanda R.', 'Paola M.', 'Sandra L.']);
+    for (const img of await page.locator('#testimonios img').all()) {
+      await expect(img).toHaveAttribute('loading', 'lazy');
+      await expect(img).toHaveAttribute('width', /^\d+$/);
+      await expect(img).toHaveAttribute('height', /^\d+$/);
+    }
+    await expect(page.locator('#testimonios')).not.toContainText(/★|⭐|estrellas/);
+    await expect(page.locator('.nav__links a[href="#testimonios"]')).toHaveCount(1);
+    await expect(page.locator('.footer a[href="#testimonios"]')).toHaveCount(1);
+    expect(html).not.toContain('Martinez');
+    expect(html).not.toContain('Familias en todo Colombia');
     expect(html).not.toContain('250.000');
     await expect(page.locator('.hero__text')).toContainText('Desde $120.000');
 

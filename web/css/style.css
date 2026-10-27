@@ -215,13 +215,14 @@ strong, b { font-weight: 600; }
     display: flex;
     position: static;
     padding: 0;
-    gap: 1.6rem;
+    gap: 1.1rem;
     background: none;
     border: 0;
     font-size: .875rem;
   }
-  .nav__links a { padding: .25rem 0; }
+  .nav__links a { padding: .25rem 0; white-space: nowrap; }
 }
+@media (min-width: 1200px) { .nav__links { gap: 1.6rem; } }
 
 /* ---------- Foto con paspartú ---------- */
 .foto {
@@ -451,6 +452,20 @@ strong, b { font-weight: 600; }
 .vitrina__card { margin: 0; }
 .vitrina__card img { width: 100%; aspect-ratio: 3 / 4; object-fit: cover; }
 .vitrina__card figcaption { font: italic 500 1.0625rem/1.35 var(--serif); color: var(--claro-2); padding-top: .6rem; }
+
+/* ---------- Testimonios ---------- */
+.testimonios { list-style: none; margin: var(--s4) 0 0; padding: 0; display: grid; gap: var(--s5); max-width: 34rem; }
+.testimonio { margin: 0; display: grid; gap: var(--s3); align-content: start; }
+.testimonio__foto img { aspect-ratio: 1 / 1; object-fit: cover; object-position: 50% 75%; }
+.testimonio__foto .testimonio__img--coco { object-position: 20% 50%; }
+.testimonio__cita { margin: 0; padding-left: var(--s3); border-left: 2px solid var(--oro); }
+.testimonio__cita p { margin: 0; font: italic 500 clamp(1.25rem, 1.15rem + .4vw, 1.4375rem)/1.4 var(--serif); color: var(--tinta); }
+.testimonio__firma { display: grid; gap: .15rem; padding-left: calc(var(--s3) + 2px); font-size: var(--fs-small); color: var(--tinta-2); }
+.testimonio__firma strong { font-size: .9375rem; color: var(--tinta); }
+@media (min-width: 960px) {
+  .testimonios { grid-template-columns: repeat(3, 1fr); gap: var(--s4); max-width: none; }
+  .testimonio__foto img { aspect-ratio: 4 / 5; }
+}
 
 /* ---------- Precios ---------- */
 .pricing-compare { display: grid; gap: var(--s3); margin-top: var(--s4); }
