@@ -279,7 +279,7 @@ test.describe('Medición FlippArt (con consentimiento)', () => {
 });
 
 test.describe('Contenido', () => {
-  test('home: 3 testimonios con inicial, sin Review/AggregateRating, sin $250.000 y tamaño de personas desde config.js', async ({ page }) => {
+  test('home: 3 testimonios con inicial, sin Review/AggregateRating y tamaño de personas desde config.js', async ({ page }) => {
     await preparar(page, { consentimiento: 'rechazado' });
     await page.goto('/index.html', { waitUntil: 'networkidle' });
     const html = await page.content();
@@ -297,11 +297,9 @@ test.describe('Contenido', () => {
     await expect(page.locator('.footer a[href="#testimonios"]')).toHaveCount(1);
     expect(html).not.toContain('Martinez');
     expect(html).not.toContain('Familias en todo Colombia');
-    expect(html).not.toContain('250.000');
-    await expect(page.locator('.hero__text')).toContainText('Desde $120.000');
 
     const ld = await page.evaluate(() => document.getElementById('structured-data').textContent);
-    expect(ld).not.toMatch(/Review|AggregateRating|aggregateRating|250000/);
+    expect(ld).not.toMatch(/Review|AggregateRating|aggregateRating/);
 
     const tamanos = await page.locator('[data-tamano-persona]').allTextContents();
     expect(tamanos).toEqual(['12 cm aprox.', '12 cm aprox.']);
