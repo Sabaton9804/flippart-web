@@ -1,7 +1,8 @@
 /*!
  * tracking.js — Medición FlippArt.
  * Se incluye en el <head> después de config.js. Responsabilidades:
- *  1. Cargar Meta Pixel, GA4 y Clarity SOLO si su ID existe en FLIPPART_CONFIG.
+ *  1. Aviso de datos/cookies (Ley 1581). Meta Pixel, GA4 y Clarity cargan SOLO si su ID existe
+ *     en FLIPPART_CONFIG y la persona aceptó; la decisión queda en localStorage.
  *  2. Persistir utm_source / utm_campaign en sessionStorage.
  *  3. Una sola función (buildWhatsAppUrl) arma todas las URL wa.me; whatsapp() dispara whatsapp_click.
  *  4. offer_view (IntersectionObserver 50 %, una vez), portfolio_open y form_submit.
@@ -14,38 +15,113 @@
   var WA_NUMBER = String(CFG.whatsapp || '573182941864').replace(/\D/g, '');
   var log = (w.__flippartEvents = w.__flippartEvents || []); // registro local para QA
 
-  /* ---------- 1. Carga condicional de scripts ---------- */
+  /* ---------- 1. Consentimiento y carga condicional de scripts ---------- */
+  var CONSENT_KEY = 'flippart_consentimiento';
+  var ACEPTADO = 'aceptado';
+  var RECHAZADO = 'rechazado';
 
-  if (CFG.metaPixelId) {
-    !function (f, b, e, v, n, t, s) {
-      if (f.fbq) return; n = f.fbq = function () {
-        n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
-      };
-      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
-      n.queue = []; t = b.createElement(e); t.async = !0;
-      t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s);
-    }(w, d, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
-    w.fbq('init', CFG.metaPixelId);
-    w.fbq('track', 'PageView');
+  function leerConsentimiento() {
+    try { return w.localStorage.getItem(CONSENT_KEY); } catch (e) { return null; }
+  }
+  function guardarConsentimiento(valor) {
+    try { w.localStorage.setItem(CONSENT_KEY, valor); } catch (e) {}
+  }
+  function hayConsentimiento() { return leerConsentimiento() === ACEPTADO; }
+
+  var cargados = false;
+  function cargarMedicion() {
+    if (cargados) return;
+    cargados = true;
+
+    if (CFG.metaPixelId) {
+      !function (f, b, e, v, n, t, s) {
+        if (f.fbq) return; n = f.fbq = function () {
+          n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+        };
+        if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+        n.queue = []; t = b.createElement(e); t.async = !0;
+        t.src = v; s = b.getElementsByTagName(e)[0]; s.parentNode.insertBefore(t, s);
+      }(w, d, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+      w.fbq('init', CFG.metaPixelId);
+      w.fbq('track', 'PageView');
+    }
+
+    if (CFG.gaId) {
+      var g = d.createElement('script');
+      g.async = true;
+      g.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(CFG.gaId);
+      d.head.appendChild(g);
+      w.dataLayer = w.dataLayer || [];
+      w.gtag = function () { w.dataLayer.push(arguments); };
+      w.gtag('js', new Date());
+      w.gtag('config', CFG.gaId);
+    }
+
+    if (CFG.clarityId) {
+      (function (c, l, a, r, i, t, y) {
+        c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
+        t = l.createElement(r); t.async = 1; t.src = 'https://www.clarity.ms/tag/' + i;
+        y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
+      })(w, d, 'clarity', 'script', CFG.clarityId);
+    }
   }
 
-  if (CFG.gaId) {
-    var g = d.createElement('script');
-    g.async = true;
-    g.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(CFG.gaId);
-    d.head.appendChild(g);
-    w.dataLayer = w.dataLayer || [];
-    w.gtag = function () { w.dataLayer.push(arguments); };
-    w.gtag('js', new Date());
-    w.gtag('config', CFG.gaId);
+  if (hayConsentimiento()) cargarMedicion();
+
+  /* ---------- Aviso de datos y cookies ---------- */
+  function herramientas() {
+    var lista = [CFG.metaPixelId && 'Meta', CFG.gaId && 'Google Analytics', CFG.clarityId && 'Microsoft Clarity'].filter(Boolean);
+    if (lista.length < 2) return lista.join('');
+    return lista.slice(0, -1).join(', ') + ' y ' + lista[lista.length - 1];
   }
 
-  if (CFG.clarityId) {
-    (function (c, l, a, r, i, t, y) {
-      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
-      t = l.createElement(r); t.async = 1; t.src = 'https://www.clarity.ms/tag/' + i;
-      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
-    })(w, d, 'clarity', 'script', CFG.clarityId);
+  var aviso = null;
+  function crearAviso() {
+    var nombres = herramientas();
+    var texto = 'Con tu permiso usamos cookies y herramientas de medición' + (nombres ? ' (' + nombres + ')' : '') +
+      ' para saber cómo se usa el sitio y mejorar nuestros anuncios. Si las rechazas, el sitio funciona igual.';
+    var el = d.createElement('section');
+    el.className = 'aviso-datos';
+    el.setAttribute('aria-labelledby', 'aviso-datos-titulo');
+    el.hidden = true;
+    el.innerHTML =
+      '<h2 class="sr-only" id="aviso-datos-titulo">Aviso de datos y cookies</h2>' +
+      '<p class="aviso-datos__texto"></p>' +
+      '<div class="aviso-datos__acciones">' +
+        '<button type="button" class="btn btn--tinta" data-consentimiento="' + ACEPTADO + '">Aceptar</button>' +
+        '<button type="button" class="btn btn--linea" data-consentimiento="' + RECHAZADO + '">Rechazar</button>' +
+      '</div>';
+    var p = el.querySelector('.aviso-datos__texto');
+    p.textContent = texto;
+    if (CFG.politicaDatosUrl) {
+      var a = d.createElement('a');
+      a.href = CFG.politicaDatosUrl;
+      a.textContent = 'Política de datos';
+      p.appendChild(d.createTextNode(' '));
+      p.appendChild(a);
+    }
+    el.addEventListener('click', function (e) {
+      var btn = e.target.closest && e.target.closest('[data-consentimiento]');
+      if (btn) decidir(btn.getAttribute('data-consentimiento'));
+    });
+    var skip = d.querySelector('.skip-link');
+    d.body.insertBefore(el, skip ? skip.nextSibling : d.body.firstChild);
+    return el;
+  }
+
+  function mostrarAviso(enfocar) {
+    if (!aviso) aviso = crearAviso();
+    aviso.hidden = false;
+    if (enfocar) aviso.querySelector('[data-consentimiento]').focus();
+  }
+
+  function decidir(valor) {
+    var antes = leerConsentimiento();
+    guardarConsentimiento(valor);
+    if (aviso) aviso.hidden = true;
+    if (valor === ACEPTADO) cargarMedicion();
+    // Si retira un permiso ya dado, recargar es la única forma de descargar los scripts.
+    else if (antes === ACEPTADO && cargados) w.location.reload();
   }
 
   /* ---------- helpers con guardas ---------- */
@@ -134,6 +210,11 @@
   }
 
   function init() {
+    if (!leerConsentimiento()) mostrarAviso(false);
+    Array.prototype.forEach.call(d.querySelectorAll('[data-aviso-datos]'), function (btn) {
+      btn.addEventListener('click', function () { mostrarAviso(true); });
+    });
+
     var ctas = d.querySelectorAll('a[data-cta-location]');
     Array.prototype.forEach.call(ctas, function (el) { whatsapp(el, false); });
 
@@ -168,6 +249,7 @@
     buildWhatsAppUrl: buildWhatsAppUrl,
     formSubmitted: formSubmitted,
     portfolioOpen: portfolioOpen,
+    hayConsentimiento: hayConsentimiento,
     LOCATIONS: LOCATIONS,
     WA_TEXT: WA_TEXT
   };

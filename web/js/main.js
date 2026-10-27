@@ -307,6 +307,7 @@ function initTamanos() {
 
 async function trackEvent(eventName, metadata = {}) {
   if (typeof FLIPPART_CONFIG === 'undefined') return;
+  if (!window.FlippartTracking?.hayConsentimiento()) return;
   const { supabaseUrl, supabaseAnonKey } = FLIPPART_CONFIG;
   if (!supabaseUrl || !supabaseAnonKey) return;
 

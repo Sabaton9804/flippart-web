@@ -606,6 +606,34 @@ strong, b { font-weight: 600; }
   .barra-wa .btn { box-shadow: 0 10px 24px -12px rgba(43, 37, 33, .55); }
 }
 
+/* ---------- Aviso de datos y cookies (sobre la barra de WhatsApp en móvil) ---------- */
+.aviso-datos {
+  position: fixed;
+  left: .75rem; right: .75rem;
+  bottom: calc(4.5rem + env(safe-area-inset-bottom));
+  z-index: 50;
+  background: var(--crema);
+  color: var(--tinta);
+  border: 1px solid var(--linea);
+  border-radius: var(--radio);
+  box-shadow: 0 10px 24px -12px rgba(43, 37, 33, .55);
+  padding: 1rem;
+}
+.aviso-datos__texto { font-size: var(--fs-small); line-height: 1.5; margin: 0 0 .75rem; }
+.aviso-datos__texto a { color: var(--oro-hondo); text-underline-offset: 3px; }
+.aviso-datos__acciones { display: flex; gap: .5rem; }
+.aviso-datos__acciones .btn { flex: 1; min-height: 44px; padding: .6rem 1rem; }
+@media (min-width: 768px) {
+  .aviso-datos { left: 1.25rem; right: auto; bottom: 1.25rem; max-width: 26rem; }
+}
+.footer__boton {
+  background: none; border: 0; padding: 0;
+  font: inherit; color: var(--claro);
+  text-decoration: underline; text-underline-offset: 3px;
+  cursor: pointer;
+}
+.footer__boton:hover { color: var(--oro); }
+
 /* ---------- Lightbox ---------- */
 .lightbox {
   position: fixed;

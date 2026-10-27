@@ -20,6 +20,12 @@ const FLIPPART_CONFIG = {
   /** Microsoft Clarity — ejemplo: abcdefghij */
   clarityId: '',
 
+  /**
+   * Política de tratamiento de datos (Ley 1581). El aviso de cookies la enlaza solo si hay URL.
+   * TODO(Camilo): el sitio aún no tiene política de datos publicada; poner aquí su URL cuando exista.
+   */
+  politicaDatosUrl: '',
+
   /** Tamaño de las figuras de personas. main.js lo escribe en cada elemento con data-tamano-persona. */
   tamanoFiguraPersona: '12 cm aprox.',
 

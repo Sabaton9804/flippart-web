@@ -49,14 +49,14 @@
   <script>
     (function () {
       var dev = /^(localhost|127\.0\.0\.1)$/i.test(location.hostname);
-      var css = dev ? 'css/style.css?dev=' + Date.now() : 'css/style.css?v=44';
+      var css = dev ? 'css/style.css?dev=' + Date.now() : 'css/style.css?v=45';
       document.write('<link rel="stylesheet" href="' + css + '">');
     })();
   </script>
-  <noscript><link rel="stylesheet" href="css/style.css?v=44"></noscript>
-  <script src="js/config.js?v=2"></script>
-  <!-- Meta Pixel / GA4 / Clarity: tracking.js los carga solo si su ID existe en config.js -->
-  <script src="js/tracking.js?v=1"></script>
+  <noscript><link rel="stylesheet" href="css/style.css?v=45"></noscript>
+  <script src="js/config.js?v=3"></script>
+  <!-- Meta Pixel / GA4 / Clarity: tracking.js los carga solo si su ID existe en config.js y la persona acepta el aviso de datos -->
+  <script src="js/tracking.js?v=2"></script>
 </head>
 <body>
   <a class="skip-link" href="#contenido-principal">Saltar al contenido</a>
@@ -623,6 +623,7 @@
           <li>50% de anticipo para iniciar</li>
           <li>Envíos a toda Colombia</li>
           <li>Cada pieza se fabrica bajo pedido</li>
+          <li><button type="button" class="footer__boton" data-aviso-datos>Preferencias de datos y cookies</button></li>
         </ul>
       </div>
     </div>
@@ -655,7 +656,7 @@
     <p id="lightboxCaption"></p>
   </div>
 
-  <script src="js/seo.js?v=3"></script>
-  <script src="js/main.js?v=19"></script>
+  <script src="js/seo.js?v=4"></script>
+  <script src="js/main.js?v=20"></script>
 </body>
 </html>
