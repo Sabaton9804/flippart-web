@@ -362,11 +362,52 @@ async function trackEvent(eventName, metadata = {}) {
   } catch (_) { /* silencioso */ }
 }
 
-async function saveLead({ nombre, telefono, tipo, mensaje }) {
-  const { supabaseUrl, supabaseAnonKey } = FLIPPART_CONFIG || {};
-  if (!supabaseUrl || !supabaseAnonKey) return false;
+/** Deben coincidir con allowed_mime_types y file_size_limit del bucket (supabase/migrations/20260630_lead_photos.sql). */
+const FOTO_TIPOS = { 'image/jpeg': 'jpg', 'image/png': 'png', 'image/webp': 'webp' };
+const FOTO_MAX_BYTES = 8 * 1024 * 1024;
+const FOTO_TIMEOUT_MS = 30000;
+const FOTO_FALLIDA = 'No pudimos subir tu foto; puedes enviarla por WhatsApp.';
 
-  const res = await fetch(`${supabaseUrl}/rest/v1/flippart_leads`, {
+/** Mensaje para la persona si la foto no sirve; '' si es válida. */
+function validarFoto(file) {
+  if (!FOTO_TIPOS[file.type]) return 'Esa foto no es JPG, PNG ni WebP. Elige otra o envíala por WhatsApp.';
+  if (file.size > FOTO_MAX_BYTES) return 'La foto pesa más de 8 MB. Elige una más liviana o envíala por WhatsApp.';
+  if (!file.size) return 'No pudimos leer esa foto. Elige otra o envíala por WhatsApp.';
+  return '';
+}
+
+/** Sube la foto al bucket privado y devuelve su ruta, o null si falla. */
+async function uploadLeadPhoto(file) {
+  const { supabaseUrl, supabaseAnonKey, storageBucket = 'lead-photos' } = FLIPPART_CONFIG || {};
+  if (!supabaseUrl || !supabaseAnonKey) return null;
+
+  const dia = new Date().toISOString().slice(0, 10);
+  const id = crypto.randomUUID ? crypto.randomUUID() : `${Date.now()}-${Math.random().toString(36).slice(2)}`;
+  const path = `cotizaciones/${dia}/${id}.${FOTO_TIPOS[file.type]}`;
+
+  try {
+    const res = await fetch(`${supabaseUrl}/storage/v1/object/${storageBucket}/${path}`, {
+      method: 'POST',
+      headers: {
+        apikey: supabaseAnonKey,
+        Authorization: `Bearer ${supabaseAnonKey}`,
+        'Content-Type': file.type,
+        'x-upsert': 'false',
+      },
+      body: file,
+      signal: AbortSignal.timeout ? AbortSignal.timeout(FOTO_TIMEOUT_MS) : undefined,
+    });
+    return res.ok ? path : null;
+  } catch (_) {
+    return null;
+  }
+}
+
+async function saveLead({ nombre, telefono, tipo, mensaje, fotoPath }) {
+  const { supabaseUrl, supabaseAnonKey } = FLIPPART_CONFIG || {};
+  if (!supabaseUrl || !supabaseAnonKey) return { ok: false, foto: false };
+
+  const insertar = (payload) => fetch(`${supabaseUrl}/rest/v1/flippart_leads`, {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json',
@@ -374,9 +415,18 @@ async function saveLead({ nombre, telefono, tipo, mensaje }) {
       Authorization: `Bearer ${supabaseAnonKey}`,
       Prefer: 'return=minimal',
     },
-    body: JSON.stringify({ nombre, telefono, tipo, mensaje: mensaje || null }),
+    body: JSON.stringify(payload),
   });
-  return res.ok;
+
+  const lead = { nombre, telefono, tipo, mensaje: mensaje || null };
+  if (fotoPath) {
+    const res = await insertar({ ...lead, foto_url: fotoPath });
+    if (res.ok) return { ok: true, foto: true };
+    // Mientras la columna foto_url no exista, PostgREST responde 400: la cotización se guarda sin la foto.
+    if (res.status !== 400) return { ok: false, foto: false };
+  }
+  const res = await insertar(lead);
+  return { ok: res.ok, foto: false };
 }
 
 function buildLeadWhatsAppText({ nombre, telefono, tipo, mensaje }) {
@@ -428,7 +478,13 @@ async function notifyLeadWhatsApp(payload) {
   }
 }
 
-async function submitLeadViaBackend({ nombre, telefono, tipo, mensaje }) {
+/** Estado de la foto para la interfaz: 'sin_foto', 'subida' o 'fallida'. */
+function estadoFoto(photoFile, subida) {
+  if (!photoFile) return 'sin_foto';
+  return subida ? 'subida' : 'fallida';
+}
+
+async function submitLeadViaBackend({ nombre, telefono, tipo, mensaje }, photoFile) {
   const submitUrl = FLIPPART_CONFIG?.leadSubmitUrl;
   if (!submitUrl) return null;
 
@@ -437,27 +493,31 @@ async function submitLeadViaBackend({ nombre, telefono, tipo, mensaje }) {
   fd.append('telefono', telefono);
   fd.append('tipo', tipo);
   fd.append('mensaje', mensaje || '');
+  if (photoFile) fd.append('foto', photoFile, photoFile.name);
 
   try {
     const res = await fetch(submitUrl, { method: 'POST', body: fd });
     if (!res.ok) return null;
     const data = await res.json();
-    return data.ok ? data : null;
+    return data.ok ? { ...data, foto: estadoFoto(photoFile, Boolean(data.foto_url)) } : null;
   } catch (_) {
     return null;
   }
 }
 
-async function submitLeadFallback(lead) {
-  const [leadOk, callMeBotOk, edgeOk] = await Promise.all([
-    saveLead(lead).catch(() => false),
+async function submitLeadFallback(lead, photoFile) {
+  const fotoPath = photoFile ? await uploadLeadPhoto(photoFile) : null;
+
+  const [saved, callMeBotOk, edgeOk] = await Promise.all([
+    saveLead({ ...lead, fotoPath }).catch(() => ({ ok: false, foto: false })),
     notifyFlippArtCallMeBot(buildLeadWhatsAppText(lead)),
-    notifyLeadWhatsApp(lead),
+    notifyLeadWhatsApp(fotoPath ? { ...lead, foto_path: fotoPath } : lead),
   ]);
 
   return {
-    ok: leadOk || callMeBotOk || edgeOk,
-    lead: leadOk,
+    ok: saved.ok || callMeBotOk || edgeOk,
+    lead: saved.ok,
+    foto: estadoFoto(photoFile, Boolean(fotoPath) && (saved.foto || edgeOk)),
     whatsapp: callMeBotOk || edgeOk,
     whatsappMode: callMeBotOk || edgeOk ? 'auto' : '',
   };
@@ -470,6 +530,43 @@ function initLeadForm() {
   const success = document.getElementById('formSuccess');
   const errorEl = document.getElementById('formError');
   const submitBtn = form.querySelector('[type="submit"]');
+  const photoInput = document.getElementById('leadPhoto');
+  const photoError = document.getElementById('leadPhotoError');
+  const photoWarning = document.getElementById('formPhotoWarning');
+  const preview = document.getElementById('photoPreview');
+  const previewImg = document.getElementById('photoPreviewImg');
+
+  function limpiarVistaPrevia() {
+    if (!preview || !previewImg) return;
+    if (previewImg.src.startsWith('blob:')) URL.revokeObjectURL(previewImg.src);
+    previewImg.removeAttribute('src');
+    preview.hidden = true;
+  }
+
+  /** La foto elegida si es válida; si no, la descarta y explica por qué. Nunca bloquea el envío. */
+  function fotoValida() {
+    const file = photoInput?.files?.[0];
+    if (!file) return null;
+    const error = validarFoto(file);
+    if (!error) return file;
+    photoInput.value = '';
+    limpiarVistaPrevia();
+    if (photoError) {
+      photoError.textContent = error;
+      photoError.hidden = false;
+    }
+    return null;
+  }
+
+  photoInput?.addEventListener('change', () => {
+    if (photoError) photoError.hidden = true;
+    limpiarVistaPrevia();
+    const file = fotoValida();
+    if (file && preview && previewImg) {
+      previewImg.src = URL.createObjectURL(file);
+      preview.hidden = false;
+    }
+  });
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
@@ -484,6 +581,7 @@ function initLeadForm() {
       tipo: document.getElementById('leadType').value,
       mensaje: document.getElementById('leadMessage').value.trim(),
     };
+    const photoFile = fotoValida();
 
     // Safari en iPhone bloquea window.open si llega después de un await: WhatsApp se abre aquí, en el mismo clic.
     let openedWhatsApp = false;
@@ -497,11 +595,12 @@ function initLeadForm() {
 
     success.hidden = true;
     errorEl.hidden = true;
+    if (photoWarning) photoWarning.hidden = true;
     const defaultLabel = submitBtn.textContent;
     submitBtn.disabled = true;
     submitBtn.textContent = 'Enviando…';
 
-    const result = (await submitLeadViaBackend(lead)) || (await submitLeadFallback(lead));
+    const result = (await submitLeadViaBackend(lead, photoFile)) || (await submitLeadFallback(lead, photoFile));
 
     submitBtn.disabled = false;
     submitBtn.textContent = defaultLabel;
@@ -512,18 +611,27 @@ function initLeadForm() {
       return;
     }
 
-    trackEvent('generate_lead', { tipo: lead.tipo });
+    trackEvent('generate_lead', { tipo: lead.tipo, foto: result.foto });
     if (window.FlippartTracking) window.FlippartTracking.formSubmitted(form.dataset.formName || 'cotizacion');
 
+    const fotoSubida = result.foto === 'subida';
     if (result.whatsappMode === 'auto') {
       success.textContent = '¡Recibimos tu cotización en nuestro WhatsApp! Te contactaremos pronto al número que indicaste.';
     } else if (openedWhatsApp) {
-      success.textContent = '¡Recibimos tu cotización! Confirma el envío en el chat de WhatsApp y adjunta ahí tus fotos de referencia.';
+      success.textContent = fotoSubida
+        ? '¡Recibimos tu cotización y tu foto! Confirma el envío en el chat de WhatsApp.'
+        : '¡Recibimos tu cotización! Confirma el envío en el chat de WhatsApp y adjunta ahí tus fotos de referencia.';
     } else {
       success.textContent = '¡Recibimos tu cotización! Te contactaremos pronto al número que indicaste.';
     }
     success.hidden = false;
+    if (photoError) photoError.hidden = true;
+    if (result.foto === 'fallida' && photoWarning) {
+      photoWarning.textContent = FOTO_FALLIDA;
+      photoWarning.hidden = false;
+    }
     form.reset();
+    limpiarVistaPrevia();
   });
 }
 

@@ -568,6 +568,18 @@ strong, b { font-weight: 600; }
 .form-hint { font-size: var(--fs-small); color: var(--tinta-2); margin: 0; }
 .form-success { color: #3E6B3A; font-weight: 600; margin: 0; }
 .form-error { color: #9A3324; font-weight: 600; margin: 0; }
+.form-group .form-hint, .form-group .form-error { margin-top: .4rem; }
+.form-opcional { font-weight: 400; color: var(--tinta-2); }
+.form-aviso {
+  margin: 0;
+  padding: .75rem 1rem;
+  background: #fff;
+  border-left: 3px solid var(--oro-hondo);
+  border-radius: 4px;
+  color: var(--tinta);
+}
+.photo-preview { margin-top: var(--s1); }
+.photo-preview img { display: block; max-width: 8rem; max-height: 8rem; object-fit: cover; border-radius: 4px; border: 1px solid var(--linea); }
 .canales { list-style: none; padding: 0; margin: var(--s3) 0; border-top: 1px solid var(--linea); }
 .canales li { padding: .9rem 0; border-bottom: 1px solid var(--linea); }
 .canales a { text-decoration-color: var(--oro); text-underline-offset: 4px; }

@@ -49,11 +49,11 @@
   <script>
     (function () {
       var dev = /^(localhost|127\.0\.0\.1)$/i.test(location.hostname);
-      var css = dev ? 'css/style.css?dev=' + Date.now() : 'css/style.css?v=46';
+      var css = dev ? 'css/style.css?dev=' + Date.now() : 'css/style.css?v=47';
       document.write('<link rel="stylesheet" href="' + css + '">');
     })();
   </script>
-  <noscript><link rel="stylesheet" href="css/style.css?v=46"></noscript>
+  <noscript><link rel="stylesheet" href="css/style.css?v=47"></noscript>
   <script src="js/config.js?v=4"></script>
   <!-- Meta Pixel / GA4 / Clarity: tracking.js los carga solo si su ID existe en config.js y la persona acepta el aviso de datos -->
   <script src="js/tracking.js?v=3"></script>
@@ -609,9 +609,18 @@
               <label for="leadMessage">Cuéntanos más</label>
               <textarea id="leadMessage" name="mensaje" rows="3" placeholder="Historia, tamaño deseado, fecha especial…"></textarea>
             </div>
-            <p class="form-hint">¿Tienes fotos de referencia? Envíalas por WhatsApp al +57 318 294 1864 después de enviar este formulario.</p>
+            <div class="form-group">
+              <label for="leadPhoto">Foto de referencia <span class="form-opcional">(opcional)</span></label>
+              <input type="file" id="leadPhoto" name="foto" accept="image/jpeg,image/png,image/webp" aria-describedby="leadPhotoHint leadPhotoError">
+              <p class="form-hint" id="leadPhotoHint">JPG, PNG o WebP de hasta 8 MB. Si prefieres, envíala por WhatsApp al +57 318 294 1864.</p>
+              <p class="form-error" id="leadPhotoError" role="alert" hidden></p>
+              <div class="photo-preview" id="photoPreview" hidden>
+                <img alt="Vista previa de tu foto de referencia" id="photoPreviewImg">
+              </div>
+            </div>
             <button type="submit" class="btn btn--tinta btn--full">Enviar cotización</button>
             <p class="form-success" id="formSuccess" role="status" hidden>¡Recibimos tu cotización!</p>
+            <p class="form-aviso" id="formPhotoWarning" role="alert" hidden></p>
             <p class="form-error" id="formError" role="alert" hidden></p>
           </form>
         </div>
@@ -716,6 +725,6 @@
   </div>
 
   <script src="js/seo.js?v=5"></script>
-  <script src="js/main.js?v=21"></script>
+  <script src="js/main.js?v=22"></script>
 </body>
 </html>
