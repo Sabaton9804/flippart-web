@@ -38,7 +38,7 @@ test.describe('FlippArt — vitrina y galería', () => {
   test('sección vitrina premium visible con imagen completa', async ({ page }) => {
     await page.goto('/#vitrina');
     await expect(page.locator('#vitrina')).toBeVisible();
-    await expect(page.getByRole('heading', { name: /Vitrina Premium/i })).toBeVisible();
+    await expect(page.getByRole('heading', { name: /Línea Vitrina/i })).toBeVisible();
 
     const heroImg = page.locator('.vitrina__hero-img');
     await expectImageFullyVisible(page, heroImg);

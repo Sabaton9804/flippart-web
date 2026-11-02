@@ -14,6 +14,15 @@ RewriteCond %{DOCUMENT_ROOT}/web/$1 -f [OR]
 RewriteCond %{DOCUMENT_ROOT}/web/$1 -d
 RewriteRule ^(.*)$ web/$1 [L]
 
+# URL limpia de páginas: /grado-ascenso/ → /grado-ascenso → web/grado-ascenso.html
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond %{DOCUMENT_ROOT}/web/$1.html -f
+RewriteRule ^([a-z0-9-]+)/$ /$1 [R=301,L]
+
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
+RewriteCond %{DOCUMENT_ROOT}/web/$1.html -f
+RewriteRule ^([a-z0-9-]+)$ web/$1.html [L]
+
 # Raíz del dominio → index del sitio
 RewriteCond %{ENV:REDIRECT_STATUS} ^$
 RewriteCond %{REQUEST_URI} ^/?$
