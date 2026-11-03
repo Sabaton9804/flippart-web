@@ -47,12 +47,14 @@
   <script>
     (function () {
       var dev = /^(localhost|127\.0\.0\.1)$/i.test(location.hostname);
-      var css = dev ? 'css/style.css?dev=' + Date.now() : 'css/style.css?v=43';
+      var css = dev ? 'css/style.css?dev=' + Date.now() : 'css/style.css?v=44';
       document.write('<link rel="stylesheet" href="' + css + '">');
     })();
   </script>
-  <noscript><link rel="stylesheet" href="css/style.css?v=43"></noscript>
-  <script src="js/config.js"></script>
+  <noscript><link rel="stylesheet" href="css/style.css?v=44"></noscript>
+  <script src="js/config.js?v=2"></script>
+  <!-- Meta Pixel / GA4 / Clarity: tracking.js los carga solo si su ID existe en config.js y la persona acepta el aviso de datos -->
+  <script src="js/tracking.js?v=3"></script>
 </head>
 <body>
   <nav class="nav" id="nav" aria-label="Navegación principal">
@@ -1766,6 +1768,7 @@
           <li><a href="#testimonios">Testimonios</a></li>
           <li><a href="#faq">Preguntas frecuentes</a></li>
           <li><a href="#cotizar">Cotizar</a></li>
+          <li><button type="button" class="footer__boton" data-aviso-datos>Preferencias de datos y cookies</button></li>
         </ul>
       </div>
       <div class="footer__col">
@@ -1859,6 +1862,6 @@
   </div>
 
   <script src="js/seo.js?v=2"></script>
-  <script src="js/main.js?v=18"></script>
+  <script src="js/main.js?v=19"></script>
 </body>
 </html>

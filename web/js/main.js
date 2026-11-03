@@ -270,47 +270,37 @@ window.addEventListener('scroll', () => {
     : 'rgba(10, 10, 10, 0.85)';
 });
 
+// Meta Pixel, GA4 y Clarity los carga js/tracking.js, solo tras aceptar el aviso de datos.
 function initAnalytics() {
   if (typeof FLIPPART_CONFIG === 'undefined') return;
 
   trackEvent('page_view', { path: window.location.pathname });
+}
 
-  if (FLIPPART_CONFIG.gaId) {
-    const s = document.createElement('script');
-    s.async = true;
-    s.src = `https://www.googletagmanager.com/gtag/js?id=${FLIPPART_CONFIG.gaId}`;
-    document.head.appendChild(s);
-    window.dataLayer = window.dataLayer || [];
-    window.gtag = function gtag() { window.dataLayer.push(arguments); };
-    window.gtag('js', new Date());
-    window.gtag('config', FLIPPART_CONFIG.gaId);
-  }
+const WHATSAPP_URL = /^https?:\/\/(wa\.me|api\.whatsapp\.com)\//i;
 
-  if (FLIPPART_CONFIG.metaPixelId) {
-    !(function (f, b, e, v, n, t, s) {
-      if (f.fbq) return;
-      n = f.fbq = function () { n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments); };
-      if (!f._fbq) f._fbq = n;
-      n.push = n; n.loaded = !0; n.version = '2.0'; n.queue = [];
-      t = b.createElement(e); t.async = !0;
-      t.src = v; s = b.getElementsByTagName(e)[0];
-      s.parentNode.insertBefore(t, s);
-    }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js'));
-    window.fbq('init', FLIPPART_CONFIG.metaPixelId);
-    window.fbq('track', 'PageView');
-  }
+function isFlippArtWhatsApp(url) {
+  const wa = String(FLIPPART_CONFIG?.whatsapp || '573182941864').replace(/\D/g, '');
+  return WHATSAPP_URL.test(url || '') && String(url).includes(wa);
+}
 
-  if (FLIPPART_CONFIG.clarityId) {
-    (function (c, l, a, r, i, t, y) {
-      c[a] = c[a] || function () { (c[a].q = c[a].q || []).push(arguments); };
-      t = l.createElement(r); t.async = 1; t.src = 'https://www.clarity.ms/tag/' + i;
-      y = l.getElementsByTagName(r)[0]; y.parentNode.insertBefore(t, y);
-    }(window, document, 'clarity', 'script', FLIPPART_CONFIG.clarityId));
-  }
+function trackWhatsAppContact(source) {
+  if (typeof window.fbq === 'function') window.fbq('track', 'Contact', { content_name: source });
+}
+
+// Los CTA con data-cta-location ya disparan Contact desde tracking.js.
+function initWhatsAppContactTracking() {
+  document.addEventListener('click', (e) => {
+    const link = e.target.closest?.('a[href]');
+    if (!link || link.matches('[data-cta-location]') || !isFlippArtWhatsApp(link.href)) return;
+    const source = link.classList.contains('whatsapp-float') ? 'whatsapp_flotante' : link.closest('[id]')?.id;
+    trackWhatsAppContact(source || 'enlace_whatsapp');
+  });
 }
 
 async function trackEvent(eventName, metadata = {}) {
   if (typeof FLIPPART_CONFIG === 'undefined') return;
+  if (!window.FlippartTracking?.hayConsentimiento()) return;
   const { supabaseUrl, supabaseAnonKey } = FLIPPART_CONFIG;
   if (!supabaseUrl || !supabaseAnonKey) return;
 
@@ -405,6 +395,7 @@ async function notifyFlippArtCallMeBot(text) {
 
 function openWhatsAppToFlippArt(text) {
   const wa = FLIPPART_CONFIG?.whatsapp || '573182941864';
+  trackWhatsAppContact('formulario_cotizacion');
   window.open(`https://wa.me/${wa}?text=${encodeURIComponent(text)}`, '_blank');
 }
 
@@ -543,10 +534,6 @@ function initLeadForm() {
       result.whatsappMode = 'wa_me';
     }
 
-    trackEvent('generate_lead', { tipo, has_photo: Boolean(photoFile) });
-    if (typeof gtag === 'function') gtag('event', 'generate_lead', { method: 'form' });
-    if (typeof fbq === 'function') fbq('track', 'Lead');
-
     submitBtn.disabled = false;
     submitBtn.textContent = defaultLabel;
 
@@ -557,6 +544,9 @@ function initLeadForm() {
       }
       return;
     }
+
+    trackEvent('generate_lead', { tipo, has_photo: Boolean(photoFile) });
+    if (window.FlippartTracking) window.FlippartTracking.formSubmitted(form.dataset.formName || 'cotizacion');
 
     if (result.whatsappMode === 'auto') {
       success.textContent = '¡Recibimos tu cotización en nuestro WhatsApp! Te contactaremos pronto al número que indicaste.';
@@ -745,4 +735,5 @@ renderGallery();
 renderVideos();
 initSEO();
 initAnalytics();
+initWhatsAppContactTracking();
 initLeadForm();

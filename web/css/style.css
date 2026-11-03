@@ -2949,3 +2949,39 @@ a { color: inherit; text-decoration: none; }
     font-size: 0.76rem;
   }
 }
+
+/* ---------- Aviso de datos y cookies (js/tracking.js) ---------- */
+.sr-only {
+  position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+  overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; border: 0;
+}
+.aviso-datos {
+  position: fixed;
+  left: 12px; right: 12px;
+  bottom: calc(100px + env(safe-area-inset-bottom));
+  z-index: 100;
+  background: var(--black-card);
+  color: var(--text);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  padding: 16px;
+}
+.aviso-datos[hidden] { display: none; }
+.aviso-datos__texto { font-size: 0.82rem; line-height: 1.5; margin: 0 0 12px; }
+.aviso-datos__texto a { color: var(--gold-light); text-underline-offset: 3px; }
+.aviso-datos__acciones { display: flex; gap: 8px; }
+.aviso-datos__acciones .btn { flex: 1; min-height: 44px; padding: 10px 16px; }
+.aviso-datos .btn--tinta { background: linear-gradient(135deg, var(--gold-light), var(--gold-dark)); color: var(--black); }
+.aviso-datos .btn--linea { background: transparent; color: var(--gold-light); border: 1px solid var(--border); }
+.aviso-datos .btn--linea:hover { border-color: var(--gold); }
+@media (min-width: 768px) {
+  .aviso-datos { left: 28px; right: auto; bottom: 28px; max-width: 26rem; }
+}
+.footer__boton {
+  background: none; border: 0; padding: 0;
+  font: inherit; font-size: 0.82rem; color: var(--text-muted);
+  text-decoration: underline; text-underline-offset: 3px;
+  cursor: pointer;
+}
+.footer__boton:hover { color: var(--gold-light); }

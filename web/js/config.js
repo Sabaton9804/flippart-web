@@ -14,8 +14,8 @@ const FLIPPART_CONFIG = {
   /** Google Analytics 4 — ejemplo: G-XXXXXXXXXX */
   gaId: '',
 
-  /** Meta Pixel — ejemplo: 1234567890123456 */
-  metaPixelId: '',
+  /** Meta Pixel FlippArt (lo carga js/tracking.js) */
+  metaPixelId: '1137674532109255',
 
   /** Microsoft Clarity — ejemplo: abcdefghij */
   clarityId: '',
