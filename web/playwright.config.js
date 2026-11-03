@@ -1,7 +1,7 @@
 const { defineConfig } = require('@playwright/test');
 
 // Puerto y comando del servidor estático configurables: PW_PORT=5500 npx playwright test
-const PORT = Number(process.env.PW_PORT || 5611);
+const PORT = Number(process.env.PW_PORT || 5733);
 const PYTHON = process.env.PYTHON || (process.platform === 'win32' ? 'python' : 'python3');
 const BASE_URL = `http://127.0.0.1:${PORT}`;
 
